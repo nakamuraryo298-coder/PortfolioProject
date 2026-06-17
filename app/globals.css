@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* Clean & light palette — tuned for the Japanese business market.
-     White base, generous whitespace, blue accent for 信頼感 (trust). */
-  --color-base: #ffffff;
-  --color-surface: #f6f8fc;
-  --color-surface-2: #eef2f9;
-  --color-border: #e3e8f1;
-  --color-muted: #5b667a;
-  --color-fg: #16203a;
-  --color-accent: #2563eb;
-  --color-accent-2: #0e9ec4;
-  --color-accent-3: #4f46e5;
+  /* Palette tuned to the hero artwork — 和 × technology.
+     Warm washi cream base, 紺青 (navy ink), 朱色 (vermillion) accent. */
+  --color-base: #f7f2ea;
+  --color-surface: #ffffff;
+  --color-surface-2: #efe8db;
+  --color-border: #e5dccc;
+  --color-muted: #5e6679;
+  --color-fg: #1f2d4d;
+  --color-accent: #2f5ca8;
+  --color-accent-2: #d2574a;
+  --color-accent-3: #3f6fc4;
 
   --font-sans: var(--font-noto-jp), var(--font-inter), "Hiragino Kaku Gothic ProN",
     "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
@@ -62,16 +62,16 @@ body {
   background: var(--color-surface);
 }
 ::-webkit-scrollbar-thumb {
-  background: #c7cfdd;
+  background: #cdc4b2;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #aab4c7;
+  background: #b6ab95;
 }
 
-/* Utility: gradient text */
+/* Utility: gradient text (kept in the blue family so headings stay calm) */
 .text-gradient {
-  background: linear-gradient(115deg, var(--color-accent), var(--color-accent-3), var(--color-accent-2));
+  background: linear-gradient(115deg, var(--color-accent), var(--color-accent-3), var(--color-accent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -80,8 +80,8 @@ body {
 /* Utility: subtle grid background */
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(47, 92, 168, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(47, 92, 168, 0.05) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 

@@ -13,7 +13,8 @@ const links = [
   { id: "experience", label: nav.experience },
   { id: "projects", label: nav.projects },
   { id: "services", label: nav.services },
-  { id: "contact", label: nav.contact },
+  { id: "flow", label: nav.flow },
+  { id: "faq", label: nav.faq },
 ];
 
 export default function Navbar() {
@@ -48,7 +49,7 @@ export default function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {links.map((link) => (
             <a
               key={link.id}
@@ -80,7 +81,7 @@ export default function Navbar() {
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            className="grid h-9 w-9 place-items-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-fg)] md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-fg)] lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -94,7 +95,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-base)]/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-base)]/95 backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
               {links.map((link) => (

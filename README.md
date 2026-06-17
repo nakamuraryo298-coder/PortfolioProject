@@ -2,7 +2,11 @@
 
 Bilingual (日本語 / English) portfolio for **Takaki Takahashi (高橋貴樹)**, freelance software engineer based in Japan.
 
-Built with **Next.js 15**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**. Sleek dark theme, fully responsive, SEO-optimized.
+Built with **Next.js 16**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**. Clean & light "和 × technology" theme (washi cream, 紺青 navy ink, 朱色 vermillion accent), Japanese web fonts (Noto Sans JP), a custom hero artwork background, trust-building sections for the Japanese market (安心のお約束 / ご依頼の流れ / よくあるご質問), fully responsive and SEO-optimized.
+
+## Hero background image
+
+The hero uses `public/hero-bg.png`. To swap it, drop a new image at that path (landscape, ideally ~1536×1024 or wider). The artwork sits on the right; text overlays a cream scrim on the left, so keep the left third relatively open.
 
 ## Getting started
 

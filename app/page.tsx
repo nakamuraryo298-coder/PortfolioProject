@@ -7,6 +7,9 @@ import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
 import Services from "@/components/sections/Services";
+import Commitments from "@/components/sections/Commitments";
+import Process from "@/components/sections/Process";
+import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -21,6 +24,9 @@ export default function Home() {
         <Experience />
         <Projects />
         <Services />
+        <Commitments />
+        <Process />
+        <Faq />
         <Contact />
       </main>
       <Footer />
