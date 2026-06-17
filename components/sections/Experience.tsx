@@ -31,7 +31,7 @@ export default function Experience() {
                     <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]" />
                   </span>
 
-                  <div className="card-glow rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 text-left">
+                  <div className="card-glow card-soft rounded-2xl border border-[var(--color-border)] bg-[var(--color-base)] p-6 text-left">
                     <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--color-accent-2)]">
                       <Briefcase className="h-3.5 w-3.5" />
                       {exp.period[lang]}
@@ -41,7 +41,7 @@ export default function Experience() {
                     <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">{exp.description[lang]}</p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {exp.tags.map((t) => (
-                        <span key={t} className="rounded-md bg-[var(--color-base)] px-2 py-0.5 text-xs text-[var(--color-muted)]">
+                        <span key={t} className="rounded-md bg-[var(--color-surface)] px-2 py-0.5 text-xs text-[var(--color-muted)]">
                           {t}
                         </span>
                       ))}

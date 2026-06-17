@@ -17,7 +17,7 @@ export default function Projects() {
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {projects.map((project, i) => (
             <Reveal key={project.title.en} delay={(i % 2) * 0.08}>
-              <article className="card-glow group flex h-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7">
+              <article className="card-glow card-soft group flex h-full flex-col rounded-2xl border border-[var(--color-border)] bg-[var(--color-base)] p-7">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-accent-2)]">
@@ -43,7 +43,7 @@ export default function Projects() {
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-lg border border-[var(--color-border)] bg-[var(--color-base)] px-2.5 py-1 text-xs font-medium text-[var(--color-muted)]"
+                      className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 py-1 text-xs font-medium text-[var(--color-muted)]"
                     >
                       {tech}
                     </span>

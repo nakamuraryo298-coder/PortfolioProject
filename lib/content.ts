@@ -44,6 +44,7 @@ export const profile = {
 
 export const nav = {
   about: { ja: "プロフィール", en: "About" },
+  strengths: { ja: "強み", en: "Strengths" },
   skills: { ja: "スキル", en: "Skills" },
   experience: { ja: "経歴", en: "Experience" },
   projects: { ja: "実績", en: "Projects" },
@@ -107,6 +108,51 @@ export const about = {
     ],
   },
 };
+
+export interface Strength {
+  icon: string;
+  no: string;
+  title: { ja: string; en: string };
+  description: { ja: string; en: string };
+}
+
+export const strengthsSection = {
+  heading: { ja: "選ばれる理由", en: "Why Clients Choose Me" },
+  lead: {
+    ja: "数あるエンジニアの中から、私が選ばれ続ける3つの理由。",
+    en: "Three reasons clients keep choosing to work with me.",
+  },
+};
+
+export const strengths: Strength[] = [
+  {
+    icon: "Workflow",
+    no: "01",
+    title: { ja: "ワンストップ対応", en: "One-Stop Partnership" },
+    description: {
+      ja: "企画・要件定義から設計・開発、運用・保守まで一人で完結します。窓口が一つにまとまるため、認識のズレや余計なコミュニケーションコストが生じません。",
+      en: "From planning and requirements to design, development, and ongoing operations — I handle it all. A single point of contact means no miscommunication and no wasted coordination cost.",
+    },
+  },
+  {
+    icon: "Award",
+    no: "02",
+    title: { ja: "確かな実績と技術力", en: "Proven Track Record" },
+    description: {
+      ja: "12年・60件超のプロジェクト経験。スタートアップから大手企業まで、幅広い業界・規模の開発を成功に導いてきました。最新技術にも継続的にキャッチアップしています。",
+      en: "12 years and 60+ projects delivered, for clients from startups to large enterprises across many industries. I continually keep pace with the latest technologies.",
+    },
+  },
+  {
+    icon: "MessagesSquare",
+    no: "03",
+    title: { ja: "丁寧で透明なコミュニケーション", en: "Clear, Transparent Communication" },
+    description: {
+      ja: "進捗の可視化と分かりやすいご報告を徹底します。専門用語に頼らず、ビジネスの目的に立ち返った対話を大切にし、安心して任せていただける関係を築きます。",
+      en: "I keep progress visible and reports easy to follow. I avoid jargon, stay focused on your business goals, and build a relationship you can rely on with peace of mind.",
+    },
+  },
+];
 
 export const skillCategories: SkillCategory[] = [
   {

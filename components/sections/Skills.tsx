@@ -28,7 +28,7 @@ export default function Skills() {
             const Icon = iconMap[cat.icon] ?? Layout;
             return (
               <Reveal key={cat.title.en} delay={i * 0.06}>
-                <div className="card-glow h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+                <div className="card-glow card-soft h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-base)] p-6">
                   <div className="flex items-center gap-3">
                     <div className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-[var(--color-accent)]/20 to-[var(--color-accent-3)]/20 text-[var(--color-accent-2)]">
                       <Icon className="h-5 w-5" />
@@ -39,7 +39,7 @@ export default function Skills() {
                     {cat.skills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-base)] px-2.5 py-1 text-xs font-medium text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-fg)]"
+                        className="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 py-1 text-xs font-medium text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-fg)]"
                       >
                         {skill}
                       </span>

@@ -28,7 +28,7 @@ export default function Services() {
             const Icon = iconMap[service.icon] ?? Code2;
             return (
               <Reveal key={service.title.en} delay={i * 0.06}>
-                <div className="card-glow group h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7">
+                <div className="card-glow card-soft group h-full rounded-2xl border border-[var(--color-border)] bg-[var(--color-base)] p-7">
                   <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] text-white transition-transform group-hover:scale-110">
                     <Icon className="h-6 w-6" />
                   </div>

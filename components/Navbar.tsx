@@ -8,6 +8,7 @@ import { nav, profile } from "@/lib/content";
 
 const links = [
   { id: "about", label: nav.about },
+  { id: "strengths", label: nav.strengths },
   { id: "skills", label: nav.skills },
   { id: "experience", label: nav.experience },
   { id: "projects", label: nav.projects },

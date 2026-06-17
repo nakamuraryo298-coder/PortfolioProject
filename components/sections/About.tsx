@@ -47,7 +47,7 @@ export default function About() {
           <Reveal delay={0.15} className="relative">
             <div className="relative mx-auto max-w-sm">
               <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] opacity-20 blur-2xl" />
-              <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+              <div className="card-soft rounded-3xl border border-[var(--color-border)] bg-[var(--color-base)] p-8">
                 <div className="flex items-center gap-4">
                   <div className="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] text-2xl font-black text-white">
                     高
@@ -60,7 +60,7 @@ export default function About() {
 
                 <div className="mt-6 grid grid-cols-2 gap-4">
                   {hero.stats.slice(0, 2).map((s) => (
-                    <div key={s.label.en} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] p-4">
+                    <div key={s.label.en} className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-4">
                       <div className="text-2xl font-black text-gradient">{s.value}</div>
                       <div className="mt-1 text-xs text-[var(--color-muted)]">{s.label[lang]}</div>
                     </div>

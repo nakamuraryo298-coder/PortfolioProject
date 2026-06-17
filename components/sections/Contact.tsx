@@ -31,7 +31,7 @@ export default function Contact() {
   ];
 
   const inputClass =
-    "w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] px-4 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)] transition-colors focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20";
+    "w-full rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-muted)] transition-colors focus:border-[var(--color-accent)] focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]/20";
 
   return (
     <section id="contact" className="relative border-t border-[var(--color-border)] bg-[var(--color-surface)]/30 py-24 sm:py-32">
@@ -41,7 +41,7 @@ export default function Contact() {
         <div className="mt-14 grid gap-10 lg:grid-cols-5">
           {/* Info */}
           <Reveal className="lg:col-span-2">
-            <div className="flex h-full flex-col justify-between gap-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+            <div className="card-soft flex h-full flex-col justify-between gap-8 rounded-2xl border border-[var(--color-border)] bg-[var(--color-base)] p-8">
               <div className="space-y-6">
                 <a
                   href={`mailto:${profile.email}`}
@@ -59,7 +59,7 @@ export default function Contact() {
                 </a>
 
                 <div className="flex items-center gap-4">
-                  <div className="grid h-12 w-12 place-items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-accent-2)]">
+                  <div className="grid h-12 w-12 place-items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-accent-2)]">
                     <MapPin className="h-5 w-5" />
                   </div>
                   <div>
@@ -83,7 +83,7 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="grid h-11 w-11 place-items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-base)] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-fg)]"
+                      className="grid h-11 w-11 place-items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-fg)]"
                     >
                       <s.icon className="h-5 w-5" />
                     </a>
@@ -95,7 +95,7 @@ export default function Contact() {
 
           {/* Form */}
           <Reveal delay={0.1} className="lg:col-span-3">
-            <form onSubmit={onSubmit} className="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-8">
+            <form onSubmit={onSubmit} className="card-soft rounded-2xl border border-[var(--color-border)] bg-[var(--color-base)] p-8">
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-[var(--color-fg)]">
