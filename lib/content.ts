@@ -70,10 +70,10 @@ export const hero = {
     available: { ja: "新規案件 受付中", en: "Available for projects" },
   },
   stats: [
-    { value: "12+", label: { ja: "年の経験", en: "Years of experience" } },
-    { value: "60+", label: { ja: "プロジェクト", en: "Projects delivered" } },
-    { value: "30+", label: { ja: "クライアント", en: "Happy clients" } },
-    { value: "100%", label: { ja: "納品実績", en: "On-time delivery" } },
+    { value: "12+", icon: "CalendarDays", label: { ja: "年の経験", en: "Years of experience" } },
+    { value: "60+", icon: "FolderCheck", label: { ja: "プロジェクト", en: "Projects delivered" } },
+    { value: "30+", icon: "Users", label: { ja: "クライアント", en: "Happy clients" } },
+    { value: "100%", icon: "BadgeCheck", label: { ja: "納品実績", en: "On-time delivery" } },
   ],
 };
 

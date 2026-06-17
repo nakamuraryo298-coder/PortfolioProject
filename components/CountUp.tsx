@@ -1,70 +1,49 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { animate, useInView } from "framer-motion";
 
 interface CountUpProps {
-  /** Full display value, e.g. "12+", "60+", "100%". The numeric part is animated; prefix/suffix are preserved. */
+  /** Target string such as "12+", "100%", "1.5k" — the leading number is animated. */
   value: string;
-  /** Animation length in seconds. */
   duration?: number;
-  /** Delay before counting starts, in seconds. */
-  delay?: number;
   className?: string;
 }
 
-export default function CountUp({ value, duration = 1.8, delay = 0.3, className }: CountUpProps) {
-  // Split into optional prefix (non-digits), the number, and an optional suffix.
-  const parsed = value.match(/^(\D*)([\d.,]+)(.*)$/);
-  const prefix = parsed?.[1] ?? "";
-  const rawNum = parsed?.[2] ?? "";
-  const suffix = parsed?.[3] ?? "";
-  const target = parsed ? parseFloat(rawNum.replace(/,/g, "")) : 0;
-  const decimals = rawNum.includes(".") ? rawNum.split(".")[1].length : 0;
-
+/**
+ * Animates the numeric part of `value` from 0 up to its target once the
+ * element scrolls into view, then stops. Any prefix/suffix (e.g. "+", "%")
+ * is preserved.
+ */
+export default function CountUp({ value, duration = 1.8, className }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
+
+  const match = String(value).match(/^(\D*)(\d+(?:\.\d+)?)(.*)$/);
+  const prefix = match?.[1] ?? "";
+  const target = match ? parseFloat(match[2]) : 0;
+  const suffix = match?.[3] ?? "";
+  const decimals = match && match[2].includes(".") ? match[2].split(".")[1].length : 0;
+
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (!inView || !parsed) return;
-
-    const prefersReduced =
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReduced) {
-      setDisplay(target);
-      return;
-    }
-
-    let raf = 0;
-    let startTs: number | null = null;
-
-    const tick = (now: number) => {
-      if (startTs === null) startTs = now;
-      const progress = Math.min((now - startTs) / (duration * 1000), 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-      setDisplay(target * eased);
-      if (progress < 1) raf = requestAnimationFrame(tick);
-      else setDisplay(target);
-    };
-
-    const timer = setTimeout(() => {
-      raf = requestAnimationFrame(tick);
-    }, delay * 1000);
-
-    return () => {
-      clearTimeout(timer);
-      cancelAnimationFrame(raf);
-    };
-  }, [inView, parsed, target, duration, delay]);
-
-  if (!parsed) return <span className={className}>{value}</span>;
+    if (!inView) return;
+    const controls = animate(0, target, {
+      duration,
+      ease: [0.16, 1, 0.3, 1], // easeOutExpo — fast start, gentle stop
+      onUpdate: (v) => setDisplay(v),
+    });
+    return () => controls.stop();
+  }, [inView, target, duration]);
 
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {display.toFixed(decimals)}
+      {display.toLocaleString("en-US", {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      })}
       {suffix}
     </span>
   );

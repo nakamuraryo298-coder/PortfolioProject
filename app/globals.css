@@ -77,6 +77,41 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Flowing animated gradient — used for the hero name for a stylish accent */
+@keyframes gradient-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.text-gradient-flow {
+  background: linear-gradient(
+    115deg,
+    var(--color-accent),
+    var(--color-accent-3),
+    var(--color-accent-2),
+    var(--color-accent-3),
+    var(--color-accent)
+  );
+  background-size: 280% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-flow 8s ease-in-out infinite;
+}
+
+/* Soft scroll-cue bounce */
+@keyframes scroll-cue {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+.animate-scroll-cue {
+  animation: scroll-cue 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient-flow { animation: none; }
+  .animate-scroll-cue { animation: none; }
+}
+
 /* Utility: subtle grid background */
 .bg-grid {
   background-image:

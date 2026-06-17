@@ -2,10 +2,27 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, MapPin } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  MapPin,
+  CalendarDays,
+  FolderCheck,
+  Users,
+  BadgeCheck,
+  ChevronDown,
+  type LucideIcon,
+} from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { hero, profile } from "@/lib/content";
 import CountUp from "../CountUp";
+
+const statIcons: Record<string, LucideIcon> = {
+  CalendarDays,
+  FolderCheck,
+  Users,
+  BadgeCheck,
+};
 
 export default function Hero() {
   const { lang } = useLanguage();
@@ -55,7 +72,7 @@ export default function Hero() {
           >
             <p className="text-lg font-medium text-[var(--color-muted)]">{hero.greeting[lang]}</p>
             <h1 className="mt-2 text-5xl font-black tracking-tight sm:text-7xl">
-              <span className="text-gradient">{profile.name[lang]}</span>
+              <span className="text-gradient-flow">{profile.name[lang]}</span>
             </h1>
             <p className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xl font-bold text-[var(--color-fg)] sm:text-2xl">
               {profile.title[lang]}
@@ -70,7 +87,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-5 text-2xl font-bold leading-snug text-[var(--color-fg)] sm:text-3xl"
+            className="mt-6 text-2xl font-bold leading-snug text-[var(--color-fg)] sm:text-3xl"
           >
             {hero.tagline[lang]}
           </motion.h2>
@@ -106,28 +123,49 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="card-soft mt-12 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-4"
-          >
-            {hero.stats.map((stat, i) => (
-              <div
-                key={stat.label.en}
-                className="flex flex-col items-center gap-1 bg-[var(--color-surface)]/90 px-4 py-6 text-center backdrop-blur sm:items-start sm:text-left"
-              >
-                <CountUp
-                  value={stat.value}
-                  delay={0.6 + i * 0.15}
-                  className="block text-3xl font-black leading-none text-gradient sm:text-4xl"
-                />
-                <span className="text-xs leading-tight text-[var(--color-muted)]">{stat.label[lang]}</span>
-              </div>
-            ))}
-          </motion.div>
+          <div className="mt-14 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
+            {hero.stats.map((stat, i) => {
+              const Icon = statIcons[stat.icon] ?? Sparkles;
+              return (
+                <motion.div
+                  key={stat.label.en}
+                  initial={{ opacity: 0, y: 24, scale: 0.96 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.55 + i * 0.12, ease: [0.21, 0.47, 0.32, 0.98] }}
+                  className="group card-soft relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)]/85 p-4 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--color-accent)]/50 hover:shadow-[0_16px_40px_rgba(47,92,168,0.16)]"
+                >
+                  {/* Animated top accent bar on hover */}
+                  <span className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-3)] to-[var(--color-accent-2)] transition-transform duration-300 group-hover:scale-x-100" />
+                  {/* Soft glow that fades in on hover */}
+                  <span className="pointer-events-none absolute -right-6 -top-6 h-16 w-16 rounded-full bg-[var(--color-accent)]/10 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
+
+                  <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--color-accent)]/12 to-[var(--color-accent-3)]/12 text-[var(--color-accent)] transition-transform duration-300 group-hover:scale-110">
+                    <Icon className="h-4 w-4" />
+                  </span>
+
+                  <div className="mt-3 text-3xl font-black leading-none">
+                    <CountUp value={stat.value} className="text-gradient" />
+                  </div>
+                  <div className="mt-1.5 text-xs leading-tight text-[var(--color-muted)]">{stat.label[lang]}</div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
+
+      {/* Scroll cue */}
+      <motion.a
+        href="#about"
+        aria-label="Scroll down"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-[var(--color-muted)] sm:flex"
+      >
+        <span className="text-[10px] font-medium uppercase tracking-[0.2em]">Scroll</span>
+        <ChevronDown className="h-5 w-5 animate-scroll-cue" />
+      </motion.a>
     </section>
   );
 }
