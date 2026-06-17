@@ -15,7 +15,7 @@ interface CountUpProps {
  * element scrolls into view, then stops. Any prefix/suffix (e.g. "+", "%")
  * is preserved.
  */
-export default function CountUp({ value, duration = 1.8, className }: CountUpProps) {
+export default function CountUp({ value, duration = 3, className }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
 
@@ -29,9 +29,12 @@ export default function CountUp({ value, duration = 1.8, className }: CountUpPro
 
   useEffect(() => {
     if (!inView) return;
+    // Small delay so the counting is noticeable after the card appears,
+    // then a gentle, steady ease-out that visibly ticks across the full duration.
     const controls = animate(0, target, {
       duration,
-      ease: [0.16, 1, 0.3, 1], // easeOutExpo — fast start, gentle stop
+      delay: 0.35,
+      ease: [0.33, 1, 0.68, 1], // easeOutCubic — gradual, readable count
       onUpdate: (v) => setDisplay(v),
     });
     return () => controls.stop();

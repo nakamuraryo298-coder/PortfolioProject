@@ -109,7 +109,7 @@ export default function Hero() {
           >
             <a
               href="#contact"
-              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-3)] px-6 py-3 font-semibold text-white shadow-lg shadow-[var(--color-accent)]/25 transition-transform hover:scale-[1.03]"
+              className="btn-sheen group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-3)] px-6 py-3 font-semibold text-white shadow-lg shadow-[var(--color-accent)]/25 transition-transform hover:scale-[1.03]"
             >
               {hero.ctaPrimary[lang]}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

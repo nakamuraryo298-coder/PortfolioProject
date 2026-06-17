@@ -21,12 +21,30 @@ export default function Navbar() {
   const { lang, toggle } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Scrollspy — highlight the nav link of the section currently in view.
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
+    );
+    links.forEach((link) => {
+      const el = document.getElementById(link.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
   }, []);
 
   const close = () => setOpen(false);
@@ -44,21 +62,35 @@ export default function Navbar() {
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] text-sm font-black text-white">
             T
           </span>
-          <span className="text-[var(--color-fg)] transition-colors group-hover:text-white">
+          <span className="text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-accent)]">
             Takaki<span className="text-[var(--color-accent)]">.</span>
           </span>
         </a>
 
         <div className="hidden items-center gap-1 lg:flex">
-          {links.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-muted)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]"
-            >
-              {link.label[lang]}
-            </a>
-          ))}
+          {links.map((link) => {
+            const isActive = active === link.id;
+            return (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className={`relative rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-[var(--color-accent)]"
+                    : "text-[var(--color-muted)] hover:bg-[var(--color-surface)] hover:text-[var(--color-fg)]"
+                }`}
+              >
+                {link.label[lang]}
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-active"
+                    className="absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-3)]"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </a>
+            );
+          })}
         </div>
 
         <div className="flex items-center gap-2">
@@ -73,7 +105,7 @@ export default function Navbar() {
 
           <a
             href="#contact"
-            className="hidden rounded-lg bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-3)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 sm:inline-block"
+            className="btn-sheen hidden rounded-lg bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-3)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 sm:inline-block"
           >
             {nav.contact[lang]}
           </a>

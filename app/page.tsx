@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Strengths from "@/components/sections/Strengths";
@@ -15,6 +16,7 @@ import Contact from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <Navbar />
       <main>
         <Hero />
