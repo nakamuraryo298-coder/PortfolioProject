@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, MapPin } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { hero, profile } from "@/lib/content";
+import CountUp from "../CountUp";
 
 export default function Hero() {
   const { lang } = useLanguage();
@@ -69,7 +70,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 text-2xl font-bold leading-snug text-[var(--color-fg)] sm:text-3xl"
+            className="mt-5 text-2xl font-bold leading-snug text-[var(--color-fg)] sm:text-3xl"
           >
             {hero.tagline[lang]}
           </motion.h2>
@@ -109,12 +110,19 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="card-soft mt-14 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-4"
+            className="card-soft mt-12 grid max-w-xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-border)] sm:grid-cols-4"
           >
-            {hero.stats.map((stat) => (
-              <div key={stat.label.en} className="bg-[var(--color-surface)]/90 px-5 py-5 text-center backdrop-blur sm:text-left">
-                <div className="text-3xl font-black text-gradient">{stat.value}</div>
-                <div className="mt-1 text-xs text-[var(--color-muted)]">{stat.label[lang]}</div>
+            {hero.stats.map((stat, i) => (
+              <div
+                key={stat.label.en}
+                className="flex flex-col items-center gap-1 bg-[var(--color-surface)]/90 px-4 py-6 text-center backdrop-blur sm:items-start sm:text-left"
+              >
+                <CountUp
+                  value={stat.value}
+                  delay={0.6 + i * 0.15}
+                  className="block text-3xl font-black leading-none text-gradient sm:text-4xl"
+                />
+                <span className="text-xs leading-tight text-[var(--color-muted)]">{stat.label[lang]}</span>
               </div>
             ))}
           </motion.div>
