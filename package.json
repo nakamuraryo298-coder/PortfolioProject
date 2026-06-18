@@ -1,8 +1,8 @@
 {
-  "name": "takaki-takahashi-portfolio",
+  "name": "hiromu-takahashi-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Portfolio of Takaki Takahashi — Freelance Software Engineer",
+  "description": "Portfolio of Hiromu Takahashi — Freelance Software Engineer",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

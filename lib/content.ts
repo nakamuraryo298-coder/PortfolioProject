@@ -29,7 +29,7 @@ export interface Service {
 }
 
 export const profile = {
-  name: { ja: "高橋 貴樹", en: "Takaki Takahashi" },
+  name: { ja: "高橋 寛武", en: "Hiromu Takahashi" },
   title: {
     ja: "フリーランス ソフトウェアエンジニア",
     en: "Freelance Software Engineer",
@@ -85,12 +85,12 @@ export const about = {
   },
   paragraphs: {
     ja: [
-      "日本を拠点に活動するフリーランスのソフトウェアエンジニア、高橋貴樹です。スタートアップから大手企業まで、12年間にわたり多様なプロジェクトに携わってきました。",
+      "日本を拠点に活動するフリーランスのソフトウェアエンジニア、高橋寛武です。スタートアップから大手企業まで、12年間にわたり多様なプロジェクトに携わってきました。",
       "得意とするのは、要件定義から設計・開発・運用まで一気通貫で担う「フルサイクル開発」。技術選定や課題の本質を見極める力に強みがあり、単なる実装者ではなく、ビジネスの成功に責任を持つパートナーとして貢献します。",
       "フロントエンド、バックエンド、モバイル、クラウドインフラ、データ・AIまで、領域を横断して最適な解決策を提供します。",
     ],
     en: [
-      "I'm Takaki Takahashi, a freelance software engineer based in Japan. Over the past 12 years I have delivered projects for clients ranging from early-stage startups to large enterprises.",
+      "I'm Hiromu Takahashi, a freelance software engineer based in Japan. Over the past 12 years I have delivered projects for clients ranging from early-stage startups to large enterprises.",
       "My specialty is full-cycle development — owning everything from requirements and architecture to implementation and operations. I excel at technology selection and getting to the root of a problem, contributing not just as a developer but as a partner accountable for business outcomes.",
       "I work across frontend, backend, mobile, cloud infrastructure, and data/AI to deliver the right solution for each challenge.",
     ],

@@ -53,8 +53,8 @@ export default function About() {
                     高
                   </div>
                   <div>
-                    <div className="font-bold text-[var(--color-fg)]">高橋 貴樹</div>
-                    <div className="text-sm text-[var(--color-muted)]">Takaki Takahashi</div>
+                    <div className="font-bold text-[var(--color-fg)]">高橋 寛武</div>
+                    <div className="text-sm text-[var(--color-muted)]">Hiromu Takahashi</div>
                   </div>
                 </div>
 

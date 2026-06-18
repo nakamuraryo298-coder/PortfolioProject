@@ -22,38 +22,38 @@ const siteUrl = "https://takaki-takahashi.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Takaki Takahashi | Freelance Software Engineer 高橋貴樹",
-    template: "%s | Takaki Takahashi",
+    default: "Hiromu Takahashi | Freelance Software Engineer 高橋寛武",
+    template: "%s | Hiromu Takahashi",
   },
   description:
-    "Takaki Takahashi (高橋貴樹) — freelance full-stack software engineer based in Japan with 12+ years of experience across frontend, backend, mobile, cloud, and AI. Available for new projects.",
+    "Hiromu Takahashi (高橋寛武) — freelance full-stack software engineer based in Japan with 12+ years of experience across frontend, backend, mobile, cloud, and AI. Available for new projects.",
   keywords: [
     "フリーランス エンジニア",
     "ソフトウェアエンジニア",
     "フルスタックエンジニア",
     "Web開発",
-    "高橋貴樹",
+    "高橋寛武",
     "freelance software engineer",
     "full-stack developer Japan",
     "Next.js",
     "React",
     "AWS",
   ],
-  authors: [{ name: "Takaki Takahashi" }],
-  creator: "Takaki Takahashi",
+  authors: [{ name: "Hiromu Takahashi" }],
+  creator: "Hiromu Takahashi",
   openGraph: {
     type: "website",
     locale: "ja_JP",
     alternateLocale: "en_US",
     url: siteUrl,
-    title: "Takaki Takahashi | Freelance Software Engineer",
+    title: "Hiromu Takahashi | Freelance Software Engineer",
     description:
       "Full-stack software engineer with 12+ years of experience. From frontend to cloud and AI — building products that drive results.",
-    siteName: "Takaki Takahashi Portfolio",
+    siteName: "Hiromu Takahashi Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Takaki Takahashi | Freelance Software Engineer",
+    title: "Hiromu Takahashi | Freelance Software Engineer",
     description:
       "Full-stack software engineer with 12+ years of experience across web, mobile, cloud, and AI.",
   },
@@ -72,8 +72,8 @@ export const viewport: Viewport = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Takaki Takahashi",
-  alternateName: "高橋 貴樹",
+  name: "Hiromu Takahashi",
+  alternateName: "高橋 寛武",
   jobTitle: "Freelance Software Engineer",
   email: "mailto:mirai.lucky.dev@gmail.com",
   url: siteUrl,

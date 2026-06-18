@@ -1,6 +1,6 @@
-# Takaki Takahashi — Portfolio
+# Hiromu Takahashi — Portfolio
 
-Bilingual (日本語 / English) portfolio for **Takaki Takahashi (高橋貴樹)**, freelance software engineer based in Japan.
+Bilingual (日本語 / English) portfolio for **Hiromu Takahashi (高橋寛武)**, freelance software engineer based in Japan.
 
 Built with **Next.js 16**, **TypeScript**, **Tailwind CSS v4**, and **Framer Motion**. Clean & light "和 × technology" theme (washi cream, 紺青 navy ink, 朱色 vermillion accent), Japanese web fonts (Noto Sans JP), a custom hero artwork background, trust-building sections for the Japanese market (安心のお約束 / ご依頼の流れ / よくあるご質問), fully responsive and SEO-optimized.
 

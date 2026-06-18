@@ -63,7 +63,7 @@ export default function Navbar() {
             T
           </span>
           <span className="text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-accent)]">
-            Takaki<span className="text-[var(--color-accent)]">.</span>
+            Hiromu<span className="text-[var(--color-accent)]">.</span>
           </span>
         </a>
 
