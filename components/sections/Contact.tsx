@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Mail, Send, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Send, MapPin, Github, Linkedin } from "lucide-react";
+import { SiLine } from "react-icons/si";
 import { useLanguage } from "@/lib/language-context";
 import { contact, profile, nav } from "@/lib/content";
 import SectionHeading from "../SectionHeading";
@@ -27,7 +28,7 @@ export default function Contact() {
   const socials = [
     { icon: Github, href: profile.github, label: "GitHub" },
     { icon: Linkedin, href: profile.linkedin, label: "LinkedIn" },
-    { icon: Twitter, href: profile.twitter, label: "Twitter / X" },
+    { icon: SiLine, href: profile.line, label: "LINE" },
   ];
 
   const inputClass =

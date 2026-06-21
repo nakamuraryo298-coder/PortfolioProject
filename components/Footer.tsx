@@ -1,6 +1,7 @@
 "use client";
 
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
+import { SiLine } from "react-icons/si";
 import { useLanguage } from "@/lib/language-context";
 import { footer, profile } from "@/lib/content";
 
@@ -10,7 +11,7 @@ export default function Footer() {
   const socials = [
     { icon: Github, href: profile.github, label: "GitHub" },
     { icon: Linkedin, href: profile.linkedin, label: "LinkedIn" },
-    { icon: Twitter, href: profile.twitter, label: "Twitter / X" },
+    { icon: SiLine, href: profile.line, label: "LINE" },
     { icon: Mail, href: `mailto:${profile.email}`, label: "Email" },
   ];
 

@@ -35,11 +35,11 @@ export const profile = {
     en: "Freelance Software Engineer",
   },
   location: { ja: "日本", en: "Japan" },
-  email: "mirai.lucky.dev@gmail.com",
+  email: "biyou00000@gmail.com",
   yearsOfExperience: 12,
   github: "https://github.com/",
   linkedin: "https://www.linkedin.com/",
-  twitter: "https://x.com/",
+  line: "https://line.me/",
 };
 
 export const nav = {
@@ -49,6 +49,9 @@ export const nav = {
   experience: { ja: "経歴", en: "Experience" },
   projects: { ja: "実績", en: "Projects" },
   services: { ja: "サービス", en: "Services" },
+  cases: { ja: "実績", en: "Work" },
+  pricing: { ja: "料金", en: "Pricing" },
+  voice: { ja: "お客様の声", en: "Reviews" },
   flow: { ja: "流れ", en: "Process" },
   faq: { ja: "FAQ", en: "FAQ" },
   contact: { ja: "お問い合わせ", en: "Contact" },
@@ -109,6 +112,23 @@ export const about = {
       "Quality and speed, without compromise",
     ],
   },
+  valuesLabel: { ja: "大切にしている信条", en: "What I value" },
+  values: {
+    ja: [
+      { title: "本質から考える", desc: "表面的な対処ではなく、課題の根本原因を見極めて解決します。" },
+      { title: "品質に妥協しない", desc: "保守性・拡張性まで見据えた、長く使えるコードを書きます。" },
+      { title: "誠実な対話", desc: "専門用語に頼らず、ビジネスの言葉で正直にお伝えします。" },
+      { title: "学び続ける", desc: "最新技術を継続的にキャッチアップし、最適解を提案します。" },
+    ],
+    en: [
+      { title: "Get to the root", desc: "I solve the underlying cause, not just the surface symptom." },
+      { title: "No compromise on quality", desc: "I write maintainable, extensible code built to last." },
+      { title: "Honest dialogue", desc: "I communicate plainly in business terms, never hiding behind jargon." },
+      { title: "Always learning", desc: "I continually adopt new technology to propose the best solution." },
+    ],
+  },
+  toolsLabel: { ja: "愛用ツール", en: "Daily toolkit" },
+  tools: ["VS Code", "GitHub", "Figma", "Notion", "Linear", "Slack", "Vercel", "Docker"],
 };
 
 export interface Strength {
@@ -527,6 +547,214 @@ export const processSteps: ProcessStep[] = [
       ja: "納品後も運用・保守や追加開発を継続的にサポートします。",
       en: "I continue to support operations, maintenance, and future enhancements.",
     },
+  },
+];
+
+export interface CaseStudy {
+  tag: { ja: string; en: string };
+  title: { ja: string; en: string };
+  challenge: { ja: string; en: string };
+  solution: { ja: string; en: string };
+  results: { value: string; label: { ja: string; en: string } }[];
+  stack: string[];
+}
+
+export const caseStudiesSection = {
+  heading: { ja: "ケーススタディ", en: "Case Studies" },
+  lead: {
+    ja: "代表的なプロジェクトを「課題 → 解決 → 成果」の流れで詳しくご紹介します。",
+    en: "A closer look at representative projects — framed as challenge, solution, and result.",
+  },
+  labels: {
+    challenge: { ja: "課題", en: "Challenge" },
+    solution: { ja: "解決アプローチ", en: "Solution" },
+    result: { ja: "成果", en: "Results" },
+  },
+  note: {
+    ja: "※ 守秘義務により一部内容を一般化しています。",
+    en: "* Some details are generalized due to confidentiality agreements.",
+  },
+};
+
+export const caseStudies: CaseStudy[] = [
+  {
+    tag: { ja: "BtoB SaaS", en: "B2B SaaS" },
+    title: { ja: "急成長SaaSのパフォーマンス再設計", en: "Re-architecting a Fast-Growing SaaS" },
+    challenge: {
+      ja: "ユーザー急増により画面表示が遅延し、解約リスクが増大。モノリスのままではスケールできない状態でした。",
+      en: "Surging usage caused slow page loads and rising churn risk; the monolith could no longer scale.",
+    },
+    solution: {
+      ja: "ボトルネックを計測で特定し、重要機能をマイクロサービス化。キャッシュ戦略とDB最適化、CI/CDの整備を実施しました。",
+      en: "I measured the bottlenecks, broke out key features into microservices, and introduced a caching strategy, DB tuning, and a solid CI/CD pipeline.",
+    },
+    results: [
+      { value: "60%", label: { ja: "表示速度の改善", en: "Faster load times" } },
+      { value: "99.9%", label: { ja: "稼働率を達成", en: "Uptime achieved" } },
+      { value: "3x", label: { ja: "同時接続数に対応", en: "Concurrency capacity" } },
+    ],
+    stack: ["Next.js", "Go", "PostgreSQL", "Redis", "Kubernetes", "AWS"],
+  },
+  {
+    tag: { ja: "AI / 業務効率化", en: "AI / Automation" },
+    title: { ja: "LLMによる社内ナレッジ検索の構築", en: "An LLM-Powered Internal Knowledge Search" },
+    challenge: {
+      ja: "問い合わせ対応に時間がかかり、担当者の負担が増大。膨大な社内文書から必要な情報を探せませんでした。",
+      en: "Support took too long and overloaded staff; finding the right answer in a huge document base was painful.",
+    },
+    solution: {
+      ja: "RAG構成で社内文書をベクトル化し、高精度な検索・要約システムを構築。セキュアな自社運用環境に実装しました。",
+      en: "I built a RAG pipeline that vectorizes internal documents for accurate search and summarization, deployed in a secure self-hosted environment.",
+    },
+    results: [
+      { value: "70%", label: { ja: "問い合わせ工数を削減", en: "Less support workload" } },
+      { value: "5x", label: { ja: "情報到達の速さ", en: "Faster answers" } },
+      { value: "100%", label: { ja: "セキュアな自社運用", en: "Self-hosted & secure" } },
+    ],
+    stack: ["Python", "FastAPI", "LLM / RAG", "Vector DB", "GCP"],
+  },
+  {
+    tag: { ja: "Eコマース", en: "E-Commerce" },
+    title: { ja: "レガシーECのモダン化と収益改善", en: "Modernizing a Legacy E-Commerce Site" },
+    challenge: {
+      ja: "古い基盤で表示が遅く、SEOも低迷。カート離脱が多く、売上が頭打ちになっていました。",
+      en: "An aging stack meant slow pages and weak SEO; cart abandonment was high and revenue had plateaued.",
+    },
+    solution: {
+      ja: "ヘッドレス構成でフロントを刷新し、Core Web Vitalsを最適化。決済フローとSEOを改善しました。",
+      en: "I rebuilt the storefront with a headless architecture, optimized Core Web Vitals, and improved the checkout flow and SEO.",
+    },
+    results: [
+      { value: "1.5x", label: { ja: "コンバージョン率", en: "Conversion rate" } },
+      { value: "満点", label: { ja: "Core Web Vitals", en: "Core Web Vitals" } },
+      { value: "+40%", label: { ja: "オーガニック流入", en: "Organic traffic" } },
+    ],
+    stack: ["Next.js", "Headless CMS", "Stripe", "Vercel"],
+  },
+];
+
+export interface PricingPlan {
+  name: { ja: string; en: string };
+  price: { ja: string; en: string };
+  unit: { ja: string; en: string };
+  description: { ja: string; en: string };
+  features: { ja: string[]; en: string[] };
+  highlighted?: boolean;
+  cta: { ja: string; en: string };
+}
+
+export const pricingSection = {
+  heading: { ja: "料金プラン", en: "Pricing" },
+  lead: {
+    ja: "ご予算やフェーズに合わせて、3つの柔軟なプランをご用意しています。",
+    en: "Three flexible engagement models to match your budget and project phase.",
+  },
+  note: {
+    ja: "※ 金額はあくまで目安です。要件をお伺いし、正式なお見積りをご提示します。",
+    en: "* Figures are indicative. I provide a formal quote after understanding your requirements.",
+  },
+};
+
+export const pricingPlans: PricingPlan[] = [
+  {
+    name: { ja: "スポット", en: "Spot" },
+    price: { ja: "¥50,000〜", en: "from ¥50k" },
+    unit: { ja: "/ 件", en: "/ task" },
+    description: {
+      ja: "技術相談・コードレビュー・トラブル対応など、単発のご依頼に。",
+      en: "For one-off needs — consulting, code review, or troubleshooting.",
+    },
+    features: {
+      ja: ["技術相談・アドバイス", "コードレビュー", "スポットでの不具合対応", "オンライン打ち合わせ"],
+      en: ["Technical consulting", "Code review", "Spot bug fixing", "Online meetings"],
+    },
+    cta: { ja: "相談する", en: "Get in touch" },
+  },
+  {
+    name: { ja: "月額（準委任）", en: "Monthly Retainer" },
+    price: { ja: "¥400,000〜", en: "from ¥400k" },
+    unit: { ja: "/ 月", en: "/ month" },
+    description: {
+      ja: "継続的な開発・改善に。チームの一員として伴走します。",
+      en: "For ongoing development — I work alongside your team as a partner.",
+    },
+    features: {
+      ja: [
+        "週2〜5日の柔軟な稼働",
+        "設計から実装・運用まで",
+        "定期的な進捗報告",
+        "技術選定・アーキテクチャ支援",
+        "優先的なサポート対応",
+      ],
+      en: [
+        "Flexible 2–5 days / week",
+        "Design to build to operations",
+        "Regular progress reports",
+        "Architecture & tech guidance",
+        "Priority support",
+      ],
+    },
+    highlighted: true,
+    cta: { ja: "このプランで相談", en: "Start a conversation" },
+  },
+  {
+    name: { ja: "プロジェクト（請負）", en: "Project (Fixed)" },
+    price: { ja: "個別見積り", en: "Custom quote" },
+    unit: { ja: "", en: "" },
+    description: {
+      ja: "明確なゴールがある案件に。要件に応じた一括のお見積り。",
+      en: "For well-defined scopes — a fixed quote tailored to requirements.",
+    },
+    features: {
+      ja: ["要件定義・設計から対応", "成果物ベースの契約", "明確な納期とマイルストーン", "納品後の保守対応", "品質保証"],
+      en: ["From requirements & design", "Deliverable-based contract", "Clear milestones & deadline", "Post-delivery support", "Quality assurance"],
+    },
+    cta: { ja: "見積りを依頼", en: "Request a quote" },
+  },
+];
+
+export interface Testimonial {
+  quote: { ja: string; en: string };
+  author: string;
+  role: { ja: string; en: string };
+}
+
+export const testimonialsSection = {
+  heading: { ja: "お客様の声", en: "What Clients Say" },
+  lead: {
+    ja: "ご一緒したお客様からいただいた評価の一部をご紹介します。",
+    en: "A few words from clients I've had the pleasure of working with.",
+  },
+  note: {
+    ja: "※ 掲載許諾済み。社名等は一部伏せています（サンプル）。",
+    en: "* Published with permission; some names withheld (sample content).",
+  },
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    quote: {
+      ja: "技術力はもちろん、こちらの意図を汲み取る理解力が抜群でした。曖昧な要望を的確な形にしてくれて、安心して任せられました。",
+      en: "Beyond strong technical skill, his ability to grasp our intent was outstanding. He turned vague requests into exactly what we needed — we felt safe entrusting the work to him.",
+    },
+    author: "K. Sato",
+    role: { ja: "SaaSスタートアップ / CTO", en: "CTO, SaaS Startup" },
+  },
+  {
+    quote: {
+      ja: "進捗の報告が丁寧で、開発の状況が常に見えて安心でした。納期も品質も期待以上。またぜひお願いしたいです。",
+      en: "His progress reports were so clear that we always knew where things stood. Both the timeline and the quality exceeded our expectations. We'll absolutely work with him again.",
+    },
+    author: "M. Tanaka",
+    role: { ja: "EC事業会社 / 事業責任者", en: "Head of Business, E-Commerce" },
+  },
+  {
+    quote: {
+      ja: "難しい技術課題を一つひとつ分かりやすく説明してくれて、非エンジニアの私たちでも判断ができました。誠実な仕事ぶりに感謝しています。",
+      en: "He explained tough technical issues in plain terms, so even our non-engineers could make decisions. We're grateful for his honest, dependable work.",
+    },
+    author: "Y. Suzuki",
+    role: { ja: "製造業 / DX推進担当", en: "DX Lead, Manufacturing" },
   },
 ];
 

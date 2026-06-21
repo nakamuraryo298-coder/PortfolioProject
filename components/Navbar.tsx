@@ -8,11 +8,11 @@ import { nav, profile } from "@/lib/content";
 
 const links = [
   { id: "about", label: nav.about },
-  { id: "strengths", label: nav.strengths },
   { id: "skills", label: nav.skills },
-  { id: "experience", label: nav.experience },
-  { id: "projects", label: nav.projects },
+  { id: "cases", label: nav.cases },
   { id: "services", label: nav.services },
+  { id: "pricing", label: nav.pricing },
+  { id: "voice", label: nav.voice },
   { id: "flow", label: nav.flow },
   { id: "faq", label: nav.faq },
 ];
@@ -52,18 +52,16 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-[var(--color-border)] bg-[var(--color-base)]/80 backdrop-blur-xl"
-          : "border-b border-transparent"
+        scrolled ? "glass-strong" : "border-b border-transparent"
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#home" className="group flex items-center gap-2 font-bold tracking-tight">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] text-sm font-black text-white">
-            T
+        <a href="#home" className="group flex items-center gap-2 font-display font-bold tracking-tight">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] text-sm font-black text-white shadow-lg shadow-[var(--color-accent)]/30">
+            H
           </span>
-          <span className="text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-accent)]">
-            Hiromu<span className="text-[var(--color-accent)]">.</span>
+          <span className="text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-accent-2)]">
+            Hiromu<span className="text-[var(--color-accent-2)]">.</span>
           </span>
         </a>
 

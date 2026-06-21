@@ -1,33 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette tuned to the hero artwork — 和 × technology.
-     Warm washi cream base, 紺青 (navy ink), 朱色 (vermillion) accent. */
-  --color-base: #f7f2ea;
-  --color-surface: #ffffff;
-  --color-surface-2: #efe8db;
-  --color-border: #e5dccc;
-  --color-muted: #5e6679;
-  --color-fg: #1f2d4d;
-  --color-accent: #2f5ca8;
-  --color-accent-2: #d2574a;
-  --color-accent-3: #3f6fc4;
+  /* ── Obsidian / aurora dark theme ─────────────────────────── */
+  --color-base: #06060c;
+  --color-base-2: #0a0a14;
+  --color-surface: #0f1020;
+  --color-surface-2: #15172b;
+  --color-border: #232544;
+  --color-muted: #9aa0c4;
+  --color-fg: #eef0ff;
 
-  --font-sans: var(--font-noto-jp), var(--font-inter), "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --color-accent: #6d5efc;     /* electric indigo */
+  --color-accent-2: #22d3ee;   /* cyan */
+  --color-accent-3: #ff5d8f;   /* rose / 朱 nod */
+  --color-gold: #ffcf6b;
 
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-slow: pulse-slow 5s ease-in-out infinite;
+  --font-sans: var(--font-inter), var(--font-noto-jp), "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-noto-jp), system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-14px); }
 }
-
-@keyframes pulse-slow {
-  0%, 100% { opacity: 0.12; }
-  50% { opacity: 0.28; }
+@keyframes aurora {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  33% { transform: translate(6%, -4%) scale(1.15); opacity: 0.7; }
+  66% { transform: translate(-5%, 5%) scale(0.95); opacity: 0.55; }
+}
+@keyframes gradient-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes scroll-cue {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(7px); opacity: 1; }
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 0.7; transform: scale(1.15); }
+}
+@keyframes rune-pulse {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.16; }
+}
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
 }
 
 * {
@@ -43,7 +68,7 @@ body {
   background-color: var(--color-base);
   color: var(--color-fg);
   font-family: var(--font-sans);
-  line-height: 1.8; /* roomy line-height reads cleaner for Japanese text */
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -54,42 +79,33 @@ body {
   color: white;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-surface);
-}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-base); }
 ::-webkit-scrollbar-thumb {
-  background: #cdc4b2;
+  background: #2a2d52;
   border-radius: 5px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #b6ab95;
-}
+::-webkit-scrollbar-thumb:hover { background: #3a3e6e; }
 
-/* Utility: gradient text (kept in the blue family so headings stay calm) */
+/* ── Type helpers ─────────────────────────────────────────── */
+.font-display { font-family: var(--font-display); }
+.font-mono { font-family: var(--font-mono); }
+.text-balance { text-wrap: balance; }
+
 .text-gradient {
-  background: linear-gradient(115deg, var(--color-accent), var(--color-accent-3), var(--color-accent));
+  background: linear-gradient(115deg, var(--color-accent-2), var(--color-accent), var(--color-accent-3));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-/* Flowing animated gradient — used for the hero name for a stylish accent */
-@keyframes gradient-flow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
 .text-gradient-flow {
   background: linear-gradient(
     115deg,
+    var(--color-accent-2),
     var(--color-accent),
     var(--color-accent-3),
-    var(--color-accent-2),
-    var(--color-accent-3),
-    var(--color-accent)
+    var(--color-accent),
+    var(--color-accent-2)
   );
   background-size: 280% auto;
   -webkit-background-clip: text;
@@ -98,54 +114,70 @@ body {
   animation: gradient-flow 8s ease-in-out infinite;
 }
 
-/* Soft scroll-cue bounce */
-@keyframes scroll-cue {
-  0%, 100% { transform: translateY(0); opacity: 0.4; }
-  50% { transform: translateY(6px); opacity: 1; }
+/* ── Surfaces ─────────────────────────────────────────────── */
+.glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
 }
-.animate-scroll-cue {
-  animation: scroll-cue 1.8s ease-in-out infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .text-gradient-flow { animation: none; }
-  .animate-scroll-cue { animation: none; }
+.glass-strong {
+  background: linear-gradient(180deg, rgba(20, 22, 44, 0.85), rgba(12, 13, 28, 0.85));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
 }
 
-/* Utility: subtle grid background */
+/* Gradient ring border via mask */
+.ring-gradient {
+  position: relative;
+}
+.ring-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--color-accent), transparent 40%, transparent 60%, var(--color-accent-2));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.ring-gradient:hover::before { opacity: 1; }
+
+/* Aurora blobs background */
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  animation: aurora 16s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Noise overlay */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(47, 92, 168, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(47, 92, 168, 0.05) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(to right, rgba(109, 94, 252, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(109, 94, 252, 0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
-/* Soft elevation for cards on a light background */
-.card-soft {
-  box-shadow: 0 1px 2px rgba(22, 32, 58, 0.04), 0 8px 24px rgba(22, 32, 58, 0.05);
+/* Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
 }
+.marquee-track:hover { animation-play-state: paused; }
 
-/* Glow ring on cards */
-.card-glow {
-  position: relative;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.card-glow:hover {
-  transform: translateY(-4px);
-  border-color: rgba(37, 99, 235, 0.45);
-  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
-}
-
-/* Japanese headings often read better with slightly tighter wrapping control */
-.text-balance {
-  text-wrap: balance;
-}
-
-/* Sheen sweep on primary buttons */
-.btn-sheen {
-  position: relative;
-  overflow: hidden;
-}
+/* Buttons */
+.btn-sheen { position: relative; overflow: hidden; }
 .btn-sheen::after {
   content: "";
   position: absolute;
@@ -153,15 +185,46 @@ body {
   left: -120%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(
-    100deg,
-    transparent,
-    rgba(255, 255, 255, 0.35),
-    transparent
-  );
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   transform: skewX(-18deg);
   transition: left 0.6s ease;
 }
-.btn-sheen:hover::after {
-  left: 140%;
+.btn-sheen:hover::after { left: 140%; }
+
+.animate-scroll-cue { animation: scroll-cue 1.8s ease-in-out infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+
+/* Spellcasting background motifs */
+.animate-spin-slow { animation: spin-slow 90s linear infinite; }
+.animate-spin-slow-rev { animation: spin-slow 70s linear infinite reverse; }
+.animate-rune-pulse { animation: rune-pulse 7s ease-in-out infinite; }
+
+/* Card elevation + hover (dark-tuned) */
+.card-soft {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 14px 34px rgba(0, 0, 0, 0.35);
+}
+.card-glow {
+  position: relative;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.card-glow:hover {
+  transform: translateY(-5px);
+  border-color: rgba(109, 94, 252, 0.55);
+  box-shadow: 0 20px 50px rgba(109, 94, 252, 0.2);
+}
+
+/* Custom cursor (desktop pointer devices only) */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-none-desktop, .cursor-none-desktop * { cursor: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient-flow,
+  .aurora-blob,
+  .marquee-track,
+  .animate-scroll-cue,
+  .animate-float,
+  .animate-spin-slow,
+  .animate-spin-slow-rev,
+  .animate-rune-pulse { animation: none; }
 }

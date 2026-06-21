@@ -1,14 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Noto_Sans_JP } from "next/font/google";
+import { Inter, Noto_Sans_JP, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import { LanguageProvider } from "@/lib/language-context";
+import MagicBackground from "@/components/MagicBackground";
 import "./globals.css";
 
-const inter = Inter({
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
   display: "swap",
 });
-
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],
@@ -17,7 +25,7 @@ const notoSansJP = Noto_Sans_JP({
   preload: false,
 });
 
-const siteUrl = "https://takaki-takahashi.dev";
+const siteUrl = "https://hiromu-takahashi.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,14 +65,11 @@ export const metadata: Metadata = {
     description:
       "Full-stack software engineer with 12+ years of experience across web, mobile, cloud, and AI.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f7f2ea",
+  themeColor: "#06060c",
   width: "device-width",
   initialScale: 1,
 };
@@ -75,12 +80,9 @@ const jsonLd = {
   name: "Hiromu Takahashi",
   alternateName: "高橋 寛武",
   jobTitle: "Freelance Software Engineer",
-  email: "mailto:mirai.lucky.dev@gmail.com",
+  email: "mailto:biyou00000@gmail.com",
   url: siteUrl,
-  address: {
-    "@type": "PostalAddress",
-    addressCountry: "JP",
-  },
+  address: { "@type": "PostalAddress", addressCountry: "JP" },
   knowsAbout: [
     "Web Development",
     "Mobile Development",
@@ -92,18 +94,19 @@ const jsonLd = {
     "Freelance full-stack software engineer based in Japan with 12+ years of experience across frontend, backend, mobile, cloud, and AI.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={`${inter.variable} ${notoSansJP.variable}`} suppressHydrationWarning>
+    <html
+      lang="ja"
+      className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrains.variable} ${notoSansJP.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <MagicBackground />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
