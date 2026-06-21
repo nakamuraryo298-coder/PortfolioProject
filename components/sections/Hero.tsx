@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -29,7 +30,7 @@ export default function Hero() {
         <div className="noise absolute inset-0 opacity-[0.04]" />
       </div>
 
-      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto grid w-full max-w-6xl items-center gap-8 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
         {/* Copy */}
         <div className="max-w-2xl">
           <motion.div
@@ -147,6 +148,29 @@ export default function Hero() {
             })}
           </motion.div>
         </div>
+
+        {/* Portrait */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+          className="relative hidden items-end justify-center lg:flex"
+        >
+          {/* Aura glow */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-[55%] rounded-full bg-gradient-to-br from-[var(--color-accent)]/40 via-[var(--color-accent-3)]/25 to-transparent blur-[80px]" />
+          {/* Rotating rune rings */}
+          <div className="animate-spin-slow pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[27rem] w-[27rem] -translate-x-1/2 -translate-y-[52%] rounded-full border border-dashed border-white/10" />
+          <div className="animate-spin-slow-rev pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[31rem] w-[31rem] -translate-x-1/2 -translate-y-[52%] rounded-full border border-white/[0.06]" />
+
+          <Image
+            src="/portrait.png"
+            alt={profile.name[lang]}
+            width={820}
+            height={900}
+            priority
+            className="relative z-10 w-[27rem] max-w-full select-none object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] [mask-image:linear-gradient(to_bottom,black_86%,transparent)]"
+          />
+        </motion.div>
       </div>
 
       <motion.a
