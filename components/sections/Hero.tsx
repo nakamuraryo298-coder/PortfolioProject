@@ -30,9 +30,9 @@ export default function Hero() {
         <div className="noise absolute inset-0 opacity-[0.04]" />
       </div>
 
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-8 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 sm:px-8">
         {/* Copy */}
-        <div className="max-w-2xl">
+        <div className="max-w-xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -148,30 +148,36 @@ export default function Hero() {
             })}
           </motion.div>
         </div>
+      </div>
 
-        {/* Portrait */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.94 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="relative hidden items-end justify-center lg:flex"
-        >
-          {/* Aura glow */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-[55%] rounded-full bg-gradient-to-br from-[var(--color-accent)]/40 via-[var(--color-accent-3)]/25 to-transparent blur-[80px]" />
-          {/* Rotating rune rings */}
-          <div className="animate-spin-slow pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[27rem] w-[27rem] -translate-x-1/2 -translate-y-[52%] rounded-full border border-dashed border-white/10" />
-          <div className="animate-spin-slow-rev pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[31rem] w-[31rem] -translate-x-1/2 -translate-y-[52%] rounded-full border border-white/[0.06]" />
+      {/* Portrait — framed in a spotlight on the right half */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
+        className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[52%] items-center justify-center xl:right-[3%] lg:flex"
+      >
+        <div className="relative h-[33rem] w-[33rem]">
+          {/* Spotlight glow */}
+          <div className="absolute left-1/2 top-1/2 h-[26rem] w-[26rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[var(--color-accent)]/35 via-[var(--color-accent-3)]/20 to-transparent blur-[70px]" />
+          {/* Concentric ring frame */}
+          <div className="absolute left-1/2 top-1/2 h-[27rem] w-[27rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+          <div className="animate-spin-slow absolute left-1/2 top-1/2 h-[27rem] w-[27rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[var(--color-accent)]/20" />
+          <div className="animate-spin-slow-rev absolute left-1/2 top-1/2 h-[31rem] w-[31rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.05]" />
+          {/* soft base shadow so the figure feels grounded */}
+          <div className="absolute bottom-6 left-1/2 h-10 w-56 -translate-x-1/2 rounded-[100%] bg-black/50 blur-2xl" />
 
+          {/* Portrait, anchored to the bottom of the disc */}
           <Image
             src="/portrait.png"
             alt={profile.name[lang]}
-            width={820}
+            width={900}
             height={900}
             priority
-            className="relative z-10 w-[27rem] max-w-full select-none object-contain drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] [mask-image:linear-gradient(to_bottom,black_86%,transparent)]"
+            className="absolute bottom-0 left-1/2 h-[34rem] w-auto max-w-none -translate-x-1/2 select-none object-contain object-bottom drop-shadow-[0_25px_60px_rgba(0,0,0,0.6)] [mask-image:linear-gradient(to_bottom,black_90%,transparent)]"
           />
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       <motion.a
         href="#about"

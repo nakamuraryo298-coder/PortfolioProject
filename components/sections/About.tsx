@@ -1,6 +1,7 @@
 "use client";
 
-import { CheckCircle2, User, MapPin, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle2, MapPin, Sparkles } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { about, nav, hero, profile } from "@/lib/content";
 import { techIcon } from "@/lib/tech-icons";
@@ -49,16 +50,17 @@ export default function About() {
             <div className="relative">
               <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-[var(--color-accent)]/30 to-[var(--color-accent-2)]/20 opacity-50 blur-2xl" />
               <div className="ring-gradient card-soft overflow-hidden rounded-3xl glass-strong">
-                {/* Photo slot */}
-                <div className="relative flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-[var(--color-surface-2)] to-[var(--color-base)]">
-                  <div className="flex flex-col items-center gap-2 text-[var(--color-muted)]">
-                    <span className="grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] font-display text-3xl font-bold text-white">
-                      高
-                    </span>
-                    <span className="flex items-center gap-1 font-mono text-[10px] uppercase tracking-wider">
-                      <User className="h-3 w-3" /> {lang === "ja" ? "写真をここに" : "Your photo here"}
-                    </span>
-                  </div>
+                {/* Photo */}
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/profile.png"
+                    alt={profile.name[lang]}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-center"
+                  />
+                  {/* subtle gradient for legibility of the badge */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--color-base)]/40 via-transparent to-transparent" />
                   <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full glass px-2.5 py-1 text-xs">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                     {lang === "ja" ? "稼働可能" : "Available"}
