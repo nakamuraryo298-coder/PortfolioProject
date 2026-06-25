@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Languages } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { nav, profile } from "@/lib/content";
 
@@ -18,7 +18,7 @@ const links = [
 ];
 
 export default function Navbar() {
-  const { lang, toggle } = useLanguage();
+  const { lang } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
@@ -92,15 +92,6 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={toggle}
-            aria-label="Toggle language"
-            className="flex items-center gap-1.5 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-2 text-xs font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-accent)]"
-          >
-            <Languages className="h-4 w-4" />
-            {lang === "ja" ? "EN" : "日本語"}
-          </button>
-
           <a
             href="#contact"
             className="btn-sheen hidden rounded-lg bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-3)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90 sm:inline-block"

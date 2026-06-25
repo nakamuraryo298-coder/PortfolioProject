@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, type ReactNode } from "react";
 import type { Lang } from "./content";
 
 interface LanguageContextValue {
@@ -11,34 +11,16 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
 
+// The site is Japanese-only. The provider keeps the same shape so existing
+// components keep working, but the language is fixed to "ja".
+const value: LanguageContextValue = {
+  lang: "ja",
+  setLang: () => {},
+  toggle: () => {},
+};
+
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("ja");
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem("lang") as Lang | null;
-    if (stored === "ja" || stored === "en") {
-      setLangState(stored);
-    } else if (typeof navigator !== "undefined" && !navigator.language.startsWith("ja")) {
-      setLangState("en");
-    }
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
-
-  const setLang = (next: Lang) => {
-    setLangState(next);
-    window.localStorage.setItem("lang", next);
-  };
-
-  const toggle = () => setLang(lang === "ja" ? "en" : "ja");
-
-  return (
-    <LanguageContext.Provider value={{ lang, setLang, toggle }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }
 
 export function useLanguage() {
