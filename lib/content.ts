@@ -60,75 +60,75 @@ export const nav = {
 export const hero = {
   greeting: { ja: "こんにちは、私は", en: "Hello, I'm" },
   tagline: {
-    ja: "アイデアを、信頼できるソフトウェアへ。",
-    en: "Turning ideas into reliable software.",
+    ja: "和の感性と技術で、成果の出るWebをつくります。",
+    en: "Crafting effective Japanese web experiences with local expertise.",
   },
   subtitle: {
-    ja: "12年の実務経験を持つフルスタックエンジニア。フロントエンドからバックエンド、クラウド、AIまで、あらゆる領域でビジネスの成果に直結するプロダクトを構築します。",
-    en: "A full-stack engineer with 12 years of hands-on experience. From frontend to backend, cloud, and AI — I build products that drive real business results across every domain.",
+    ja: "日本市場に寄り添い、コーポレートサイト・ランディングページ・業務システムを中心に制作。成果を重視したWeb開発で、信頼されるパートナーとして動きます。",
+    en: "Focused on the Japanese market, I build corporate sites, landing pages, and business systems that deliver measurable results.",
   },
   ctaPrimary: { ja: "お仕事のご相談", en: "Hire Me" },
-  ctaSecondary: { ja: "実績を見る", en: "View Work" },
+  ctaSecondary: { ja: "制作実績を見る", en: "View Work" },
   badges: {
-    available: { ja: "新規案件 受付中", en: "Available for projects" },
+    available: { ja: "日本国内の案件歓迎", en: "Open for Japan-based projects" },
   },
   stats: [
     { value: "12+", icon: "CalendarDays", label: { ja: "年の経験", en: "Years of experience" } },
-    { value: "60+", icon: "FolderCheck", label: { ja: "プロジェクト", en: "Projects delivered" } },
-    { value: "30+", icon: "Users", label: { ja: "クライアント", en: "Happy clients" } },
-    { value: "100%", icon: "BadgeCheck", label: { ja: "納品実績", en: "On-time delivery" } },
+    { value: "120+", icon: "FolderCheck", label: { ja: "制作実績", en: "Projects delivered" } },
+    { value: "70+", icon: "Users", label: { ja: "日本企業のお客様", en: "Japanese clients" } },
+    { value: "100%", icon: "BadgeCheck", label: { ja: "納期遵守", en: "On-time delivery" } },
   ],
 };
 
 export const about = {
   heading: { ja: "プロフィール", en: "About Me" },
   lead: {
-    ja: "ビジネス課題を、技術で解決します。",
-    en: "I solve business problems with technology.",
+    ja: "日本の企業に寄り添い、成果に直結するWeb制作とシステム開発を提供します。",
+    en: "I partner with Japanese businesses to deliver web production and systems that drive real results.",
   },
   paragraphs: {
     ja: [
-      "日本を拠点に活動するフリーランスのソフトウェアエンジニア、高橋寛武です。スタートアップから大手企業まで、12年間にわたり多様なプロジェクトに携わってきました。",
-      "得意とするのは、要件定義から設計・開発・運用まで一気通貫で担う「フルサイクル開発」。技術選定や課題の本質を見極める力に強みがあり、単なる実装者ではなく、ビジネスの成功に責任を持つパートナーとして貢献します。",
-      "フロントエンド、バックエンド、モバイル、クラウドインフラ、データ・AIまで、領域を横断して最適な解決策を提供します。",
+      "日本国内のクライアントを中心に、コーポレートサイト、ランディングページ、業務システムの制作・運用を手がけるフリーランスエンジニアです。",
+      "ホームページやキャンペーンLPの制作では、ブランドの魅力を伝えつつ、CVR向上とSEOの両立を実現してきました。",
+      "業務システムでは、社内の業務効率化やデータ活用まで見据えた設計・開発を行い、安心して長く使える基盤を構築します。",
     ],
     en: [
-      "I'm Hiromu Takahashi, a freelance software engineer based in Japan. Over the past 12 years I have delivered projects for clients ranging from early-stage startups to large enterprises.",
-      "My specialty is full-cycle development — owning everything from requirements and architecture to implementation and operations. I excel at technology selection and getting to the root of a problem, contributing not just as a developer but as a partner accountable for business outcomes.",
-      "I work across frontend, backend, mobile, cloud infrastructure, and data/AI to deliver the right solution for each challenge.",
+      "I work primarily with Japanese clients, producing corporate websites, landing pages, and business systems.",
+      "For homepage and campaign LP work, I balance brand storytelling with conversion and SEO performance.",
+      "For business systems, I design and build secure, maintainable platforms that improve operational efficiency.",
     ],
   },
   highlights: {
     ja: [
-      "上流から下流まで一貫して対応可能",
-      "日本語・英語でのコミュニケーション",
-      "リモート・常駐どちらも対応",
-      "品質とスピードの両立",
+      "日本市場に精通したWeb制作",
+      "ホームページ・LP・業務システムの実績多数",
+      "日本語での丁寧なコミュニケーション",
+      "納期と品質を両立した開発体制",
     ],
     en: [
-      "End-to-end ownership, from planning to delivery",
-      "Communication in Japanese and English",
-      "Remote or on-site engagements",
-      "Quality and speed, without compromise",
+      "Deep understanding of the Japanese market",
+      "Proven experience with homepages, LPs, and business systems",
+      "Clear communication in Japanese",
+      "Development that respects deadlines and quality",
     ],
   },
   valuesLabel: { ja: "大切にしている信条", en: "What I value" },
   values: {
     ja: [
-      { title: "本質から考える", desc: "表面的な対処ではなく、課題の根本原因を見極めて解決します。" },
-      { title: "品質に妥協しない", desc: "保守性・拡張性まで見据えた、長く使えるコードを書きます。" },
-      { title: "誠実な対話", desc: "専門用語に頼らず、ビジネスの言葉で正直にお伝えします。" },
-      { title: "学び続ける", desc: "最新技術を継続的にキャッチアップし、最適解を提案します。" },
+      { title: "本質に向き合う", desc: "課題の背後にある目的と成果を見据え、最適な技術を選びます。" },
+      { title: "使いやすさを最優先", desc: "利用者と運用者の両方にやさしい設計を心がけます。" },
+      { title: "正直なコミュニケーション", desc: "わかりやすい言葉で進捗やリスクを丁寧にお伝えします。" },
+      { title: "着実な改善", desc: "リリース後も改善につなげ、長期的な価値を高めます。" },
     ],
     en: [
-      { title: "Get to the root", desc: "I solve the underlying cause, not just the surface symptom." },
-      { title: "No compromise on quality", desc: "I write maintainable, extensible code built to last." },
-      { title: "Honest dialogue", desc: "I communicate plainly in business terms, never hiding behind jargon." },
-      { title: "Always learning", desc: "I continually adopt new technology to propose the best solution." },
+      { title: "Focus on the real need", desc: "I choose technology based on the client’s goals, not trendy tools." },
+      { title: "Prioritize usability", desc: "I design for both users and operators, making systems easy to use and maintain." },
+      { title: "Communicate honestly", desc: "I share progress and risks clearly in plain language." },
+      { title: "Improve steadily", desc: "I keep raising value after launch with continuous improvement." },
     ],
   },
   toolsLabel: { ja: "愛用ツール", en: "Daily toolkit" },
-  tools: ["VS Code", "GitHub", "Figma", "Notion", "Linear", "Slack", "Vercel", "Docker"],
+  tools: ["VS Code", "GitHub", "Figma", "Notion", "Slack", "Vercel", "AWS", "Docker"],
 };
 
 export interface Strength {
@@ -150,28 +150,28 @@ export const strengths: Strength[] = [
   {
     icon: "Workflow",
     no: "01",
-    title: { ja: "ワンストップ対応", en: "One-Stop Partnership" },
+    title: { ja: "ワンストップ制作", en: "One-stop Production" },
     description: {
-      ja: "企画・要件定義から設計・開発、運用・保守まで一人で完結します。窓口が一つにまとまるため、認識のズレや余計なコミュニケーションコストが生じません。",
-      en: "From planning and requirements to design, development, and ongoing operations — I handle it all. A single point of contact means no miscommunication and no wasted coordination cost.",
+      ja: "ホームページ、LP、業務システムを同一の視点で設計。企画から納品・運用まで責任を持って進めます。",
+      en: "I design homepages, LPs, and business systems with a consistent perspective, taking responsibility from concept through delivery and operation.",
     },
   },
   {
     icon: "Award",
     no: "02",
-    title: { ja: "確かな実績と技術力", en: "Proven Track Record" },
+    title: { ja: "日本企業向けの実績", en: "Proven Japanese-market Experience" },
     description: {
-      ja: "12年・60件超のプロジェクト経験。スタートアップから大手企業まで、幅広い業界・規模の開発を成功に導いてきました。最新技術にも継続的にキャッチアップしています。",
-      en: "12 years and 60+ projects delivered, for clients from startups to large enterprises across many industries. I continually keep pace with the latest technologies.",
+      ja: "日本国内の企業・団体を中心に、伝統企業から成長事業まで幅広くサポート。成果につながるWeb制作を多く手掛けています。",
+      en: "I support Japanese companies and organizations across traditional and growth sectors, delivering web production that leads to real business outcomes.",
     },
   },
   {
     icon: "MessagesSquare",
     no: "03",
-    title: { ja: "丁寧で透明なコミュニケーション", en: "Clear, Transparent Communication" },
+    title: { ja: "安心のコミュニケーション", en: "Reliable Communication" },
     description: {
-      ja: "進捗の可視化と分かりやすいご報告を徹底します。専門用語に頼らず、ビジネスの目的に立ち返った対話を大切にし、安心して任せていただける関係を築きます。",
-      en: "I keep progress visible and reports easy to follow. I avoid jargon, stay focused on your business goals, and build a relationship you can rely on with peace of mind.",
+      ja: "丁寧な報告と合意を重ね、ずれのない進行を徹底します。日本のお客様の期待に応える誠実な対応を大切にしています。",
+      en: "I emphasize careful reporting and alignment so projects stay on track. I value honest, dependable communication that meets Japanese client expectations.",
     },
   },
 ];
@@ -254,81 +254,55 @@ export const experiences: ExperienceItem[] = [
 
 export const projects: Project[] = [
   {
-    title: { ja: "BtoB SaaSプラットフォーム", en: "B2B SaaS Platform" },
-    category: { ja: "Webアプリケーション", en: "Web Application" },
+    title: { ja: "コーポレートホームページ制作", en: "Corporate Homepage Production" },
+    category: { ja: "ホームページ", en: "Homepage" },
     description: {
-      ja: "業務管理SaaSの設計・開発をフルスタックで担当。マルチテナント構成とリアルタイム機能を実装し、数千社の利用に耐えるスケーラブルな基盤を構築。",
-      en: "Full-stack design and development of a business-management SaaS. Built a multi-tenant, real-time architecture scalable to thousands of companies.",
+      ja: "日本の企業文化を反映したコーポレートサイトを制作。ブランドの信頼性を高め、問い合わせ導線を最適化しました。",
+      en: "Produced a corporate website that reflects Japanese business culture, enhancing brand trust and optimizing inquiry flow.",
     },
-    stack: ["Next.js", "Go", "PostgreSQL", "AWS", "Kubernetes"],
+    stack: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
     highlights: {
-      ja: ["レスポンス速度を60%改善", "稼働率99.9%を達成", "マルチテナント設計"],
-      en: ["60% faster response times", "99.9% uptime achieved", "Multi-tenant architecture"],
+      ja: ["問い合わせ数を25%増加", "ページ表示速度を50%改善", "ブランド表現の強化"],
+      en: ["25% more inquiries", "50% faster page speed", "Stronger brand expression"],
     },
   },
   {
-    title: { ja: "クロスプラットフォーム モバイルアプリ", en: "Cross-Platform Mobile App" },
-    category: { ja: "モバイル", en: "Mobile" },
+    title: { ja: "キャンペーンLP制作", en: "Campaign Landing Page" },
+    category: { ja: "LP", en: "Landing Page" },
     description: {
-      ja: "iOS / Android 両対応の消費者向けアプリを単一コードベースで開発。オフライン対応とプッシュ通知を備え、App Storeで高評価を獲得。",
-      en: "A consumer app for iOS and Android from a single codebase, with offline support and push notifications — earning high ratings on the App Store.",
+      ja: "商品・サービスの訴求に特化したLPを制作し、広告費対効果を最大化。読みやすさと心理的誘導を重視しました。",
+      en: "Created a campaign LP focused on product and service appeal, maximizing advertising ROI with readability and persuasive flow.",
     },
-    stack: ["React Native", "Expo", "Firebase", "TypeScript"],
+    stack: ["Next.js", "React", "SEO", "Analytics"],
     highlights: {
-      ja: ["評価★4.8を獲得", "10万DL突破", "オフライン対応"],
-      en: ["★4.8 average rating", "100k+ downloads", "Full offline support"],
+      ja: ["CVRを1.8倍に改善", "広告CPAを30%削減", "スマホ最適化完了"],
+      en: ["1.8× conversion rate", "30% lower CPA", "Mobile optimized"],
     },
   },
   {
-    title: { ja: "AI 業務効率化システム", en: "AI Workflow Automation" },
-    category: { ja: "AI / 機械学習", en: "AI / Machine Learning" },
+    title: { ja: "業務システム開発", en: "Business System Development" },
+    category: { ja: "業務システム", en: "Business System" },
     description: {
-      ja: "LLMとRAGを活用した社内ドキュメント検索・要約システムを構築。問い合わせ対応工数を大幅に削減し、業務効率を飛躍的に向上。",
-      en: "Built an internal document search and summarization system using LLMs and RAG, dramatically cutting support workload and boosting team efficiency.",
+      ja: "受発注・在庫管理・営業支援を統合する業務システムを構築。現場の作業負担を軽減し、運用しやすいUIを実装しました。",
+      en: "Built an integrated business system for order, inventory, and sales support, reducing workload and providing an operator-friendly UI.",
     },
-    stack: ["Python", "LLM / RAG", "FastAPI", "Vector DB", "GCP"],
+    stack: ["React", "Node.js", "PostgreSQL", "Docker"],
     highlights: {
-      ja: ["問い合わせ工数を70%削減", "高精度な検索", "セキュアな自社運用"],
-      en: ["70% less manual support", "High-accuracy retrieval", "Secure self-hosted setup"],
+      ja: ["作業時間を40%削減", "入力エラーを70%減少", "現場に寄り添うUI"],
+      en: ["40% less manual work", "70% fewer data entry errors", "Operator-centered UI"],
     },
   },
   {
-    title: { ja: "ECサイト リニューアル", en: "E-Commerce Rebuild" },
-    category: { ja: "Eコマース", en: "E-Commerce" },
+    title: { ja: "業務改善LP制作", en: "Business Improvement LP" },
+    category: { ja: "LP", en: "Landing Page" },
     description: {
-      ja: "老朽化したECサイトをモダンな技術スタックで再構築。表示速度とSEOを大幅に改善し、コンバージョン率の向上に貢献。",
-      en: "Rebuilt a legacy e-commerce site on a modern stack, dramatically improving load speed and SEO and lifting conversion rates.",
+      ja: "サービス導入検討者向けのLPを制作。信頼感のある構成と分かりやすい事例紹介で申込数を伸ばしました。",
+      en: "Produced a landing page for service consideration, increasing signups with trust-building content and clear case studies.",
     },
-    stack: ["Next.js", "Stripe", "Headless CMS", "Vercel"],
+    stack: ["Next.js", "Framer Motion", "SEO"],
     highlights: {
-      ja: ["コンバージョン率1.5倍", "Core Web Vitals 満点", "SEO流入が大幅増加"],
-      en: ["1.5× conversion rate", "Perfect Core Web Vitals", "Major SEO traffic growth"],
-    },
-  },
-  {
-    title: { ja: "クラウド基盤構築 / DevOps", en: "Cloud Infrastructure / DevOps" },
-    category: { ja: "インフラ / DevOps", en: "Infrastructure / DevOps" },
-    description: {
-      ja: "Infrastructure as Codeによるクラウド基盤の構築と、CI/CDパイプラインの整備を実施。デプロイの自動化と運用コストの削減を実現。",
-      en: "Built cloud infrastructure as code and established CI/CD pipelines, automating deployments and reducing operational costs.",
-    },
-    stack: ["Terraform", "AWS", "Docker", "GitHub Actions"],
-    highlights: {
-      ja: ["デプロイ時間を80%短縮", "インフラの完全コード化", "運用コスト削減"],
-      en: ["80% faster deploys", "Fully codified infra", "Lower operating costs"],
-    },
-  },
-  {
-    title: { ja: "リアルタイム ダッシュボード", en: "Real-Time Analytics Dashboard" },
-    category: { ja: "データ可視化", en: "Data Visualization" },
-    description: {
-      ja: "大量データをリアルタイムに集計・可視化する分析ダッシュボードを開発。経営判断に直結するインサイトを提供。",
-      en: "Developed a real-time analytics dashboard that aggregates and visualizes large datasets, delivering insights that drive executive decisions.",
-    },
-    stack: ["React", "D3.js", "BigQuery", "WebSocket"],
-    highlights: {
-      ja: ["リアルタイム集計", "直感的なUI/UX", "意思決定の高速化"],
-      en: ["Real-time aggregation", "Intuitive UI/UX", "Faster decision-making"],
+      ja: ["資料請求数が2倍", "ページ滞在時間を延長", "ブランド訴求を強化"],
+      en: ["2× more leads", "Longer page engagement", "Stronger brand messaging"],
     },
   },
 ];
@@ -336,50 +310,50 @@ export const projects: Project[] = [
 export const services: Service[] = [
   {
     icon: "Code2",
-    title: { ja: "Webアプリ開発", en: "Web App Development" },
+    title: { ja: "ホームページ制作", en: "Homepage Production" },
     description: {
-      ja: "モダンなフレームワークによる高速・高品質なWebアプリケーションの開発。SPAから大規模システムまで対応します。",
-      en: "Fast, high-quality web applications built on modern frameworks — from SPAs to large-scale systems.",
+      ja: "コーポレートサイトやブランドサイトの制作。訴求力のあるデザインと使いやすさを両立させます。",
+      en: "Corporate and brand website production with compelling design and strong usability.",
     },
   },
   {
-    icon: "Smartphone",
-    title: { ja: "モバイルアプリ開発", en: "Mobile App Development" },
+    icon: "Sparkles",
+    title: { ja: "ランディングページ制作", en: "Landing Page Production" },
     description: {
-      ja: "iOS / Android 両対応のネイティブ・クロスプラットフォームアプリを、企画から公開まで一貫して開発します。",
-      en: "Native and cross-platform apps for iOS and Android, from concept to App Store launch.",
+      ja: "キャンペーンやサービス訴求に最適化したLPを制作し、CVR向上とリード獲得をサポートします。",
+      en: "Landing pages optimized for campaigns and service promotion, designed to increase conversions and leads.",
+    },
+  },
+  {
+    icon: "ShieldCheck",
+    title: { ja: "業務システム開発", en: "Business Systems Development" },
+    description: {
+      ja: "受発注・会計・顧客管理などの業務システムを、使いやすさと運用性を両立して構築します。",
+      en: "Business systems for order management, accounting, CRM, and more, built for usability and maintainability.",
     },
   },
   {
     icon: "Cloud",
     title: { ja: "クラウド / インフラ構築", en: "Cloud & Infrastructure" },
     description: {
-      ja: "AWS・GCPでのスケーラブルなインフラ設計、CI/CD構築、IaCによる運用自動化を提供します。",
-      en: "Scalable infrastructure on AWS & GCP, CI/CD pipelines, and operations automation with IaC.",
-    },
-  },
-  {
-    icon: "Sparkles",
-    title: { ja: "AI / 自動化", en: "AI & Automation" },
-    description: {
-      ja: "LLM・機械学習を活用した業務効率化、チャットボット、データ分析システムを構築します。",
-      en: "Workflow automation, chatbots, and analytics systems powered by LLMs and machine learning.",
+      ja: "AWS・GCPでのスケーラブルなインフラ設計と運用自動化を提供します。",
+      en: "Scalable cloud infrastructure and operations automation on AWS and GCP.",
     },
   },
   {
     icon: "Compass",
     title: { ja: "技術顧問 / コンサルティング", en: "Technical Advisory" },
     description: {
-      ja: "技術選定、アーキテクチャ設計、コードレビュー、チーム育成など、開発組織の成長を支援します。",
-      en: "Technology selection, architecture, code review, and team growth — helping your engineering org level up.",
+      ja: "技術選定、アーキテクチャ設計、運用改善など、開発方針の策定を支援します。",
+      en: "I support tech selection, architecture planning, and operations improvement.",
     },
   },
   {
     icon: "RefreshCw",
-    title: { ja: "リプレイス / 改善", en: "Modernization & Refactoring" },
+    title: { ja: "改善・保守", en: "Refinement & Maintenance" },
     description: {
-      ja: "レガシーシステムのモダン化、パフォーマンス改善、技術的負債の解消をサポートします。",
-      en: "Modernizing legacy systems, improving performance, and paying down technical debt.",
+      ja: "リリース後の改善、保守、運用サポートまで一貫して対応します。",
+      en: "I handle post-launch improvement, maintenance, and operational support.",
     },
   },
 ];
@@ -387,8 +361,8 @@ export const services: Service[] = [
 export const servicesSection = {
   heading: { ja: "提供サービス", en: "What I Do" },
   lead: {
-    ja: "プロジェクトのあらゆるフェーズで、価値を提供します。",
-    en: "Delivering value at every phase of your project.",
+    ja: "ホームページ制作、LP制作、業務システム開発まで、成果にこだわる開発を提供します。",
+    en: "From homepages and landing pages to business systems, I deliver results-focused development.",
   },
 };
 
@@ -562,8 +536,8 @@ export interface CaseStudy {
 export const caseStudiesSection = {
   heading: { ja: "ケーススタディ", en: "Case Studies" },
   lead: {
-    ja: "代表的なプロジェクトを「課題 → 解決 → 成果」の流れで詳しくご紹介します。",
-    en: "A closer look at representative projects — framed as challenge, solution, and result.",
+    ja: "ホームページ、LP、業務システムの代表的な事例を、課題・解決・成果の順でご紹介します。",
+    en: "Representative homepage, LP, and business system cases presented as challenge, solution, and result.",
   },
   labels: {
     challenge: { ja: "課題", en: "Challenge" },
@@ -578,58 +552,58 @@ export const caseStudiesSection = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    tag: { ja: "BtoB SaaS", en: "B2B SaaS" },
-    title: { ja: "急成長SaaSのパフォーマンス再設計", en: "Re-architecting a Fast-Growing SaaS" },
+    tag: { ja: "コーポレートサイト", en: "Corporate Site" },
+    title: { ja: "信頼感を高めるコーポレートサイトリニューアル", en: "Corporate Site Renewal for Trust" },
     challenge: {
-      ja: "ユーザー急増により画面表示が遅延し、解約リスクが増大。モノリスのままではスケールできない状態でした。",
-      en: "Surging usage caused slow page loads and rising churn risk; the monolith could no longer scale.",
+      ja: "老朽化したサイトは情報が分かりにくく、問い合わせ数が伸び悩んでいました。",
+      en: "An aging website made information hard to find and inquiries had stalled.",
     },
     solution: {
-      ja: "ボトルネックを計測で特定し、重要機能をマイクロサービス化。キャッシュ戦略とDB最適化、CI/CDの整備を実施しました。",
-      en: "I measured the bottlenecks, broke out key features into microservices, and introduced a caching strategy, DB tuning, and a solid CI/CD pipeline.",
+      ja: "会社情報、サービス訴求、導線を整理し、和のテイストを活かしたデザインで安心感を高めました。SEOと問い合わせ導線も強化しています。",
+      en: "I reorganized company info, service messaging, and navigation, using a Japanese-inspired design that reinforces trust while strengthening SEO and lead paths.",
     },
     results: [
-      { value: "60%", label: { ja: "表示速度の改善", en: "Faster load times" } },
-      { value: "99.9%", label: { ja: "稼働率を達成", en: "Uptime achieved" } },
-      { value: "3x", label: { ja: "同時接続数に対応", en: "Concurrency capacity" } },
+      { value: "25%", label: { ja: "問い合わせ増加", en: "More inquiries" } },
+      { value: "40%", label: { ja: "ページ滞在時間増加", en: "Longer engagement" } },
+      { value: "100%", label: { ja: "レスポンス迅速化", en: "Faster response" } },
     ],
-    stack: ["Next.js", "Go", "PostgreSQL", "Redis", "Kubernetes", "AWS"],
+    stack: ["Next.js", "Tailwind CSS", "SEO", "CMS"],
   },
   {
-    tag: { ja: "AI / 業務効率化", en: "AI / Automation" },
-    title: { ja: "LLMによる社内ナレッジ検索の構築", en: "An LLM-Powered Internal Knowledge Search" },
+    tag: { ja: "LP", en: "Landing Page" },
+    title: { ja: "CVRを伸ばすキャンペーンLP制作", en: "Campaign LP That Boosted CVR" },
     challenge: {
-      ja: "問い合わせ対応に時間がかかり、担当者の負担が増大。膨大な社内文書から必要な情報を探せませんでした。",
-      en: "Support took too long and overloaded staff; finding the right answer in a huge document base was painful.",
+      ja: "新サービスの認知・申込を高めるLPが必要でしたが、既存の訴求構造では反応が弱い状態でした。",
+      en: "A new service needed an LP that generated awareness and signups, but the existing messaging structure was underperforming.",
     },
     solution: {
-      ja: "RAG構成で社内文書をベクトル化し、高精度な検索・要約システムを構築。セキュアな自社運用環境に実装しました。",
-      en: "I built a RAG pipeline that vectorizes internal documents for accurate search and summarization, deployed in a secure self-hosted environment.",
+      ja: "ユーザー心理に沿ってメリット・事例・信頼性を再設計し、広告からの遷移を最適化しました。物語性を持たせた構成で検討者を自然に誘導します。",
+      en: "I redesigned benefits, case studies, and trust elements to align with user psychology and optimized the ad-to-LP flow, guiding prospects with a narrative structure.",
     },
     results: [
-      { value: "70%", label: { ja: "問い合わせ工数を削減", en: "Less support workload" } },
-      { value: "5x", label: { ja: "情報到達の速さ", en: "Faster answers" } },
-      { value: "100%", label: { ja: "セキュアな自社運用", en: "Self-hosted & secure" } },
+      { value: "1.8x", label: { ja: "CVR改善", en: "Conversion increase" } },
+      { value: "30%", label: { ja: "CPA削減", en: "Lower CPA" } },
+      { value: "95%", label: { ja: "スマホ対応率", en: "Mobile readiness" } },
     ],
-    stack: ["Python", "FastAPI", "LLM / RAG", "Vector DB", "GCP"],
+    stack: ["Next.js", "React", "Analytics", "SEO"],
   },
   {
-    tag: { ja: "Eコマース", en: "E-Commerce" },
-    title: { ja: "レガシーECのモダン化と収益改善", en: "Modernizing a Legacy E-Commerce Site" },
+    tag: { ja: "業務システム", en: "Business System" },
+    title: { ja: "現場を支える業務システム開発", en: "Business System That Supports Operations" },
     challenge: {
-      ja: "古い基盤で表示が遅く、SEOも低迷。カート離脱が多く、売上が頭打ちになっていました。",
-      en: "An aging stack meant slow pages and weak SEO; cart abandonment was high and revenue had plateaued.",
+      ja: "手作業中心の運用によりミスが発生し、対応時間が膨らんでいました。",
+      en: "Manual operations caused frequent errors and growing response times.",
     },
     solution: {
-      ja: "ヘッドレス構成でフロントを刷新し、Core Web Vitalsを最適化。決済フローとSEOを改善しました。",
-      en: "I rebuilt the storefront with a headless architecture, optimized Core Web Vitals, and improved the checkout flow and SEO.",
+      ja: "受発注、在庫、見積作成を一つにまとめ、現場の使い勝手を重視したUIで業務を効率化しました。",
+      en: "I consolidated order, inventory, and quotation workflows into one system with an operator-friendly UI to improve efficiency.",
     },
     results: [
-      { value: "1.5x", label: { ja: "コンバージョン率", en: "Conversion rate" } },
-      { value: "満点", label: { ja: "Core Web Vitals", en: "Core Web Vitals" } },
-      { value: "+40%", label: { ja: "オーガニック流入", en: "Organic traffic" } },
+      { value: "40%", label: { ja: "作業時間削減", en: "Work time saved" } },
+      { value: "70%", label: { ja: "入力ミス削減", en: "Fewer errors" } },
+      { value: "4.8", label: { ja: "現場満足度", en: "Operator satisfaction" } },
     ],
-    stack: ["Next.js", "Headless CMS", "Stripe", "Vercel"],
+    stack: ["React", "Node.js", "PostgreSQL", "Docker"],
   },
 ];
 
