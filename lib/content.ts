@@ -60,22 +60,22 @@ export const nav = {
 export const hero = {
   greeting: { ja: "こんにちは、私は", en: "Hello, I'm" },
   tagline: {
-    ja: "和の感性と技術で、成果の出るWebをつくります。",
-    en: "Crafting effective Japanese web experiences with local expertise.",
+    ja: "確かな技術で、成果の出るWebをつくります。",
+    en: "Crafting web experiences that deliver real results.",
   },
   subtitle: {
-    ja: "日本市場に寄り添い、コーポレートサイト・ランディングページ・業務システムを中心に制作。成果を重視したWeb開発で、信頼されるパートナーとして動きます。",
-    en: "Focused on the Japanese market, I build corporate sites, landing pages, and business systems that deliver measurable results.",
+    ja: "コーポレートサイト・ランディングページ・業務システムを中心に制作。成果を重視したWeb開発で、信頼されるパートナーとして動きます。",
+    en: "I build corporate sites, landing pages, and business systems that deliver measurable results.",
   },
   ctaPrimary: { ja: "お仕事のご相談", en: "Hire Me" },
   ctaSecondary: { ja: "制作実績を見る", en: "View Work" },
   badges: {
-    available: { ja: "日本国内の案件歓迎", en: "Open for Japan-based projects" },
+    available: { ja: "新規案件 受付中", en: "Available for projects" },
   },
   stats: [
     { value: "12+", icon: "CalendarDays", label: { ja: "年の経験", en: "Years of experience" } },
     { value: "120+", icon: "FolderCheck", label: { ja: "制作実績", en: "Projects delivered" } },
-    { value: "70+", icon: "Users", label: { ja: "日本企業のお客様", en: "Japanese clients" } },
+    { value: "70+", icon: "Users", label: { ja: "取引企業", en: "Client companies" } },
     { value: "100%", icon: "BadgeCheck", label: { ja: "納期遵守", en: "On-time delivery" } },
   ],
 };
@@ -83,32 +83,32 @@ export const hero = {
 export const about = {
   heading: { ja: "プロフィール", en: "About Me" },
   lead: {
-    ja: "日本の企業に寄り添い、成果に直結するWeb制作とシステム開発を提供します。",
-    en: "I partner with Japanese businesses to deliver web production and systems that drive real results.",
+    ja: "お客様に寄り添い、成果に直結するWeb制作とシステム開発を提供します。",
+    en: "I partner closely with clients to deliver web production and systems that drive real results.",
   },
   paragraphs: {
     ja: [
-      "日本国内のクライアントを中心に、コーポレートサイト、ランディングページ、業務システムの制作・運用を手がけるフリーランスエンジニアです。",
+      "コーポレートサイト、ランディングページ、業務システムの制作・運用を手がけるフリーランスエンジニアです。",
       "ホームページやキャンペーンLPの制作では、ブランドの魅力を伝えつつ、CVR向上とSEOの両立を実現してきました。",
       "業務システムでは、社内の業務効率化やデータ活用まで見据えた設計・開発を行い、安心して長く使える基盤を構築します。",
     ],
     en: [
-      "I work primarily with Japanese clients, producing corporate websites, landing pages, and business systems.",
+      "I produce and operate corporate websites, landing pages, and business systems as a freelance engineer.",
       "For homepage and campaign LP work, I balance brand storytelling with conversion and SEO performance.",
       "For business systems, I design and build secure, maintainable platforms that improve operational efficiency.",
     ],
   },
   highlights: {
     ja: [
-      "日本市場に精通したWeb制作",
+      "成果につながるWeb制作",
       "ホームページ・LP・業務システムの実績多数",
-      "日本語での丁寧なコミュニケーション",
+      "丁寧で分かりやすいコミュニケーション",
       "納期と品質を両立した開発体制",
     ],
     en: [
-      "Deep understanding of the Japanese market",
+      "Web production focused on real results",
       "Proven experience with homepages, LPs, and business systems",
-      "Clear communication in Japanese",
+      "Clear, approachable communication",
       "Development that respects deadlines and quality",
     ],
   },
@@ -159,10 +159,10 @@ export const strengths: Strength[] = [
   {
     icon: "Award",
     no: "02",
-    title: { ja: "日本企業向けの実績", en: "Proven Japanese-market Experience" },
+    title: { ja: "確かな制作実績", en: "Proven Track Record" },
     description: {
-      ja: "日本国内の企業・団体を中心に、伝統企業から成長事業まで幅広くサポート。成果につながるWeb制作を多く手掛けています。",
-      en: "I support Japanese companies and organizations across traditional and growth sectors, delivering web production that leads to real business outcomes.",
+      ja: "伝統企業から成長事業まで、幅広い企業・団体をサポート。成果につながるWeb制作を多く手掛けています。",
+      en: "I support organizations from established firms to growing ventures, delivering web production that leads to real business outcomes.",
     },
   },
   {
@@ -170,8 +170,8 @@ export const strengths: Strength[] = [
     no: "03",
     title: { ja: "安心のコミュニケーション", en: "Reliable Communication" },
     description: {
-      ja: "丁寧な報告と合意を重ね、ずれのない進行を徹底します。日本のお客様の期待に応える誠実な対応を大切にしています。",
-      en: "I emphasize careful reporting and alignment so projects stay on track. I value honest, dependable communication that meets Japanese client expectations.",
+      ja: "丁寧な報告と合意を重ね、ずれのない進行を徹底します。お客様の期待に応える誠実な対応を大切にしています。",
+      en: "I emphasize careful reporting and alignment so projects stay on track. I value honest, dependable communication that meets client expectations.",
     },
   },
 ];
@@ -257,8 +257,8 @@ export const projects: Project[] = [
     title: { ja: "コーポレートホームページ制作", en: "Corporate Homepage Production" },
     category: { ja: "ホームページ", en: "Homepage" },
     description: {
-      ja: "日本の企業文化を反映したコーポレートサイトを制作。ブランドの信頼性を高め、問い合わせ導線を最適化しました。",
-      en: "Produced a corporate website that reflects Japanese business culture, enhancing brand trust and optimizing inquiry flow.",
+      ja: "企業の個性を反映したコーポレートサイトを制作。ブランドの信頼性を高め、問い合わせ導線を最適化しました。",
+      en: "Produced a corporate website that reflects the company's character, enhancing brand trust and optimizing inquiry flow.",
     },
     stack: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel"],
     highlights: {
@@ -559,8 +559,8 @@ export const caseStudies: CaseStudy[] = [
       en: "An aging website made information hard to find and inquiries had stalled.",
     },
     solution: {
-      ja: "会社情報、サービス訴求、導線を整理し、和のテイストを活かしたデザインで安心感を高めました。SEOと問い合わせ導線も強化しています。",
-      en: "I reorganized company info, service messaging, and navigation, using a Japanese-inspired design that reinforces trust while strengthening SEO and lead paths.",
+      ja: "会社情報、サービス訴求、導線を整理し、洗練されたデザインで安心感を高めました。SEOと問い合わせ導線も強化しています。",
+      en: "I reorganized company info, service messaging, and navigation, using a refined design that reinforces trust while strengthening SEO and lead paths.",
     },
     results: [
       { value: "25%", label: { ja: "問い合わせ増加", en: "More inquiries" } },
@@ -777,8 +777,8 @@ export const faqs: FaqItem[] = [
   {
     question: { ja: "対応エリアや言語を教えてください。", en: "What regions and languages do you cover?" },
     answer: {
-      ja: "日本全国にリモートで対応しています。日本語・英語の両方でコミュニケーションが可能で、海外のお客様にも対応します。",
-      en: "I work remotely across Japan and communicate in both Japanese and English, including with overseas clients.",
+      ja: "全国どこでもリモートで対応しています。日本語に加えて英語でのやり取りも可能で、海外のお客様のご相談も歓迎します。",
+      en: "I work remotely nationwide, and can also communicate in English in addition to Japanese, including with overseas clients.",
     },
   },
   {
