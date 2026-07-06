@@ -83,19 +83,23 @@ export const hero = {
 export const about = {
   heading: { ja: "プロフィール", en: "About Me" },
   lead: {
-    ja: "お客様に寄り添い、成果に直結するWeb制作とシステム開発を提供します。",
-    en: "I partner closely with clients to deliver web production and systems that drive real results.",
+    ja: "お客様に寄り添うWebエンジニア",
+    en: "A Web Engineer Who Stays Close to Your Business",
   },
   paragraphs: {
     ja: [
-      "Webシステム、モバイルアプリ、業務システム、AI開発まで幅広く手がけるフリーランスエンジニアです。",
-      "ホームページやキャンペーンLPの制作では、ブランドの魅力を伝えつつ、CVR向上とSEOの両立を実現してきました。",
-      "業務システムでは、社内の業務効率化やデータ活用まで見据えた設計・開発を行い、安心して長く使える基盤を構築します。",
+      "お客様のビジネスや課題を深く理解し、成果につながるシステム開発を第一に考えています。業務システムやWebアプリケーション、モバイルアプリ、AIを活用した開発まで幅広く対応し、企画・設計・開発・運用まで一貫してサポートいたします。",
+      "システム開発では、現場の課題を丁寧にヒアリングし、使いやすさだけでなく、保守性・拡張性を考慮した設計を重視しています。AI技術を活用した業務効率化や自動化など、新しい技術も積極的に取り入れ、お客様にとって最適なソリューションをご提案します。",
+      "ホームページやランディングページ制作では、ブランドイメージを大切にしながら、ユーザー目線の導線設計やCVR向上、SEOを意識したWebサイトを制作しています。見た目の美しさだけでなく、成果につながるサイトづくりを心掛けています。",
+      "また、開発中は進捗状況を分かりやすく共有し、迅速かつ丁寧なコミュニケーションを徹底しています。Web制作やシステム開発が初めてのお客様にも安心してご依頼いただけるよう、一つひとつの工程を分かりやすくご説明しながら進めています。",
+      "技術力だけでなく、「相談しやすさ」と「信頼関係」を大切にし、お客様のビジネスを支えるパートナーとして、長期的に価値を提供できる開発を目指しています。",
     ],
     en: [
-      "As a freelance engineer, I handle a broad range of work — web systems, mobile apps, business systems, and AI development.",
-      "For homepage and campaign LP work, I balance brand storytelling with conversion and SEO performance.",
-      "For business systems, I design and build secure, maintainable platforms that improve operational efficiency.",
+      "I deeply understand your business and challenges, always prioritizing system development that leads to real results. I handle a broad range of work — business systems, web applications, mobile apps, and AI-powered development — supporting you end-to-end across planning, design, development, and operation.",
+      "In system development, I carefully listen to on-the-ground challenges and prioritize designs that consider not only usability but also maintainability and scalability. I actively adopt new technologies, such as AI-driven efficiency and automation, to propose the optimal solution for you.",
+      "For homepage and landing page production, I value your brand image while building websites with user-focused navigation, conversion improvement, and SEO in mind. Beyond visual beauty, I focus on creating sites that lead to real results.",
+      "During development, I share progress in an easy-to-understand way and maintain fast, courteous communication. So that even clients new to web production or system development can feel at ease, I explain each step clearly as we proceed.",
+      "Beyond technical skill, I value approachability and trust, aiming to deliver long-term value as a partner who supports your business.",
     ],
   },
   highlights: {
