@@ -1,6 +1,6 @@
 "use client";
 
-import { Code2, Smartphone, Cloud, Sparkles, Compass, RefreshCw, type LucideIcon } from "lucide-react";
+import { Code2, Smartphone, Cloud, Sparkles, Compass, RefreshCw, ShieldCheck, BrainCircuit, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { services, servicesSection, nav } from "@/lib/content";
 import SectionHeading from "../SectionHeading";
@@ -13,6 +13,8 @@ const iconMap: Record<string, LucideIcon> = {
   Sparkles,
   Compass,
   RefreshCw,
+  ShieldCheck,
+  BrainCircuit,
 };
 
 export default function Services() {

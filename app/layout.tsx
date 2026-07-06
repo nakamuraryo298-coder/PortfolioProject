@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Hiromu Takahashi",
   },
   description:
-    "Hiromu Takahashi (高橋寛武) — freelance full-stack software engineer based in Japan with 12+ years of experience across frontend, backend, mobile, cloud, and AI. Available for new projects.",
+    "Hiromu Takahashi (高橋寛武) — freelance full-stack software engineer based in Japan with 8+ years of experience across frontend, backend, mobile, cloud, and AI. Available for new projects.",
   keywords: [
     "フリーランス エンジニア",
     "ソフトウェアエンジニア",
@@ -56,14 +56,14 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Hiromu Takahashi | Freelance Software Engineer",
     description:
-      "Full-stack software engineer with 12+ years of experience. From frontend to cloud and AI — building products that drive results.",
+      "Full-stack software engineer with 8+ years of experience. From frontend to cloud and AI — building products that drive results.",
     siteName: "Hiromu Takahashi Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Hiromu Takahashi | Freelance Software Engineer",
     description:
-      "Full-stack software engineer with 12+ years of experience across web, mobile, cloud, and AI.",
+      "Full-stack software engineer with 8+ years of experience across web, mobile, cloud, and AI.",
   },
   robots: { index: true, follow: true },
 };
@@ -91,7 +91,7 @@ const jsonLd = {
     "Software Architecture",
   ],
   description:
-    "Freelance full-stack software engineer based in Japan with 12+ years of experience across frontend, backend, mobile, cloud, and AI.",
+    "Freelance full-stack software engineer based in Japan with 8+ years of experience across frontend, backend, mobile, cloud, and AI.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

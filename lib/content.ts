@@ -36,7 +36,7 @@ export const profile = {
   },
   location: { ja: "日本", en: "Japan" },
   email: "biyou00000@gmail.com",
-  yearsOfExperience: 12,
+  yearsOfExperience: 8,
   github: "https://github.com/",
   linkedin: "https://www.linkedin.com/",
   line: "https://line.me/",
@@ -60,12 +60,12 @@ export const nav = {
 export const hero = {
   greeting: { ja: "こんにちは、私は", en: "Hello, I'm" },
   tagline: {
-    ja: "確かな技術で、成果の出るWebをつくります。",
-    en: "Crafting web experiences that deliver real results.",
+    ja: "開発経験8年。",
+    en: "8 years of development experience.",
   },
   subtitle: {
-    ja: "コーポレートサイト・ランディングページ・業務システムを中心に制作。成果を重視したWeb開発で、信頼されるパートナーとして動きます。",
-    en: "I build corporate sites, landing pages, and business systems that deliver measurable results.",
+    ja: "Webシステム・モバイルアプリ・業務システム・AI開発まで幅広く対応。品質・保守性・拡張性を重視し、お客様の課題解決につながるシステムを提供しています。",
+    en: "Broad expertise across web systems, mobile apps, business systems, and AI development. I focus on quality, maintainability, and scalability to deliver systems that solve real client problems.",
   },
   ctaPrimary: { ja: "お仕事のご相談", en: "Hire Me" },
   ctaSecondary: { ja: "制作実績を見る", en: "View Work" },
@@ -73,7 +73,7 @@ export const hero = {
     available: { ja: "新規案件 受付中", en: "Available for projects" },
   },
   stats: [
-    { value: "12+", icon: "CalendarDays", label: { ja: "年の経験", en: "Years of experience" } },
+    { value: "8+", icon: "CalendarDays", label: { ja: "年の経験", en: "Years of experience" } },
     { value: "120+", icon: "FolderCheck", label: { ja: "制作実績", en: "Projects delivered" } },
     { value: "70+", icon: "Users", label: { ja: "取引企業", en: "Client companies" } },
     { value: "100%", icon: "BadgeCheck", label: { ja: "納期遵守", en: "On-time delivery" } },
@@ -88,12 +88,12 @@ export const about = {
   },
   paragraphs: {
     ja: [
-      "コーポレートサイト、ランディングページ、業務システムの制作・運用を手がけるフリーランスエンジニアです。",
+      "Webシステム、モバイルアプリ、業務システム、AI開発まで幅広く手がけるフリーランスエンジニアです。",
       "ホームページやキャンペーンLPの制作では、ブランドの魅力を伝えつつ、CVR向上とSEOの両立を実現してきました。",
       "業務システムでは、社内の業務効率化やデータ活用まで見据えた設計・開発を行い、安心して長く使える基盤を構築します。",
     ],
     en: [
-      "I produce and operate corporate websites, landing pages, and business systems as a freelance engineer.",
+      "As a freelance engineer, I handle a broad range of work — web systems, mobile apps, business systems, and AI development.",
       "For homepage and campaign LP work, I balance brand storytelling with conversion and SEO performance.",
       "For business systems, I design and build secure, maintainable platforms that improve operational efficiency.",
     ],
@@ -101,13 +101,13 @@ export const about = {
   highlights: {
     ja: [
       "成果につながるWeb制作",
-      "ホームページ・LP・業務システムの実績多数",
+      "Web・モバイル・業務システム・AI開発の実績多数",
       "丁寧で分かりやすいコミュニケーション",
       "納期と品質を両立した開発体制",
     ],
     en: [
       "Web production focused on real results",
-      "Proven experience with homepages, LPs, and business systems",
+      "Proven work across web, mobile, business systems, and AI",
       "Clear, approachable communication",
       "Development that respects deadlines and quality",
     ],
@@ -152,8 +152,8 @@ export const strengths: Strength[] = [
     no: "01",
     title: { ja: "ワンストップ制作", en: "One-stop Production" },
     description: {
-      ja: "ホームページ、LP、業務システムを同一の視点で設計。企画から納品・運用まで責任を持って進めます。",
-      en: "I design homepages, LPs, and business systems with a consistent perspective, taking responsibility from concept through delivery and operation.",
+      ja: "Webシステム、モバイルアプリ、業務システム、AI開発を同一の視点で設計。企画から納品・運用まで責任を持って進めます。",
+      en: "I design web systems, mobile apps, business systems, and AI solutions with a consistent perspective, taking responsibility from concept through delivery and operation.",
     },
   },
   {
@@ -211,7 +211,7 @@ export const skillCategories: SkillCategory[] = [
 
 export const experiences: ExperienceItem[] = [
   {
-    period: { ja: "2021 — 現在", en: "2021 — Present" },
+    period: { ja: "2023 — 現在", en: "2023 — Present" },
     role: { ja: "フリーランス ソフトウェアエンジニア", en: "Freelance Software Engineer" },
     company: { ja: "個人事業", en: "Independent" },
     description: {
@@ -221,7 +221,7 @@ export const experiences: ExperienceItem[] = [
     tags: ["Next.js", "Go", "AWS", "技術顧問 / Advisory"],
   },
   {
-    period: { ja: "2017 — 2021", en: "2017 — 2021" },
+    period: { ja: "2021 — 2023", en: "2021 — 2023" },
     role: { ja: "テックリード / シニアエンジニア", en: "Tech Lead / Senior Engineer" },
     company: { ja: "自社開発企業（SaaS）", en: "Product Company (SaaS)" },
     description: {
@@ -231,7 +231,7 @@ export const experiences: ExperienceItem[] = [
     tags: ["TypeScript", "Kubernetes", "Microservices", "Mentoring"],
   },
   {
-    period: { ja: "2014 — 2017", en: "2014 — 2017" },
+    period: { ja: "2019 — 2021", en: "2019 — 2021" },
     role: { ja: "フルスタックエンジニア", en: "Full-Stack Engineer" },
     company: { ja: "Web開発エージェンシー", en: "Web Development Agency" },
     description: {
@@ -241,7 +241,7 @@ export const experiences: ExperienceItem[] = [
     tags: ["Ruby on Rails", "Vue.js", "MySQL", "E-commerce"],
   },
   {
-    period: { ja: "2013 — 2014", en: "2013 — 2014" },
+    period: { ja: "2018 — 2019", en: "2018 — 2019" },
     role: { ja: "ソフトウェアエンジニア", en: "Software Engineer" },
     company: { ja: "システム開発会社", en: "Software Development Firm" },
     description: {
@@ -333,6 +333,22 @@ export const services: Service[] = [
     },
   },
   {
+    icon: "Smartphone",
+    title: { ja: "モバイルアプリ開発", en: "Mobile App Development" },
+    description: {
+      ja: "iOS・Android・クロスプラットフォームに対応。快適な操作性とスムーズな体験を備えたアプリを開発します。",
+      en: "iOS, Android, and cross-platform apps built for smooth, comfortable user experiences.",
+    },
+  },
+  {
+    icon: "BrainCircuit",
+    title: { ja: "AI開発 / データ活用", en: "AI & Data Solutions" },
+    description: {
+      ja: "生成AIやLLM/RAGの導入、データ分析・自動化など、AIを活かした課題解決を支援します。",
+      en: "Generative AI, LLM/RAG integration, data analysis, and automation to solve real business problems.",
+    },
+  },
+  {
     icon: "Cloud",
     title: { ja: "クラウド / インフラ構築", en: "Cloud & Infrastructure" },
     description: {
@@ -361,8 +377,8 @@ export const services: Service[] = [
 export const servicesSection = {
   heading: { ja: "提供サービス", en: "What I Do" },
   lead: {
-    ja: "ホームページ制作、LP制作、業務システム開発まで、成果にこだわる開発を提供します。",
-    en: "From homepages and landing pages to business systems, I deliver results-focused development.",
+    ja: "Webシステム、モバイルアプリ、業務システム、AI開発まで、成果にこだわる開発を幅広く提供します。",
+    en: "From web systems and mobile apps to business systems and AI, I deliver results-focused development across a broad range.",
   },
 };
 
@@ -377,8 +393,8 @@ export const skillsSection = {
 export const experienceSection = {
   heading: { ja: "経歴", en: "Experience" },
   lead: {
-    ja: "12年間、技術と共に歩んできたキャリア。",
-    en: "A 12-year career growing alongside technology.",
+    ja: "8年間、技術と共に歩んできたキャリア。",
+    en: "An 8-year career growing alongside technology.",
   },
 };
 

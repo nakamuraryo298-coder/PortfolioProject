@@ -9,7 +9,7 @@ const lines: { tokens: { t: string; c?: string }[]; indent?: number }[] = [
   { indent: 1, tokens: [{ t: "name", c: "key" }, { t: ": ", c: "" }, { t: '"Hiromu Takahashi"', c: "str" }, { t: ",", c: "" }] },
   { indent: 1, tokens: [{ t: "role", c: "key" }, { t: ": ", c: "" }, { t: '"Freelance Software Engineer"', c: "str" }, { t: ",", c: "" }] },
   { indent: 1, tokens: [{ t: "location", c: "key" }, { t: ": ", c: "" }, { t: '"Japan"', c: "str" }, { t: ",", c: "" }] },
-  { indent: 1, tokens: [{ t: "experience", c: "key" }, { t: ": ", c: "" }, { t: "12", c: "num" }, { t: ", ", c: "" }, { t: "// years", c: "cm" }] },
+  { indent: 1, tokens: [{ t: "experience", c: "key" }, { t: ": ", c: "" }, { t: "8", c: "num" }, { t: ", ", c: "" }, { t: "// years", c: "cm" }] },
   { indent: 1, tokens: [{ t: "stack", c: "key" }, { t: ": [", c: "" }, { t: '"React"', c: "str" }, { t: ", ", c: "" }, { t: '"Go"', c: "str" }, { t: ", ", c: "" }, { t: '"AWS"', c: "str" }, { t: ", ", c: "" }, { t: '"LLM"', c: "str" }, { t: "],", c: "" }] },
   { indent: 1, tokens: [{ t: "available", c: "key" }, { t: ": ", c: "" }, { t: "true", c: "bool" }, { t: ",", c: "" }] },
   { tokens: [{ t: "};", c: "" }] },
