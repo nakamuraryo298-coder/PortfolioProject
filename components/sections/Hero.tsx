@@ -8,7 +8,7 @@ import {
   MapPin,
   CalendarDays,
   FolderCheck,
-  Users,
+  LayoutGrid,
   BadgeCheck,
   ChevronDown,
   type LucideIcon,
@@ -18,7 +18,7 @@ import { hero, profile } from "@/lib/content";
 import CountUp from "../CountUp";
 import Magnetic from "../Magnetic";
 
-const statIcons: Record<string, LucideIcon> = { CalendarDays, FolderCheck, Users, BadgeCheck };
+const statIcons: Record<string, LucideIcon> = { CalendarDays, FolderCheck, LayoutGrid, BadgeCheck };
 
 export default function Hero() {
   const { lang } = useLanguage();
