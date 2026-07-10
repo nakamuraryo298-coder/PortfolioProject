@@ -219,28 +219,28 @@ export const experiences: ExperienceItem[] = [
     role: { ja: "フリーランス ソフトウェアエンジニア", en: "Freelance Software Engineer" },
     company: { ja: "個人事業", en: "Independent" },
     description: {
-      ja: "複数のクライアント向けにWebサービス・モバイルアプリ・クラウド基盤を設計から開発・運用まで担当。技術顧問やチームの立ち上げ支援も行う。",
-      en: "Designing, building, and operating web services, mobile apps, and cloud infrastructure for multiple clients. Also serving as a technical advisor and helping teams get off the ground.",
+      ja: "独立後、コーポレートサイト・LP・業務システム・モバイルアプリの開発を、要件定義から設計・実装・運用まで一貫して請け負う。Next.js / TypeScript を中心としたモダンな構成に加え、生成AIを活用した業務効率化ツールの開発や、既存システムの改善・保守も担当。準委任・請負の双方でプロジェクトを推進している。",
+      en: "Since going independent, I deliver corporate sites, landing pages, business systems, and mobile apps end-to-end — from requirements through design, implementation, and operation. Alongside a modern Next.js / TypeScript stack, I build generative-AI tools for operational efficiency and take on the improvement and maintenance of existing systems, working on both retainer and fixed-scope engagements.",
     },
-    tags: ["Next.js", "Go", "AWS", "技術顧問 / Advisory"],
+    tags: ["Next.js", "TypeScript", "AWS", "生成AI / LLM"],
   },
   {
     period: { ja: "2021 — 2023", en: "2021 — 2023" },
     role: { ja: "テックリード / シニアエンジニア", en: "Tech Lead / Senior Engineer" },
     company: { ja: "自社開発企業（SaaS）", en: "Product Company (SaaS)" },
     description: {
-      ja: "BtoB SaaSプロダクトの開発をリード。マイクロサービス化、パフォーマンス改善、チームのメンタリングを推進し、ユーザー数を大幅に拡大。",
-      en: "Led development of a B2B SaaS product. Drove the move to microservices, performance improvements, and team mentoring — significantly scaling the user base.",
+      ja: "BtoB向けSaaSプロダクトの開発チームで、フロントエンドとバックエンドの設計・実装をリード。モノリスからのサービス分割やCI/CDの整備、パフォーマンス改善に取り組み、主要画面の表示速度を大きく改善した。コードレビューや若手メンバーのメンタリングを通じて、チーム全体の開発品質向上にも貢献。",
+      en: "Led frontend and backend design and implementation on a B2B SaaS product team. Drove the migration from a monolith toward split services, established CI/CD, and improved performance — substantially speeding up key screens. Also raised overall team quality through code review and mentoring of junior engineers.",
     },
-    tags: ["TypeScript", "Kubernetes", "Microservices", "Mentoring"],
+    tags: ["TypeScript", "Node.js", "Docker", "CI/CD"],
   },
   {
     period: { ja: "2019 — 2021", en: "2019 — 2021" },
     role: { ja: "フルスタックエンジニア", en: "Full-Stack Engineer" },
     company: { ja: "Web開発エージェンシー", en: "Web Development Agency" },
     description: {
-      ja: "ECサイト、コーポレートサイト、業務システムなど幅広い案件を担当。要件定義からリリースまで一貫して対応し、多数のプロジェクトを成功に導く。",
-      en: "Delivered a wide range of projects — e-commerce, corporate sites, and internal systems — owning everything from requirements to release and shipping many successful projects.",
+      ja: "受託開発のエージェンシーで、ECサイト・コーポレートサイト・予約管理システムなど、業種の異なる案件を並行して担当。クライアントとの要件定義から画面設計、実装、公開後の保守までを一貫して手掛け、複数のプロジェクトを納期通りにリリースした。",
+      en: "At a client-services agency, I handled diverse projects in parallel — e-commerce, corporate sites, and reservation-management systems across different industries. I owned each project from requirements and screen design through implementation and post-launch maintenance, shipping multiple releases on schedule.",
     },
     tags: ["Ruby on Rails", "Vue.js", "MySQL", "E-commerce"],
   },
@@ -249,10 +249,10 @@ export const experiences: ExperienceItem[] = [
     role: { ja: "ソフトウェアエンジニア", en: "Software Engineer" },
     company: { ja: "システム開発会社", en: "Software Development Firm" },
     description: {
-      ja: "業務系アプリケーションの開発でキャリアをスタート。基礎的な設計・実装・テストの実務を通じてエンジニアリングの土台を築く。",
-      en: "Started my career building enterprise applications, establishing strong engineering fundamentals through hands-on design, implementation, and testing.",
+      ja: "社内業務システムや基幹系アプリケーションの開発でエンジニアとしてのキャリアをスタート。詳細設計・実装・テスト・ドキュメント作成といった開発工程の基礎を実務で身につけ、チーム開発やバージョン管理、レビュー文化を学んだ。",
+      en: "Began my engineering career developing in-house business systems and core enterprise applications. Through hands-on detailed design, implementation, testing, and documentation, I built solid fundamentals and learned team development, version control, and a culture of code review.",
     },
-    tags: ["Java", "SQL", "Enterprise"],
+    tags: ["Java", "SQL", "業務システム / Enterprise"],
   },
 ];
 
@@ -307,6 +307,318 @@ export const projects: Project[] = [
     highlights: {
       ja: ["資料請求数が2倍", "ページ滞在時間を延長", "ブランド訴求を強化"],
       en: ["2× more leads", "Longer page engagement", "Stronger brand messaging"],
+    },
+  },
+  {
+    title: { ja: "会員向けモバイルアプリ開発", en: "Membership Mobile App" },
+    category: { ja: "モバイルアプリ", en: "Mobile App" },
+    description: {
+      ja: "iOS / Android 両対応の会員向けモバイルアプリを開発。プッシュ通知やオフライン対応を実装し、リピート利用を促進しました。",
+      en: "Developed a members' mobile app for both iOS and Android, implementing push notifications and offline support to encourage repeat usage.",
+    },
+    stack: ["React Native", "Expo", "TypeScript", "Firebase"],
+    highlights: {
+      ja: ["継続利用率を35%向上", "アプリ評価4.6を獲得", "オフライン閲覧に対応"],
+      en: ["35% higher retention", "4.6 app rating", "Offline reading support"],
+    },
+  },
+  {
+    title: { ja: "AIチャットボット開発", en: "AI Chatbot Development" },
+    category: { ja: "AI開発", en: "AI Development" },
+    description: {
+      ja: "社内ドキュメントを学習させたAIチャットボットを構築。問い合わせ対応を自動化し、担当者の負担を大幅に軽減しました。",
+      en: "Built an AI chatbot trained on internal documents, automating inquiry handling and greatly reducing staff workload.",
+    },
+    stack: ["Next.js", "OpenAI API", "RAG", "PostgreSQL"],
+    highlights: {
+      ja: ["問い合わせ対応を60%自動化", "回答時間を大幅短縮", "社内ナレッジを一元化"],
+      en: ["60% of inquiries automated", "Much faster responses", "Centralized knowledge"],
+    },
+  },
+  {
+    title: { ja: "予約管理システム開発", en: "Reservation Management System" },
+    category: { ja: "業務システム", en: "Business System" },
+    description: {
+      ja: "店舗向けの予約・顧客管理システムを開発。ダブルブッキングを防ぎ、日々の予約業務を効率化しました。",
+      en: "Developed a reservation and customer-management system for retail locations, preventing double-bookings and streamlining daily operations.",
+    },
+    stack: ["React", "Node.js", "MySQL", "AWS"],
+    highlights: {
+      ja: ["予約対応の工数を50%削減", "ダブルブッキングを解消", "スマホから予約管理"],
+      en: ["50% less booking effort", "Zero double-bookings", "Manage bookings on mobile"],
+    },
+  },
+  {
+    title: { ja: "ブランドECサイト構築", en: "Brand E-commerce Build" },
+    category: { ja: "ECサイト", en: "E-commerce" },
+    description: {
+      ja: "ブランドの世界観を表現したECサイトを構築。決済・在庫連携を整備し、購入までの導線を最適化しました。",
+      en: "Built an e-commerce site expressing the brand's world view, integrating payments and inventory while optimizing the path to purchase.",
+    },
+    stack: ["Next.js", "Stripe", "Headless CMS", "Vercel"],
+    highlights: {
+      ja: ["カゴ落ち率を改善", "客単価が向上", "在庫連携を自動化"],
+      en: ["Lower cart abandonment", "Higher order value", "Automated inventory sync"],
+    },
+  },
+  {
+    title: { ja: "社内向けダッシュボード開発", en: "Internal Analytics Dashboard" },
+    category: { ja: "Webアプリ", en: "Web App" },
+    description: {
+      ja: "各種データを可視化する社内向けダッシュボードを開発。散在していた指標を統合し、意思決定のスピードを高めました。",
+      en: "Developed an internal dashboard visualizing key data, consolidating scattered metrics to speed up decision-making.",
+    },
+    stack: ["React", "TypeScript", "BigQuery", "Recharts"],
+    highlights: {
+      ja: ["レポート作成を自動化", "指標を一画面に統合", "集計作業を80%削減"],
+      en: ["Automated reporting", "All metrics in one view", "80% less manual work"],
+    },
+  },
+  {
+    title: { ja: "採用サイト制作", en: "Recruitment Site" },
+    category: { ja: "ホームページ", en: "Homepage" },
+    description: {
+      ja: "求職者に企業の魅力を伝える採用サイトを制作。社員インタビューや職場紹介を通じて応募意欲を高めました。",
+      en: "Produced a recruitment site conveying the company's appeal to job seekers, boosting applications through employee interviews and workplace features.",
+    },
+    stack: ["Next.js", "microCMS", "Tailwind CSS", "Vercel"],
+    highlights: {
+      ja: ["応募数を1.6倍に増加", "採用ミスマッチを削減", "スマホ閲覧に最適化"],
+      en: ["1.6× more applicants", "Fewer hiring mismatches", "Mobile-optimized"],
+    },
+  },
+  {
+    title: { ja: "クリニックサイト制作", en: "Clinic Website" },
+    category: { ja: "ホームページ", en: "Homepage" },
+    description: {
+      ja: "地域のクリニック向けに、オンライン予約と診療案内を備えたサイトを制作。患者が迷わず来院できる導線を設計しました。",
+      en: "Built a site for a local clinic with online booking and treatment guidance, designing a clear path that helps patients visit with confidence.",
+    },
+    stack: ["Next.js", "TypeScript", "予約API", "Vercel"],
+    highlights: {
+      ja: ["電話予約の負担を軽減", "新患の来院を増加", "アクセシビリティに配慮"],
+      en: ["Less phone-booking load", "More new-patient visits", "Accessibility-conscious"],
+    },
+  },
+  {
+    title: { ja: "不動産ポータル開発", en: "Real Estate Portal" },
+    category: { ja: "Webアプリ", en: "Web App" },
+    description: {
+      ja: "物件検索・問い合わせ機能を備えた不動産ポータルサイトを開発。地図連携と絞り込み検索で使い勝手を高めました。",
+      en: "Developed a real-estate portal with property search and inquiry features, improving usability with map integration and faceted search.",
+    },
+    stack: ["Next.js", "PostgreSQL", "Google Maps API", "AWS"],
+    highlights: {
+      ja: ["問い合わせ率が向上", "検索離脱を削減", "物件更新を効率化"],
+      en: ["Higher inquiry rate", "Lower search drop-off", "Streamlined listing updates"],
+    },
+  },
+  {
+    title: { ja: "サブスク申込LP制作", en: "Subscription Signup LP" },
+    category: { ja: "LP", en: "Landing Page" },
+    description: {
+      ja: "サブスクリプションサービスの申込に特化したLPを制作。料金プランの比較と安心材料の訴求で申込を後押ししました。",
+      en: "Created an LP focused on subscription signups, driving conversions with clear plan comparisons and trust-building messaging.",
+    },
+    stack: ["Next.js", "Stripe", "SEO", "Analytics"],
+    highlights: {
+      ja: ["申込率を1.5倍に改善", "離脱ポイントを解消", "決済まで最短導線"],
+      en: ["1.5× signup rate", "Removed drop-off points", "Shortest path to checkout"],
+    },
+  },
+  {
+    title: { ja: "セミナー集客LP制作", en: "Seminar Recruitment LP" },
+    category: { ja: "LP", en: "Landing Page" },
+    description: {
+      ja: "オンラインセミナーの集客用LPを制作。登壇者紹介と参加メリットを分かりやすく伝え、申込を最大化しました。",
+      en: "Produced an LP for online-seminar recruitment, maximizing signups by clearly presenting speakers and participation benefits.",
+    },
+    stack: ["Next.js", "Framer Motion", "フォーム連携"],
+    highlights: {
+      ja: ["申込数が2.2倍", "広告CPAを削減", "当日参加率が向上"],
+      en: ["2.2× signups", "Lower ad CPA", "Higher attendance rate"],
+    },
+  },
+  {
+    title: { ja: "在庫管理システム開発", en: "Inventory Management System" },
+    category: { ja: "業務システム", en: "Business System" },
+    description: {
+      ja: "複数拠点の在庫をリアルタイムに把握できる在庫管理システムを開発。欠品と過剰在庫の削減を実現しました。",
+      en: "Developed an inventory system giving real-time visibility across multiple locations, reducing both stockouts and overstock.",
+    },
+    stack: ["React", "Node.js", "PostgreSQL", "Docker"],
+    highlights: {
+      ja: ["棚卸し工数を60%削減", "欠品率を改善", "拠点間の在庫を可視化"],
+      en: ["60% less stocktaking", "Fewer stockouts", "Cross-site stock visibility"],
+    },
+  },
+  {
+    title: { ja: "勤怠管理システム開発", en: "Attendance Management System" },
+    category: { ja: "業務システム", en: "Business System" },
+    description: {
+      ja: "打刻・申請・集計を一元化した勤怠管理システムを開発。手作業の集計をなくし、労務担当の負担を軽減しました。",
+      en: "Built a time-and-attendance system unifying clock-in, requests, and totals, eliminating manual aggregation and easing HR workload.",
+    },
+    stack: ["Vue.js", "Laravel", "MySQL", "AWS"],
+    highlights: {
+      ja: ["集計作業をほぼ自動化", "申請漏れを削減", "法令改正にも対応"],
+      en: ["Near-automated totals", "Fewer missed requests", "Compliant with law changes"],
+    },
+  },
+  {
+    title: { ja: "CRMシステム開発", en: "CRM System Development" },
+    category: { ja: "業務システム", en: "Business System" },
+    description: {
+      ja: "営業活動と顧客情報を一元管理するCRMを開発。案件の進捗を可視化し、チームの連携を強化しました。",
+      en: "Developed a CRM centralizing sales activity and customer data, visualizing deal progress and strengthening team coordination.",
+    },
+    stack: ["React", "Node.js", "PostgreSQL", "GraphQL"],
+    highlights: {
+      ja: ["対応漏れを削減", "商談化率が向上", "レポートを自動生成"],
+      en: ["Fewer dropped follow-ups", "Higher deal conversion", "Auto-generated reports"],
+    },
+  },
+  {
+    title: { ja: "モバイルオーダーアプリ開発", en: "Mobile Order App" },
+    category: { ja: "モバイルアプリ", en: "Mobile App" },
+    description: {
+      ja: "飲食店向けにテーブルから注文できるモバイルオーダーアプリを開発。回転率の向上と注文ミスの削減に貢献しました。",
+      en: "Developed a mobile-order app letting restaurant guests order from their table, improving turnover and reducing order errors.",
+    },
+    stack: ["Flutter", "Firebase", "Stripe"],
+    highlights: {
+      ja: ["注文ミスを削減", "回転率が向上", "多言語メニューに対応"],
+      en: ["Fewer order errors", "Better table turnover", "Multilingual menus"],
+    },
+  },
+  {
+    title: { ja: "フィットネス記録アプリ開発", en: "Fitness Tracking App" },
+    category: { ja: "モバイルアプリ", en: "Mobile App" },
+    description: {
+      ja: "トレーニングと食事を記録できるフィットネスアプリを開発。継続を促すUIとグラフ表示で習慣化を支援しました。",
+      en: "Developed a fitness app for logging workouts and meals, supporting habit-building with motivating UI and progress charts.",
+    },
+    stack: ["React Native", "Expo", "TypeScript", "Supabase"],
+    highlights: {
+      ja: ["継続率が向上", "記録の手間を軽減", "進捗をグラフで可視化"],
+      en: ["Higher retention", "Faster logging", "Progress visualized in charts"],
+    },
+  },
+  {
+    title: { ja: "AI文書要約ツール開発", en: "AI Document Summarizer" },
+    category: { ja: "AI開発", en: "AI Development" },
+    description: {
+      ja: "長文の議事録や資料を自動で要約するAIツールを開発。情報共有のスピードを高め、確認負担を軽減しました。",
+      en: "Developed an AI tool that automatically summarizes long minutes and documents, speeding up information sharing and reducing review effort.",
+    },
+    stack: ["Next.js", "OpenAI API", "TypeScript"],
+    highlights: {
+      ja: ["要約作業を自動化", "確認時間を短縮", "社内共有を効率化"],
+      en: ["Automated summarizing", "Less review time", "Efficient internal sharing"],
+    },
+  },
+  {
+    title: { ja: "AI画像解析システム開発", en: "AI Image Analysis System" },
+    category: { ja: "AI開発", en: "AI Development" },
+    description: {
+      ja: "製造現場の検品を支援するAI画像解析システムを開発。目視検査のばらつきを抑え、品質チェックを効率化しました。",
+      en: "Developed an AI image-analysis system to assist manufacturing inspection, reducing variability in visual checks and streamlining QA.",
+    },
+    stack: ["Python", "TensorFlow", "FastAPI", "Docker"],
+    highlights: {
+      ja: ["検品のばらつきを抑制", "チェック時間を短縮", "不良流出を低減"],
+      en: ["Reduced inspection variance", "Faster checks", "Fewer defects shipped"],
+    },
+  },
+  {
+    title: { ja: "レコメンドエンジン開発", en: "Recommendation Engine" },
+    category: { ja: "AI開発", en: "AI Development" },
+    description: {
+      ja: "ECサイト向けに購買履歴を活用したレコメンドエンジンを開発。関連商品の提案で客単価の向上に貢献しました。",
+      en: "Built a recommendation engine for an e-commerce site using purchase history, lifting average order value through related-item suggestions.",
+    },
+    stack: ["Python", "PostgreSQL", "FastAPI", "AWS"],
+    highlights: {
+      ja: ["客単価が向上", "回遊率が改善", "在庫消化を促進"],
+      en: ["Higher order value", "Better engagement", "Faster inventory turnover"],
+    },
+  },
+  {
+    title: { ja: "BtoB ECサイト構築", en: "B2B E-commerce Build" },
+    category: { ja: "ECサイト", en: "E-commerce" },
+    description: {
+      ja: "取引先ごとの掛率や承認フローに対応したBtoB向けECサイトを構築。受注業務の効率化を実現しました。",
+      en: "Built a B2B e-commerce site supporting customer-specific pricing and approval flows, streamlining order operations.",
+    },
+    stack: ["Next.js", "Node.js", "PostgreSQL", "Stripe"],
+    highlights: {
+      ja: ["受注処理を効率化", "取引先別価格に対応", "発注ミスを削減"],
+      en: ["Streamlined order handling", "Customer-specific pricing", "Fewer ordering errors"],
+    },
+  },
+  {
+    title: { ja: "定期通販サイト構築", en: "Subscription Commerce Site" },
+    category: { ja: "ECサイト", en: "E-commerce" },
+    description: {
+      ja: "定期購入モデルの通販サイトを構築。継続課金と配送スケジュールの管理を自動化し、運用負担を軽減しました。",
+      en: "Built a subscription-commerce site, automating recurring billing and delivery scheduling to reduce operational load.",
+    },
+    stack: ["Next.js", "Stripe", "Headless CMS", "Vercel"],
+    highlights: {
+      ja: ["継続率が向上", "課金管理を自動化", "解約率を低減"],
+      en: ["Higher retention", "Automated billing", "Lower churn"],
+    },
+  },
+  {
+    title: { ja: "社内ポータル開発", en: "Internal Portal" },
+    category: { ja: "Webアプリ", en: "Web App" },
+    description: {
+      ja: "各種申請や社内情報を集約する社内ポータルを開発。情報の分散を解消し、社員の業務効率を高めました。",
+      en: "Developed an internal portal consolidating requests and company information, eliminating scattered data and improving staff efficiency.",
+    },
+    stack: ["React", "TypeScript", "Node.js", "AWS"],
+    highlights: {
+      ja: ["情報探しの時間を短縮", "申請をペーパーレス化", "問い合わせを削減"],
+      en: ["Less time searching", "Paperless requests", "Fewer internal inquiries"],
+    },
+  },
+  {
+    title: { ja: "データ分析基盤構築", en: "Data Analytics Platform" },
+    category: { ja: "Webアプリ", en: "Web App" },
+    description: {
+      ja: "散在する業務データを集約する分析基盤を構築。ダッシュボードで指標を可視化し、データドリブンな意思決定を支援しました。",
+      en: "Built a data-analytics platform consolidating scattered business data, visualizing metrics on dashboards to support data-driven decisions.",
+    },
+    stack: ["BigQuery", "dbt", "Looker", "Python"],
+    highlights: {
+      ja: ["集計を自動化", "指標を横断で可視化", "意思決定を迅速化"],
+      en: ["Automated aggregation", "Cross-cutting metrics", "Faster decisions"],
+    },
+  },
+  {
+    title: { ja: "コーポレートサイトリニューアル", en: "Corporate Site Renewal" },
+    category: { ja: "ホームページ", en: "Homepage" },
+    description: {
+      ja: "老朽化したコーポレートサイトをリニューアル。情報設計と表示速度を見直し、ブランド印象と使いやすさを向上しました。",
+      en: "Renewed an aging corporate site, revisiting information architecture and performance to improve brand impression and usability.",
+    },
+    stack: ["Next.js", "Tailwind CSS", "Headless CMS", "Vercel"],
+    highlights: {
+      ja: ["表示速度を大幅改善", "回遊率が向上", "更新運用を簡素化"],
+      en: ["Much faster load", "Better engagement", "Simpler content updates"],
+    },
+  },
+  {
+    title: { ja: "オウンドメディア構築", en: "Owned Media Site" },
+    category: { ja: "ホームページ", en: "Homepage" },
+    description: {
+      ja: "集客につながるオウンドメディアを構築。SEOを意識した設計と更新しやすいCMSで、継続的な情報発信を支援しました。",
+      en: "Built an owned-media site for lead generation, supporting ongoing publishing with SEO-focused design and an easy-to-update CMS.",
+    },
+    stack: ["Next.js", "microCMS", "SEO", "Vercel"],
+    highlights: {
+      ja: ["オーガニック流入が増加", "記事更新を効率化", "指名検索が増加"],
+      en: ["More organic traffic", "Efficient publishing", "More branded searches"],
     },
   },
 ];

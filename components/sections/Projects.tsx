@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { ArrowUpRight, CheckCircle2, Plus } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { projects, projectsSection, nav } from "@/lib/content";
 import SectionHeading from "../SectionHeading";
@@ -8,8 +9,15 @@ import Reveal from "../Reveal";
 import TiltCard from "../TiltCard";
 import { techIcon } from "@/lib/tech-icons";
 
+const STEP = 6;
+
 export default function Projects() {
   const { lang } = useLanguage();
+  const [visibleCount, setVisibleCount] = useState(STEP);
+
+  const visibleProjects = projects.slice(0, visibleCount);
+  const remaining = projects.length - visibleCount;
+  const nextBatch = Math.min(STEP, remaining);
 
   return (
     <section id="projects" className="relative border-t border-[var(--color-border)] bg-[var(--color-surface)]/30 py-24 sm:py-32">
@@ -17,7 +25,7 @@ export default function Projects() {
         <SectionHeading label={nav.projects[lang]} heading={projectsSection.heading[lang]} lead={projectsSection.lead[lang]} />
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {projects.map((project, i) => (
+          {visibleProjects.map((project, i) => (
             <Reveal key={project.title.en} delay={(i % 2) * 0.08}>
               <TiltCard className="group h-full" max={7}>
                 <article className="ring-gradient card-soft flex h-full flex-col rounded-2xl glass-strong p-7">
@@ -61,6 +69,24 @@ export default function Projects() {
             </Reveal>
           ))}
         </div>
+
+        {remaining > 0 && (
+          <div className="mt-12 flex flex-col items-center gap-3">
+            <button
+              type="button"
+              onClick={() => setVisibleCount((c) => c + STEP)}
+              className="btn-sheen group inline-flex items-center gap-2 rounded-xl glass-strong px-6 py-3 font-semibold text-[var(--color-fg)] transition-transform hover:scale-[1.03]"
+            >
+              <Plus className="h-4 w-4 text-[var(--color-accent-2)] transition-transform group-hover:rotate-90" />
+              {lang === "ja" ? `実績をもっと見る（+${nextBatch}）` : `Show More (+${nextBatch})`}
+            </button>
+            <span className="font-mono text-xs text-[var(--color-muted)]">
+              {lang === "ja"
+                ? `${visibleCount} / ${projects.length} 件を表示中`
+                : `Showing ${visibleCount} of ${projects.length}`}
+            </span>
+          </div>
+        )}
 
         <Reveal delay={0.1}>
           <p className="mt-8 text-center text-xs text-[var(--color-muted)]">{projectsSection.note[lang]}</p>
