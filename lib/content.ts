@@ -14,9 +14,36 @@ export interface ExperienceItem {
   tags: string[];
 }
 
+export interface ProjectCategory {
+  key: string;
+  ja: string;
+  en: string;
+}
+
+// Category registry — a project can belong to several of these (tags), so the
+// same site can appear under multiple filters (e.g. Beauty + Landing Page).
+export const projectCategories: ProjectCategory[] = [
+  { key: "medical", ja: "医療・ヘルスケア", en: "Medical" },
+  { key: "animal", ja: "動物病院", en: "Veterinary" },
+  { key: "corporate", ja: "コーポレート", en: "Corporate" },
+  { key: "beauty", ja: "美容・ウェルネス", en: "Beauty & Wellness" },
+  { key: "brand", ja: "ブランド・商品", en: "Brand" },
+  { key: "recruit", ja: "採用・リクルート", en: "Recruitment" },
+  { key: "education", ja: "教育", en: "Education" },
+  { key: "welfare", ja: "福祉・介護", en: "Welfare" },
+  { key: "shopping", ja: "EC・ショッピング", en: "E-commerce" },
+  { key: "sports", ja: "スポーツ・フィットネス", en: "Sports" },
+  { key: "certification", ja: "資格・試験・団体", en: "Certification" },
+  { key: "food", ja: "飲食", en: "Food & Beverage" },
+  { key: "leisure", ja: "レジャー・施設", en: "Leisure" },
+  { key: "public", ja: "公共・団体", en: "Public / Nonprofit" },
+  { key: "lp", ja: "ランディングページ", en: "Landing Page" },
+  { key: "nocode", ja: "ノーコード制作", en: "No-code" },
+];
+
 export interface Project {
   title: { ja: string; en: string };
-  category: { ja: string; en: string };
+  categories: string[];
   url: string;
   image: string;
   description: { ja: string; en: string };
@@ -259,7 +286,7 @@ export const experiences: ExperienceItem[] = [
 export const projects: Project[] = [
   {
     title: { ja: "東北公済病院", en: "Tohoku Kosai Hospital" },
-    category: { ja: "医療・病院", en: "Medical" },
+    categories: ["medical"],
     url: "https://tohokukosai.kkr.or.jp/",
     image: "med-tohokukosai.png",
     description: {
@@ -269,7 +296,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "岐阜県総合医療センター", en: "Gifu Prefectural General Medical Center" },
-    category: { ja: "医療・病院", en: "Medical" },
+    categories: ["medical"],
     url: "https://www.gifu-hp.jp/index.html",
     image: "med-gifu.png",
     description: {
@@ -279,7 +306,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "横浜市立市民病院", en: "Yokohama City Municipal Hospital" },
-    category: { ja: "医療・病院", en: "Medical" },
+    categories: ["medical"],
     url: "https://yokohama-shiminhosp.jp/index.html",
     image: "med-yokohama.png",
     description: {
@@ -289,7 +316,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "たまの病院", en: "Tamano Hospital" },
-    category: { ja: "医療・病院", en: "Medical" },
+    categories: ["medical"],
     url: "https://tamano-hp.jp/",
     image: "med-tamano.png",
     description: {
@@ -299,7 +326,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "隈病院", en: "Kuma Hospital" },
-    category: { ja: "医療・病院", en: "Medical" },
+    categories: ["medical"],
     url: "https://www.kuma-h.or.jp/",
     image: "med-kuma.png",
     description: {
@@ -309,7 +336,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "武田病院グループ", en: "Takeda Hospital Group" },
-    category: { ja: "医療・病院", en: "Medical" },
+    categories: ["medical"],
     url: "https://www.takedahp.or.jp/",
     image: "med-takeda.png",
     description: {
@@ -319,7 +346,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "山田メディカルクリニック", en: "Yamada Medical Clinic" },
-    category: { ja: "医療・病院", en: "Medical" },
+    categories: ["medical"],
     url: "https://www.yamada-medical.or.jp/",
     image: "med-yamada.png",
     description: {
@@ -329,7 +356,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "Y'sデンタルクリニック", en: "Y's Dental Clinic" },
-    category: { ja: "医療・病院", en: "Medical" },
+    categories: ["medical"],
     url: "https://www.ys-dc.jp/",
     image: "med-ysdc.png",
     description: {
@@ -339,7 +366,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "緑の森どうぶつ病院", en: "Midori-no-Mori Animal Hospital" },
-    category: { ja: "動物病院", en: "Animal" },
+    categories: ["animal"],
     url: "https://midori-no-mori.jp/",
     image: "ani-midori.png",
     description: {
@@ -349,7 +376,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "ほごねこクリニック", en: "Hogoneko Clinic" },
-    category: { ja: "動物病院", en: "Animal" },
+    categories: ["animal"],
     url: "https://hogoneco-clinic.neco-republic.jp/",
     image: "ani-hogoneco.png",
     description: {
@@ -359,7 +386,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "KINS WITH 動物病院", en: "KINS WITH Animal Hospital" },
-    category: { ja: "動物病院", en: "Animal" },
+    categories: ["animal"],
     url: "https://kinswith-vet.com/",
     image: "ani-kinswith.png",
     description: {
@@ -369,7 +396,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "株式会社中原組", en: "Nakahara-gumi Co., Ltd." },
-    category: { ja: "コーポレート", en: "Corporate" },
+    categories: ["corporate"],
     url: "https://www.nakaharagumi.jp/",
     image: "corp-nakahara.png",
     description: {
@@ -379,7 +406,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "株式会社河野製作所", en: "Kohno Mfg. Co., Ltd." },
-    category: { ja: "コーポレート", en: "Corporate" },
+    categories: ["corporate"],
     url: "https://kohno-mfg.co.jp/",
     image: "corp-kohno.png",
     description: {
@@ -389,7 +416,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "FineOne", en: "FineOne" },
-    category: { ja: "コーポレート", en: "Corporate" },
+    categories: ["corporate"],
     url: "https://www.fine-1.co.jp/",
     image: "corp-fine.png",
     description: {
@@ -398,18 +425,8 @@ export const projects: Project[] = [
     },
   },
   {
-    title: { ja: "一宮美容クリニック", en: "Ichinomiya Beauty Clinic" },
-    category: { ja: "コーポレート", en: "Corporate" },
-    url: "https://138beauty.jp/",
-    image: "corp-138beauty.png",
-    description: {
-      ja: "愛知県一宮市の美容外科・美容皮膚科クリニックのサイト。",
-      en: "Site for a cosmetic surgery and dermatology clinic in Ichinomiya, Aichi.",
-    },
-  },
-  {
     title: { ja: "株式会社トリニティーラボ", en: "Trinity-Lab Inc." },
-    category: { ja: "コーポレート", en: "Corporate" },
+    categories: ["corporate"],
     url: "https://trinity-lab.com/",
     image: "corp-trinity.png",
     description: {
@@ -419,7 +436,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "大野こども園", en: "Ono Kodomoen" },
-    category: { ja: "コーポレート", en: "Corporate" },
+    categories: ["corporate"],
     url: "https://www.onons.jp/",
     image: "corp-onons.png",
     description: {
@@ -428,8 +445,48 @@ export const projects: Project[] = [
     },
   },
   {
+    title: { ja: "一宮美容クリニック", en: "Ichinomiya Beauty Clinic" },
+    categories: ["beauty", "lp"],
+    url: "https://138beauty.jp/",
+    image: "corp-138beauty.png",
+    description: {
+      ja: "愛知県一宮市の美容外科・美容皮膚科クリニックのサイト。",
+      en: "Site for a cosmetic surgery and dermatology clinic in Ichinomiya, Aichi.",
+    },
+  },
+  {
+    title: { ja: "スヴェンソン 医療用ウィッグ", en: "Svenson Medical Wigs" },
+    categories: ["beauty"],
+    url: "https://www.datsumousyou-wig.net/",
+    image: "brand-wig.png",
+    description: {
+      ja: "円形脱毛症向けの医療用ウィッグ・ヘアケアサービスのサイト。",
+      en: "Site for medical wigs and hair-care services for alopecia.",
+    },
+  },
+  {
+    title: { ja: "ロート製薬 商品情報サイト", en: "Rohto Pharmaceutical" },
+    categories: ["beauty"],
+    url: "https://jp.rohto.com/",
+    image: "brand-rohto.png",
+    description: {
+      ja: "化粧品・スキンケアを中心にロート製薬の商品情報を紹介するブランドサイト。",
+      en: "Brand site presenting Rohto's cosmetics, skincare, and healthcare products.",
+    },
+  },
+  {
+    title: { ja: "リストーナ", en: "Restorna" },
+    categories: ["beauty", "lp"],
+    url: "https://restorna.jp/",
+    image: "brand-restorna.png",
+    description: {
+      ja: "横浜のプライベート＆コンディショニングジムのサービスサイト。",
+      en: "Service site for a private conditioning and wellness gym in Yokohama.",
+    },
+  },
+  {
     title: { ja: "指輪工房 G.festa", en: "G.festa Ring Atelier" },
-    category: { ja: "ブランド・サービス", en: "Brand" },
+    categories: ["brand", "lp"],
     url: "https://www.yubiwatsukuru.com/",
     image: "brand-yubiwa.png",
     description: {
@@ -439,7 +496,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "長良川温泉 十八楼", en: "Nagaragawa Onsen Juhachiro" },
-    category: { ja: "ブランド・サービス", en: "Brand" },
+    categories: ["brand", "food"],
     url: "https://www.18rou.com/",
     image: "brand-18rou.png",
     description: {
@@ -449,7 +506,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "クリーニングの和光", en: "Wako Cleaning" },
-    category: { ja: "ブランド・サービス", en: "Brand" },
+    categories: ["brand", "lp"],
     url: "http://takuhai.cl-wakou.com/",
     image: "brand-takuhai.png",
     description: {
@@ -458,28 +515,8 @@ export const projects: Project[] = [
     },
   },
   {
-    title: { ja: "リストーナ", en: "Restorna" },
-    category: { ja: "ブランド・サービス", en: "Brand" },
-    url: "https://restorna.jp/",
-    image: "brand-restorna.png",
-    description: {
-      ja: "横浜のプライベート＆コンディショニングジムのサイト。",
-      en: "Site for a private conditioning gym in Yokohama.",
-    },
-  },
-  {
-    title: { ja: "スヴェンソン 医療用ウィッグ", en: "Svenson Medical Wigs" },
-    category: { ja: "ブランド・サービス", en: "Brand" },
-    url: "https://www.datsumousyou-wig.net/",
-    image: "brand-wig.png",
-    description: {
-      ja: "円形脱毛症向けの医療用ウィッグ・ヘアケアサービスのサイト。",
-      en: "Site for medical wigs and hair-care services for alopecia.",
-    },
-  },
-  {
     title: { ja: "はな工房", en: "Hana Kobo" },
-    category: { ja: "ブランド・サービス", en: "Brand" },
+    categories: ["brand"],
     url: "https://hana-kobo.jp/",
     image: "brand-hana.png",
     description: {
@@ -488,18 +525,8 @@ export const projects: Project[] = [
     },
   },
   {
-    title: { ja: "ロート製薬 商品情報サイト", en: "Rohto Pharmaceutical" },
-    category: { ja: "ブランド・サービス", en: "Brand" },
-    url: "https://jp.rohto.com/",
-    image: "brand-rohto.png",
-    description: {
-      ja: "ロート製薬の商品情報を紹介するブランドサイト。",
-      en: "Brand site presenting product information for Rohto Pharmaceutical.",
-    },
-  },
-  {
     title: { ja: "佐藤歯科医院 採用サイト", en: "Sato Dental — Recruiting" },
-    category: { ja: "採用サイト", en: "Recruit" },
+    categories: ["recruit"],
     url: "https://recruit.dentist-sato.com/",
     image: "rec-sato.png",
     description: {
@@ -509,7 +536,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "TRAIL INC.", en: "TRAIL INC." },
-    category: { ja: "採用サイト", en: "Recruit" },
+    categories: ["recruit"],
     url: "https://trail-inc.jp/",
     image: "rec-trail.png",
     description: {
@@ -518,38 +545,8 @@ export const projects: Project[] = [
     },
   },
   {
-    title: { ja: "Paw Park", en: "Paw Park" },
-    category: { ja: "ノーコード制作", en: "No-code" },
-    url: "https://pawpark.jp/",
-    image: "noc-pawpark.png",
-    description: {
-      ja: "犬の幼稚園・保育園のサイト（ノーコードで制作）。",
-      en: "Site for a dog daycare and kindergarten, built with no-code tooling.",
-    },
-  },
-  {
-    title: { ja: "しまなみブルワリー", en: "Shimanami Brewery" },
-    category: { ja: "ノーコード制作", en: "No-code" },
-    url: "https://shimanami-brewery.com/",
-    image: "noc-shimanami.png",
-    description: {
-      ja: "クラフトビールブランドの公式サイト（ノーコードで制作）。",
-      en: "Official brand site for a craft brewery, built with no-code tooling.",
-    },
-  },
-  {
-    title: { ja: "食楽堂 蓬左〈hōsa〉", en: "Hosa Nagoya" },
-    category: { ja: "ノーコード制作", en: "No-code" },
-    url: "https://www.hosa.nagoya/",
-    image: "noc-hosa.png",
-    description: {
-      ja: "尾張名古屋の味を未来へつなぐ食のブランドサイト（ノーコード）。",
-      en: "A food-brand site carrying Nagoya's flavors forward, built with no-code tooling.",
-    },
-  },
-  {
     title: { ja: "あすかのサマバケ", en: "Asuka Summer Program" },
-    category: { ja: "教育・スクール", en: "Education" },
+    categories: ["education"],
     url: "https://samabake-asuka.com/",
     image: "edu-asuka.png",
     description: {
@@ -559,7 +556,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "嘉瀬こどもの森", en: "Kase Kodomo-no-Mori" },
-    category: { ja: "教育・スクール", en: "Education" },
+    categories: ["education"],
     url: "https://seigaku.jp/kase/",
     image: "edu-seigaku.png",
     description: {
@@ -569,7 +566,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "神戸女子大学", en: "Kobe Women's University" },
-    category: { ja: "教育・スクール", en: "Education" },
+    categories: ["education"],
     url: "https://www.kobe-wu.ac.jp/",
     image: "edu-kobewu.png",
     description: {
@@ -579,7 +576,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "社会福祉法人 功有会", en: "Koyukai Welfare" },
-    category: { ja: "福祉・介護", en: "Welfare" },
+    categories: ["welfare"],
     url: "https://www.yamatoen.or.jp/",
     image: "wel-yamatoen.png",
     description: {
@@ -589,7 +586,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "メディケア・リハビリ", en: "Medi-care Rehabilitation" },
-    category: { ja: "福祉・介護", en: "Welfare" },
+    categories: ["welfare"],
     url: "https://kango.medi-care.co.jp/",
     image: "wel-medicare.png",
     description: {
@@ -599,7 +596,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "仁誠会", en: "Jinseikai" },
-    category: { ja: "福祉・介護", en: "Welfare" },
+    categories: ["welfare"],
     url: "https://www.jinseikai.or.jp/",
     image: "wel-jinseikai.png",
     description: {
@@ -609,17 +606,17 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "肌ナチュール", en: "HADANATURE" },
-    category: { ja: "福祉・介護", en: "Welfare" },
+    categories: ["welfare"],
     url: "https://hadanature-rmc.jp/",
     image: "wel-hadanature.png",
     description: {
-      ja: "炭酸コスメ・スキンケアのブランドサイト。",
-      en: "Brand site for a carbonated cosmetics and skincare line.",
+      ja: "医療・リハビリと連携したスキンケアブランドのサイト。",
+      en: "Site for a skincare brand tied to medical and rehabilitation services.",
     },
   },
   {
     title: { ja: "タウン情報おかやま", en: "Town Joho Okayama" },
-    category: { ja: "ショッピング", en: "Shopping" },
+    categories: ["shopping"],
     url: "https://tjokayama.jp/",
     image: "shop-tj.png",
     description: {
@@ -629,7 +626,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "三越伊勢丹オンラインストア", en: "Mitsukoshi Isetan Online" },
-    category: { ja: "ショッピング", en: "Shopping" },
+    categories: ["shopping"],
     url: "https://www.mistore.jp/shopping",
     image: "shop-mistore.png",
     description: {
@@ -639,7 +636,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "紀ノ国屋 オンラインストア", en: "Kinokuniya Online Store" },
-    category: { ja: "ショッピング", en: "Shopping" },
+    categories: ["shopping"],
     url: "https://www.super-kinokuniya.jp/",
     image: "shop-kinokuniya.png",
     description: {
@@ -649,7 +646,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "YogaStudio アンジャリ六甲", en: "Yoga Studio Anjali Rokko" },
-    category: { ja: "スポーツ", en: "Sports" },
+    categories: ["sports"],
     url: "https://anjalirokko.jp/",
     image: "spo-anjali.png",
     description: {
@@ -659,7 +656,7 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "横浜トライアスロン大会", en: "Yokohama Triathlon (WTS)" },
-    category: { ja: "スポーツ", en: "Sports" },
+    categories: ["sports"],
     url: "https://yokohamatriathlon.jp/wts/",
     image: "spo-triathlon.png",
     description: {
@@ -669,12 +666,92 @@ export const projects: Project[] = [
   },
   {
     title: { ja: "Dr.トレーニング", en: "Dr. Training" },
-    category: { ja: "スポーツ", en: "Sports" },
+    categories: ["sports"],
     url: "https://drtraining.jp/",
     image: "spo-drtraining.png",
     description: {
       ja: "パーソナルトレーニング・パーソナルジムの公式サイト。",
       en: "Official site for a personal-training gym.",
+    },
+  },
+  {
+    title: { ja: "日本防犯設備協会", en: "SSAJ — Security Equipment Assoc." },
+    categories: ["certification", "public"],
+    url: "https://www.ssaj.or.jp/security_officer/shiken.html",
+    image: "cert-ssaj.png",
+    description: {
+      ja: "防犯設備士の資格試験を案内する公益社団法人のサイト。",
+      en: "Site for a public-interest association running the security-equipment technician exam.",
+    },
+  },
+  {
+    title: { ja: "ハウスキーピング協会", en: "Housekeeping Association" },
+    categories: ["certification", "public"],
+    url: "https://housekeeping.or.jp/",
+    image: "cert-housekeeping.png",
+    description: {
+      ja: "整理収納アドバイザーなどの資格を運営する協会の公式サイト。",
+      en: "Official site for an association running organizing and tidying certifications.",
+    },
+  },
+  {
+    title: { ja: "日本防犯学校", en: "Japan Crime-Prevention School" },
+    categories: ["certification", "public"],
+    url: "http://j-ss.org/",
+    image: "cert-jss.png",
+    description: {
+      ja: "防犯の専門資格・講座を提供する一般社団法人のサイト。",
+      en: "Site for an association offering crime-prevention qualifications and courses.",
+    },
+  },
+  {
+    title: { ja: "資格スクエア", en: "Shikaku Square" },
+    categories: ["certification"],
+    url: "https://www.shikaku-square.com/",
+    image: "cert-shikaku.png",
+    description: {
+      ja: "難関資格に特化したオンライン予備校・通信講座のサイト。",
+      en: "Site for an online prep school specializing in difficult professional qualifications.",
+    },
+  },
+  {
+    title: { ja: "フォーサイト", en: "Foresight" },
+    categories: ["certification"],
+    url: "https://www.foresight.jp/",
+    image: "cert-foresight.png",
+    description: {
+      ja: "資格試験の通信教育・通信講座を提供するオンライン講座のサイト。",
+      en: "Site for an online distance-learning provider for professional qualification exams.",
+    },
+  },
+  {
+    title: { ja: "Paw Park", en: "Paw Park" },
+    categories: ["leisure", "nocode"],
+    url: "https://pawpark.jp/",
+    image: "noc-pawpark.png",
+    description: {
+      ja: "犬の幼稚園・保育園＆ドッグランのサイト（STUDIO / ノーコード制作）。",
+      en: "Site for a dog daycare and dog run, built with STUDIO (no-code).",
+    },
+  },
+  {
+    title: { ja: "しまなみブルワリー", en: "Shimanami Brewery" },
+    categories: ["food", "nocode"],
+    url: "https://shimanami-brewery.com/",
+    image: "noc-shimanami.png",
+    description: {
+      ja: "クラフトビールブランドの公式サイト（STUDIO / ノーコード制作）。",
+      en: "Official brand site for a craft brewery, built with STUDIO (no-code).",
+    },
+  },
+  {
+    title: { ja: "食楽堂 蓬左〈hōsa〉", en: "Hosa Nagoya" },
+    categories: ["nocode"],
+    url: "https://www.hosa.nagoya/",
+    image: "noc-hosa.png",
+    description: {
+      ja: "尾張名古屋の味を未来へつなぐ食のブランドサイト（STUDIO / ノーコード制作）。",
+      en: "A Nagoya food-brand site carrying local flavors forward, built with STUDIO (no-code).",
     },
   },
 ];
@@ -773,8 +850,8 @@ export const experienceSection = {
 export const projectsSection = {
   heading: { ja: "制作実績", en: "Selected Work" },
   lead: {
-    ja: "医療・コーポレート・ブランドから教育・福祉・スポーツまで、幅広い業種のWeb制作を手がけてきました。",
-    en: "Web production across healthcare, corporate, brand, education, welfare, sports, and more.",
+    ja: "医療・美容・コーポレート・教育・福祉・スポーツなど、さまざまなジャンルのWeb制作を手がけてきました。カテゴリーから絞り込んでご覧いただけます。",
+    en: "Web production across medical, beauty, corporate, education, welfare, sports, and more — filter by category below.",
   },
   note: {
     ja: "※ 制作・実装に携わった実績の一部です。各カードをクリックすると実際のサイトが開きます。",

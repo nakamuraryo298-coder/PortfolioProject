@@ -20,16 +20,22 @@ type Palette = {
 };
 
 const CATEGORY: Record<string, { kind: string; hue: number }> = {
-  "Medical": { kind: "site", hue: 200 },
-  "Animal": { kind: "site", hue: 150 },
-  "Corporate": { kind: "table", hue: 220 },
-  "Brand": { kind: "shop", hue: 334 },
-  "Recruit": { kind: "site", hue: 262 },
-  "No-code": { kind: "lp", hue: 190 },
-  "Education": { kind: "site", hue: 40 },
-  "Welfare": { kind: "site", hue: 170 },
-  "Shopping": { kind: "shop", hue: 20 },
-  "Sports": { kind: "dash", hue: 280 },
+  medical: { kind: "site", hue: 200 },
+  animal: { kind: "site", hue: 150 },
+  corporate: { kind: "table", hue: 220 },
+  beauty: { kind: "lp", hue: 330 },
+  brand: { kind: "shop", hue: 20 },
+  recruit: { kind: "site", hue: 262 },
+  education: { kind: "site", hue: 40 },
+  welfare: { kind: "site", hue: 170 },
+  shopping: { kind: "shop", hue: 10 },
+  sports: { kind: "dash", hue: 280 },
+  certification: { kind: "table", hue: 210 },
+  food: { kind: "lp", hue: 30 },
+  leisure: { kind: "site", hue: 120 },
+  public: { kind: "table", hue: 205 },
+  lp: { kind: "lp", hue: 300 },
+  nocode: { kind: "site", hue: 190 },
 };
 
 // deterministic PRNG so server and client render identically (no hydration drift)

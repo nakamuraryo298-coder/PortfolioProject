@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { ArrowUpRight, Globe, Plus, Search } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
-import { projects, projectsSection, nav } from "@/lib/content";
+import { projects, projectCategories, projectsSection, nav } from "@/lib/content";
 import SectionHeading from "../SectionHeading";
 import Reveal from "../Reveal";
 import TiltCard from "../TiltCard";
@@ -53,35 +53,42 @@ export default function Projects() {
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(STEP);
 
-  // unique categories in first-appearance order + a stable seed per project
-  const { categories, indexOf } = useMemo(() => {
-    const seen = new Map<string, { ja: string; en: string }>();
+  const { labelOf, indexOf, counts, activeCategories } = useMemo(() => {
+    const labelMap = new Map(projectCategories.map((c) => [c.key, c]));
     const idx = new Map<string, number>();
+    const countMap = new Map<string, number>();
     projects.forEach((p, i) => {
       idx.set(p.url, i);
-      if (!seen.has(p.category.en)) seen.set(p.category.en, p.category);
+      p.categories.forEach((k) => countMap.set(k, (countMap.get(k) ?? 0) + 1));
     });
-    return { categories: Array.from(seen.values()), indexOf: idx };
+    return {
+      labelOf: (k: string) => labelMap.get(k),
+      indexOf: idx,
+      counts: countMap,
+      // only show chips for categories that actually have projects, in registry order
+      activeCategories: projectCategories.filter((c) => (countMap.get(c.key) ?? 0) > 0),
+    };
   }, []);
 
   const q = query.trim().toLowerCase();
   const filtered = useMemo(
     () =>
       projects.filter((p) => {
-        if (active !== "all" && p.category.en !== active) return false;
+        if (active !== "all" && !p.categories.includes(active)) return false;
         if (!q) return true;
-        const hay = `${p.title.ja} ${p.title.en} ${p.description.ja} ${p.description.en} ${p.category.ja} ${p.category.en}`.toLowerCase();
+        const cats = p.categories.map((k) => `${labelOf(k)?.ja ?? ""} ${labelOf(k)?.en ?? ""}`).join(" ");
+        const hay = `${p.title.ja} ${p.title.en} ${p.description.ja} ${p.description.en} ${cats}`.toLowerCase();
         return hay.includes(q);
       }),
-    [active, q]
+    [active, q, labelOf]
   );
 
   const visible = filtered.slice(0, visibleCount);
   const remaining = filtered.length - visibleCount;
   const nextBatch = Math.min(STEP, remaining);
 
-  const selectCategory = (en: string) => {
-    setActive(en);
+  const selectCategory = (key: string) => {
+    setActive(key);
     setVisibleCount(STEP);
   };
   const onSearch = (v: string) => {
@@ -109,13 +116,13 @@ export default function Projects() {
             </div>
             <div className="flex flex-wrap justify-center gap-2">
               <Chip active={active === "all"} label={lang === "ja" ? "すべて" : "All"} count={projects.length} onClick={() => selectCategory("all")} />
-              {categories.map((c) => (
+              {activeCategories.map((c) => (
                 <Chip
-                  key={c.en}
-                  active={active === c.en}
+                  key={c.key}
+                  active={active === c.key}
                   label={c[lang]}
-                  count={projects.filter((p) => p.category.en === c.en).length}
-                  onClick={() => selectCategory(c.en)}
+                  count={counts.get(c.key) ?? 0}
+                  onClick={() => selectCategory(c.key)}
                 />
               ))}
             </div>
@@ -124,42 +131,52 @@ export default function Projects() {
 
         {visible.length > 0 ? (
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {visible.map((project, i) => (
-              <Reveal key={project.url} delay={(i % 3) * 0.06}>
-                <TiltCard className="group h-full" max={6}>
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ring-gradient card-soft flex h-full flex-col overflow-hidden rounded-2xl glass-strong"
-                  >
-                    <ProjectCover
-                      image={project.image}
-                      category={project.category.en}
-                      seed={indexOf.get(project.url) ?? i}
-                      alt={project.title[lang]}
-                    />
+            {visible.map((project, i) => {
+              const primary = project.categories[0];
+              return (
+                <Reveal key={project.url} delay={(i % 3) * 0.06}>
+                  <TiltCard className="group h-full" max={6}>
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ring-gradient card-soft flex h-full flex-col overflow-hidden rounded-2xl glass-strong"
+                    >
+                      <ProjectCover
+                        image={project.image}
+                        category={primary}
+                        seed={indexOf.get(project.url) ?? i}
+                        alt={project.title[lang]}
+                      />
 
-                    <div className="flex flex-1 flex-col p-6">
-                      <div className="flex items-center justify-between gap-3">
-                        <span className="font-mono text-xs uppercase tracking-wider text-[var(--color-accent-2)]">
-                          {project.category[lang]}
-                        </span>
-                        <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--color-muted)] transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--color-accent-2)]" />
+                      <div className="flex flex-1 flex-col p-6">
+                        <div className="flex items-center justify-between gap-3">
+                          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
+                            {project.categories.map((k, idx2) => (
+                              <span key={k} className="inline-flex items-center gap-1.5">
+                                {idx2 > 0 && <span className="text-[var(--color-muted)]">·</span>}
+                                <span className="font-mono text-[11px] uppercase tracking-wider text-[var(--color-accent-2)]">
+                                  {labelOf(k)?.[lang] ?? k}
+                                </span>
+                              </span>
+                            ))}
+                          </div>
+                          <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--color-muted)] transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--color-accent-2)]" />
+                        </div>
+                        <h3 className="mt-1.5 font-display text-lg font-bold leading-snug text-[var(--color-fg)]">
+                          {project.title[lang]}
+                        </h3>
+                        <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{project.description[lang]}</p>
+                        <div className="mt-auto flex items-center gap-1.5 pt-4 font-mono text-xs text-[var(--color-muted)]">
+                          <Globe className="h-3.5 w-3.5 text-[var(--color-accent-2)]" />
+                          {hostOf(project.url)}
+                        </div>
                       </div>
-                      <h3 className="mt-1.5 font-display text-lg font-bold leading-snug text-[var(--color-fg)]">
-                        {project.title[lang]}
-                      </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{project.description[lang]}</p>
-                      <div className="mt-auto flex items-center gap-1.5 pt-4 font-mono text-xs text-[var(--color-muted)]">
-                        <Globe className="h-3.5 w-3.5 text-[var(--color-accent-2)]" />
-                        {hostOf(project.url)}
-                      </div>
-                    </div>
-                  </a>
-                </TiltCard>
-              </Reveal>
-            ))}
+                    </a>
+                  </TiltCard>
+                </Reveal>
+              );
+            })}
           </div>
         ) : (
           <p className="mt-16 text-center text-[var(--color-muted)]">
