@@ -8,11 +8,7 @@ the `image` field of each entry in `lib/content.ts`
 - Any file missing (some sites block automated capture behind a firewall) falls
   back to a generated mockup automatically, so the site never looks broken.
 
-## Sites still needing a real screenshot
+## Status
 
-These render only a loading splash / blank to automated capture (client-side
-intro animations), so they currently use the generated mockup. Take a
-screenshot yourself (landscape, ~1440×900, above the fold) and save it here
-with the exact filename:
-
-- `edu-asuka.png` — あすかのサマバケ
+All projects currently have a real site screenshot. To refresh one, capture it
+(landscape, ~1440×900, above the fold) and overwrite the file here.
