@@ -15,5 +15,4 @@ intro animations), so they currently use the generated mockup. Take a
 screenshot yourself (landscape, ~1440×900, above the fold) and save it here
 with the exact filename:
 
-- `med-ysdc.png`  — Y'sデンタルクリニック
 - `edu-asuka.png` — あすかのサマバケ

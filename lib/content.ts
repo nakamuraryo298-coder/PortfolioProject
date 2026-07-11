@@ -355,16 +355,6 @@ export const projects: Project[] = [
     },
   },
   {
-    title: { ja: "Y'sデンタルクリニック", en: "Y's Dental Clinic" },
-    categories: ["medical"],
-    url: "https://www.ys-dc.jp/",
-    image: "med-ysdc.png",
-    description: {
-      ja: "名古屋・栄の審美治療・部分矯正・精密歯科クリニックのサイト。",
-      en: "Site for an aesthetic and precision dental clinic in Sakae, Nagoya.",
-    },
-  },
-  {
     title: { ja: "緑の森どうぶつ病院", en: "Midori-no-Mori Animal Hospital" },
     categories: ["animal"],
     url: "https://midori-no-mori.jp/",
