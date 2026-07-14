@@ -1,13 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Globe, Plus, Search } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
-import { projects, projectCategories, projectsSection, nav } from "@/lib/content";
+import { projects, projectCategories, projectsSection, nav, type Project } from "@/lib/content";
 import SectionHeading from "../SectionHeading";
 import Reveal from "../Reveal";
 import TiltCard from "../TiltCard";
 import ProjectCover from "../ProjectCover";
+import ProjectModal from "../ProjectModal";
 
 const STEP = 6;
 
@@ -52,13 +54,14 @@ export default function Projects() {
   const [active, setActive] = useState<string>("all");
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(STEP);
+  const [selected, setSelected] = useState<{ project: Project; seed: number } | null>(null);
 
   const { labelOf, indexOf, counts, activeCategories } = useMemo(() => {
     const labelMap = new Map(projectCategories.map((c) => [c.key, c]));
     const idx = new Map<string, number>();
     const countMap = new Map<string, number>();
     projects.forEach((p, i) => {
-      idx.set(p.url, i);
+      idx.set(p.image, i);
       p.categories.forEach((k) => countMap.set(k, (countMap.get(k) ?? 0) + 1));
     });
     return {
@@ -134,18 +137,17 @@ export default function Projects() {
             {visible.map((project, i) => {
               const primary = project.categories[0];
               return (
-                <Reveal key={project.url} delay={(i % 3) * 0.06}>
+                <Reveal key={project.image} delay={(i % 3) * 0.06}>
                   <TiltCard className="group h-full" max={6}>
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ring-gradient card-soft flex h-full flex-col overflow-hidden rounded-2xl glass-strong"
+                    <button
+                      type="button"
+                      onClick={() => setSelected({ project, seed: indexOf.get(project.image) ?? i })}
+                      className="ring-gradient card-soft flex h-full w-full flex-col overflow-hidden rounded-2xl glass-strong text-left"
                     >
                       <ProjectCover
                         image={project.image}
                         category={primary}
-                        seed={indexOf.get(project.url) ?? i}
+                        seed={indexOf.get(project.image) ?? i}
                         alt={project.title[lang]}
                       />
 
@@ -169,10 +171,10 @@ export default function Projects() {
                         <p className="mt-2 text-sm leading-relaxed text-[var(--color-muted)]">{project.description[lang]}</p>
                         <div className="mt-auto flex items-center gap-1.5 pt-4 font-mono text-xs text-[var(--color-muted)]">
                           <Globe className="h-3.5 w-3.5 text-[var(--color-accent-2)]" />
-                          {hostOf(project.url)}
+                          {project.url ? hostOf(project.url) : lang === "ja" ? "詳細を見る" : "View details"}
                         </div>
                       </div>
-                    </a>
+                    </button>
                   </TiltCard>
                 </Reveal>
               );
@@ -206,6 +208,18 @@ export default function Projects() {
           <p className="mt-8 text-center text-xs text-[var(--color-muted)]">{projectsSection.note[lang]}</p>
         </Reveal>
       </div>
+
+      <AnimatePresence>
+        {selected && (
+          <ProjectModal
+            key={selected.project.image}
+            project={selected.project}
+            seed={selected.seed}
+            lang={lang}
+            onClose={() => setSelected(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

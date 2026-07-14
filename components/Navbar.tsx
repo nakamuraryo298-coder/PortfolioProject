@@ -9,9 +9,8 @@ import { nav, profile } from "@/lib/content";
 const links = [
   { id: "about", label: nav.about },
   { id: "skills", label: nav.skills },
-  { id: "cases", label: nav.cases },
+  { id: "projects", label: nav.projects },
   { id: "services", label: nav.services },
-  { id: "pricing", label: nav.pricing },
   { id: "voice", label: nav.voice },
   { id: "flow", label: nav.flow },
   { id: "faq", label: nav.faq },

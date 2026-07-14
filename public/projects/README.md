@@ -10,5 +10,13 @@ the `image` field of each entry in `lib/content.ts`
 
 ## Status
 
-All projects currently have a real site screenshot. To refresh one, capture it
-(landscape, ~1440×900, above the fold) and overwrite the file here.
+Most projects have a real site screenshot. To refresh one, capture it
+(landscape, ~1440×900) and overwrite the file here.
+
+## Images to add (development projects — no live site to screenshot)
+
+Save your own infographic/diagram for each of these here with the exact
+filename. Until then the card shows a generated mockup:
+
+- `tool-scraping.png` — Webスクレイピング自動収集ツール
+- `app-gps.png`       — GPS見守りサービス

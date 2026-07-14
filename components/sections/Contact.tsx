@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Mail, Send, MapPin, Github, Linkedin } from "lucide-react";
+import { Mail, Send, MapPin, MessagesSquare } from "lucide-react";
 import { SiLine } from "react-icons/si";
 import { useLanguage } from "@/lib/language-context";
 import { contact, profile, nav } from "@/lib/content";
@@ -26,9 +26,9 @@ export default function Contact() {
   };
 
   const socials = [
-    { icon: Github, href: profile.github, label: "GitHub" },
-    { icon: Linkedin, href: profile.linkedin, label: "LinkedIn" },
+    { icon: MessagesSquare, href: profile.chatwork, label: "Chatwork" },
     { icon: SiLine, href: profile.line, label: "LINE" },
+    { icon: Mail, href: `mailto:${profile.email}`, label: "Email" },
   ];
 
   const inputClass =
@@ -81,7 +81,7 @@ export default function Contact() {
                     <a
                       key={s.label}
                       href={s.href}
-                      target="_blank"
+                      target={s.href.startsWith("mailto") ? undefined : "_blank"}
                       rel="noopener noreferrer"
                       aria-label={s.label}
                       className="grid h-11 w-11 place-items-center rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-muted)] transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-fg)]"

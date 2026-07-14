@@ -36,6 +36,8 @@ const CATEGORY: Record<string, { kind: string; hue: number }> = {
   public: { kind: "table", hue: 205 },
   lp: { kind: "lp", hue: 300 },
   nocode: { kind: "site", hue: 190 },
+  app: { kind: "phone", hue: 150 },
+  tool: { kind: "dash", hue: 210 },
 };
 
 // deterministic PRNG so server and client render identically (no hydration drift)

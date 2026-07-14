@@ -81,6 +81,20 @@ const map: Record<string, TechIcon> = {
   "Headless CMS": { Icon: FileText, color: "#22d3ee" },
   "D3.js": { Icon: BarChart3, color: "#FF8F2B" },
   "WebSocket": { Icon: Radio, color: "#22d3ee" },
+  // Web-production skills
+  "HTML5": { Icon: Code2, color: "#E5734B" },
+  "CSS3": { Icon: Code2, color: "#4a90d9" },
+  "JavaScript": { Icon: Code2, color: "#E6C531" },
+  "SCSS": { Icon: Code2, color: "#CD6799" },
+  "jQuery": { Icon: Code2, color: "#4aa3df" },
+  "WordPress": { Icon: FileText, color: "#4a9cc4" },
+  "GSAP": { Icon: RefreshCw, color: "#8CCF3F" },
+  "STUDIO": { Icon: Boxes, color: "#22d3ee" },
+  "STUDIO CMS": { Icon: FileText, color: "#22d3ee" },
+  "ノーコード": { Icon: Boxes, color: "#8aa0ff" },
+  "レスポンシブデザイン": { Icon: Layers, color: "#22d3ee" },
+  "ECサイト": { Icon: Boxes, color: "#FF9900" },
+  "CMS": { Icon: FileText, color: "#22d3ee" },
 };
 
 const fallback: TechIcon = { Icon: Code2, color: "var(--color-accent-2)" };

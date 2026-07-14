@@ -39,14 +39,20 @@ export const projectCategories: ProjectCategory[] = [
   { key: "public", ja: "公共・団体", en: "Public / Nonprofit" },
   { key: "lp", ja: "ランディングページ", en: "Landing Page" },
   { key: "nocode", ja: "ノーコード制作", en: "No-code" },
+  { key: "app", ja: "アプリ・システム開発", en: "App & System" },
+  { key: "tool", ja: "業務ツール・自動化", en: "Tools & Automation" },
 ];
 
 export interface Project {
   title: { ja: string; en: string };
   categories: string[];
-  url: string;
+  url?: string;
   image: string;
   description: { ja: string; en: string };
+  // optional per-project detail override (otherwise derived from category)
+  role?: { ja: string; en: string };
+  tech?: string[];
+  scope?: { ja: string[]; en: string[] };
 }
 
 export interface Service {
@@ -64,8 +70,7 @@ export const profile = {
   location: { ja: "日本", en: "Japan" },
   email: "biyou00000@gmail.com",
   yearsOfExperience: 8,
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
+  chatwork: "https://www.chatwork.com/",
   line: "https://line.me/",
 };
 
@@ -744,6 +749,66 @@ export const projects: Project[] = [
       en: "A Nagoya food-brand site carrying local flavors forward, built with STUDIO (no-code).",
     },
   },
+  {
+    title: { ja: "Webスクレイピング自動収集ツール", en: "Web Scraping Automation Tool" },
+    categories: ["tool"],
+    image: "tool-scraping.png",
+    description: {
+      ja: "Webサイトから企業・求人・商品情報などを自動で収集・整形し、Excel／CSVで出力する業務効率化ツール。動的サイト（JavaScript）にも対応し、定期実行で最新データを自動更新します。",
+      en: "An automation tool that scrapes company, job, and product data from websites, cleans it, and exports to Excel/CSV — handling JavaScript-rendered sites and refreshing data on a schedule.",
+    },
+    role: {
+      ja: "要件整理から収集ロジックの設計・実装、運用の自動化までを担当。",
+      en: "Owned requirements, scraping-logic design and implementation, and operational automation.",
+    },
+    tech: ["Python", "Selenium", "BeautifulSoup", "requests", "pandas", "openpyxl"],
+    scope: {
+      ja: [
+        "対象サイトの構造解析と収集ロジックの設計",
+        "動的サイト（JavaScript）への対応（Selenium）",
+        "アクセス間隔の制御・エラー処理・リトライの実装",
+        "データの整形・重複除去（pandas）",
+        "Excel／CSV出力と定期実行による自動更新",
+      ],
+      en: [
+        "Analyzing target-site structure and designing scraping logic",
+        "Handling JavaScript-rendered sites with Selenium",
+        "Rate-limiting, error handling, and retry logic",
+        "Data cleaning and de-duplication with pandas",
+        "Excel/CSV export and scheduled auto-refresh",
+      ],
+    },
+  },
+  {
+    title: { ja: "GPS見守りサービス", en: "GPS Monitoring Service" },
+    categories: ["app"],
+    image: "app-gps.png",
+    description: {
+      ja: "GPSトラッカーの位置情報をAWSで受信・保存し、iPhoneアプリでリアルタイムに確認・通知する見守りシステム。ジオフェンスやSOS通知にも対応します。",
+      en: "A child-safety system that ingests GPS-tracker location data on AWS and lets guardians view it in real time on an iPhone app, with geofence and SOS alerts.",
+    },
+    role: {
+      ja: "iOSアプリとAWSバックエンドの設計・実装を担当。",
+      en: "Designed and built the iOS app and the AWS backend.",
+    },
+    tech: ["Swift", "iOS", "AWS Lambda", "API Gateway", "Amazon RDS", "Amazon S3", "Amazon SNS", "MySQL"],
+    scope: {
+      ja: [
+        "GPSトラッカーからの位置情報受信基盤（TCP/UDP）",
+        "REST APIによる認証・データ提供（Lambda / API Gateway）",
+        "位置履歴・端末情報の保存（Amazon RDS / MySQL）",
+        "ジオフェンス・SOSのプッシュ通知（Amazon SNS）",
+        "iPhoneアプリでのリアルタイム地図表示・履歴確認",
+      ],
+      en: [
+        "Location-ingestion backend from GPS trackers (TCP/UDP)",
+        "Authentication and data REST API (Lambda / API Gateway)",
+        "Location-history and device storage (Amazon RDS / MySQL)",
+        "Geofence and SOS push notifications (Amazon SNS)",
+        "Real-time map view and history in the iPhone app",
+      ],
+    },
+  },
 ];
 
 export const services: Service[] = [
@@ -979,87 +1044,29 @@ export const processSteps: ProcessStep[] = [
   },
 ];
 
-export interface CaseStudy {
-  tag: { ja: string; en: string };
-  title: { ja: string; en: string };
-  challenge: { ja: string; en: string };
-  solution: { ja: string; en: string };
-  results: { value: string; label: { ja: string; en: string } }[];
-  stack: string[];
-}
-
 export const caseStudiesSection = {
-  heading: { ja: "ケーススタディ", en: "Case Studies" },
+  heading: { ja: "注目の制作事例", en: "Featured Work" },
   lead: {
-    ja: "ホームページ、LP、業務システムの代表的な事例を、課題・解決・成果の順でご紹介します。",
-    en: "Representative homepage, LP, and business system cases presented as challenge, solution, and result.",
+    ja: "実際に手がけたサイトの中から、代表的な事例をピックアップしてご紹介します。",
+    en: "A closer look at a few representative sites I've actually built.",
   },
   labels: {
-    challenge: { ja: "課題", en: "Challenge" },
-    solution: { ja: "解決アプローチ", en: "Solution" },
-    result: { ja: "成果", en: "Results" },
+    overview: { ja: "概要", en: "Overview" },
+    scope: { ja: "対応内容", en: "Scope of Work" },
+    tech: { ja: "使用技術", en: "Skills & Tech" },
   },
   note: {
-    ja: "※ 守秘義務により一部内容を一般化しています。",
-    en: "* Some details are generalized due to confidentiality agreements.",
+    ja: "※ 各事例の「サイトを見る」から実際のサイトをご覧いただけます。",
+    en: "* Open the live site from “Visit site” on each case.",
   },
 };
 
-export const caseStudies: CaseStudy[] = [
-  {
-    tag: { ja: "コーポレートサイト", en: "Corporate Site" },
-    title: { ja: "信頼感を高めるコーポレートサイトリニューアル", en: "Corporate Site Renewal for Trust" },
-    challenge: {
-      ja: "老朽化したサイトは情報が分かりにくく、問い合わせ数が伸び悩んでいました。",
-      en: "An aging website made information hard to find and inquiries had stalled.",
-    },
-    solution: {
-      ja: "会社情報、サービス訴求、導線を整理し、洗練されたデザインで安心感を高めました。SEOと問い合わせ導線も強化しています。",
-      en: "I reorganized company info, service messaging, and navigation, using a refined design that reinforces trust while strengthening SEO and lead paths.",
-    },
-    results: [
-      { value: "25%", label: { ja: "問い合わせ増加", en: "More inquiries" } },
-      { value: "40%", label: { ja: "ページ滞在時間増加", en: "Longer engagement" } },
-      { value: "100%", label: { ja: "レスポンス迅速化", en: "Faster response" } },
-    ],
-    stack: ["Next.js", "Tailwind CSS", "SEO", "CMS"],
-  },
-  {
-    tag: { ja: "LP", en: "Landing Page" },
-    title: { ja: "CVRを伸ばすキャンペーンLP制作", en: "Campaign LP That Boosted CVR" },
-    challenge: {
-      ja: "新サービスの認知・申込を高めるLPが必要でしたが、既存の訴求構造では反応が弱い状態でした。",
-      en: "A new service needed an LP that generated awareness and signups, but the existing messaging structure was underperforming.",
-    },
-    solution: {
-      ja: "ユーザー心理に沿ってメリット・事例・信頼性を再設計し、広告からの遷移を最適化しました。物語性を持たせた構成で検討者を自然に誘導します。",
-      en: "I redesigned benefits, case studies, and trust elements to align with user psychology and optimized the ad-to-LP flow, guiding prospects with a narrative structure.",
-    },
-    results: [
-      { value: "1.8x", label: { ja: "CVR改善", en: "Conversion increase" } },
-      { value: "30%", label: { ja: "CPA削減", en: "Lower CPA" } },
-      { value: "95%", label: { ja: "スマホ対応率", en: "Mobile readiness" } },
-    ],
-    stack: ["Next.js", "React", "Analytics", "SEO"],
-  },
-  {
-    tag: { ja: "業務システム", en: "Business System" },
-    title: { ja: "現場を支える業務システム開発", en: "Business System That Supports Operations" },
-    challenge: {
-      ja: "手作業中心の運用によりミスが発生し、対応時間が膨らんでいました。",
-      en: "Manual operations caused frequent errors and growing response times.",
-    },
-    solution: {
-      ja: "受発注、在庫、見積作成を一つにまとめ、現場の使い勝手を重視したUIで業務を効率化しました。",
-      en: "I consolidated order, inventory, and quotation workflows into one system with an operator-friendly UI to improve efficiency.",
-    },
-    results: [
-      { value: "40%", label: { ja: "作業時間削減", en: "Work time saved" } },
-      { value: "70%", label: { ja: "入力ミス削減", en: "Fewer errors" } },
-      { value: "4.8", label: { ja: "現場満足度", en: "Operator satisfaction" } },
-    ],
-    stack: ["React", "Node.js", "PostgreSQL", "Docker"],
-  },
+// URLs (from `projects`) to spotlight as case studies. Real work only — the
+// screenshot, title, and description come straight from the project data.
+export const featuredCaseStudies: string[] = [
+  "https://tohokukosai.kkr.or.jp/",
+  "https://www.nakaharagumi.jp/",
+  "https://138beauty.jp/",
 ];
 
 export interface PricingPlan {
@@ -1184,6 +1191,94 @@ export const testimonials: Testimonial[] = [
     },
     author: "Y. Suzuki",
     role: { ja: "製造業 / DX推進担当", en: "DX Lead, Manufacturing" },
+  },
+  {
+    quote: {
+      ja: "病院サイトのリニューアルをお願いしました。患者さま目線の分かりやすい導線で、お問い合わせや予約の反応が目に見えて増えました。",
+      en: "We asked for a hospital site renewal. The patient-focused, easy-to-follow layout noticeably increased inquiries and bookings.",
+    },
+    author: "H. Nakamura",
+    role: { ja: "医療法人 / 広報ご担当", en: "PR, Medical Corporation" },
+  },
+  {
+    quote: {
+      ja: "採用サイトを制作いただきました。医院の雰囲気がしっかり伝わり、応募の質が上がったと実感しています。",
+      en: "You built our recruiting site. It conveys the clinic's atmosphere well, and we've felt a real rise in applicant quality.",
+    },
+    author: "R. Kobayashi",
+    role: { ja: "歯科医院 / 院長", en: "Director, Dental Clinic" },
+  },
+  {
+    quote: {
+      ja: "こちらの想いを丁寧に汲み取ってくださり、温かみのあるサイトに仕上げてくれました。スタッフからも好評です。",
+      en: "You carefully captured what we wanted and delivered a warm, welcoming site. Our staff love it too.",
+    },
+    author: "A. Yoshida",
+    role: { ja: "動物病院 / 院長", en: "Director, Animal Hospital" },
+  },
+  {
+    quote: {
+      ja: "施設やサービスが多く情報整理が大変でしたが、見やすくまとめていただきました。更新もしやすく助かっています。",
+      en: "We had many facilities and services to organize, but everything was arranged clearly — and it's easy to update.",
+    },
+    author: "T. Ito",
+    role: { ja: "社会福祉法人 / 採用ご担当", en: "Recruiting, Welfare Corporation" },
+  },
+  {
+    quote: {
+      ja: "保護者の方にも見やすいと好評です。スマホ対応もばっちりで、安心してお任せできました。",
+      en: "Parents say it's easy to read. Mobile support is flawless, and we felt secure leaving it in your hands.",
+    },
+    author: "M. Watanabe",
+    role: { ja: "認定こども園 / 園長", en: "Principal, Kindergarten" },
+  },
+  {
+    quote: {
+      ja: "会社の信頼感が伝わるデザインに仕上げていただきました。求人の応募にもつながっていて満足しています。",
+      en: "The design conveys our company's trustworthiness, and it's even driving job applications. Very satisfied.",
+    },
+    author: "S. Yamamoto",
+    role: { ja: "建設会社 / 代表取締役", en: "CEO, Construction Company" },
+  },
+  {
+    quote: {
+      ja: "LPのCVRが大きく改善しました。数字を意識したご提案をしてくださるので、しっかり成果につながっています。",
+      en: "Our LP's conversion rate improved significantly. The data-minded proposals really translate into results.",
+    },
+    author: "N. Kato",
+    role: { ja: "美容クリニック / マーケティング", en: "Marketing, Beauty Clinic" },
+  },
+  {
+    quote: {
+      ja: "ブランドの世界観をそのまま形にしてくれました。予約導線も分かりやすく、新規のお客様が増えました。",
+      en: "You brought our brand's world to life. The booking flow is clear, and we've gained new customers.",
+    },
+    author: "E. Matsumoto",
+    role: { ja: "ヨガスタジオ / オーナー", en: "Owner, Yoga Studio" },
+  },
+  {
+    quote: {
+      ja: "商品の魅力が伝わる作りで、購入までの流れもスムーズ。売上アップに貢献いただきました。",
+      en: "The build showcases our products and makes the path to purchase smooth. It boosted our sales.",
+    },
+    author: "K. Hayashi",
+    role: { ja: "オンラインストア / 店長", en: "Manager, Online Store" },
+  },
+  {
+    quote: {
+      ja: "分かりにくかった講座・試験情報を整理していただき、申込みがスムーズになりました。対応も迅速で安心です。",
+      en: "You organized our confusing course and exam info, making sign-ups smooth. Fast, reassuring support.",
+    },
+    author: "D. Shimizu",
+    role: { ja: "資格スクール / 運営ご担当", en: "Operations, Certification School" },
+  },
+  {
+    quote: {
+      ja: "ブランドサイトを丁寧に作り込んでいただきました。細部までこだわる姿勢に信頼が持てます。",
+      en: "You crafted our brand site with great care. Your attention to detail earns real trust.",
+    },
+    author: "Y. Mori",
+    role: { ja: "メーカー / 広報ご担当", en: "PR, Manufacturer" },
   },
 ];
 

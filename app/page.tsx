@@ -8,9 +8,8 @@ import Strengths from "@/components/sections/Strengths";
 import Skills from "@/components/sections/Skills";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
-import CaseStudies from "@/components/sections/CaseStudies";
+// import CaseStudies from "@/components/sections/CaseStudies"; // hidden for now
 import Services from "@/components/sections/Services";
-import Pricing from "@/components/sections/Pricing";
 import Commitments from "@/components/sections/Commitments";
 import Process from "@/components/sections/Process";
 import Testimonials from "@/components/sections/Testimonials";
@@ -30,9 +29,8 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
-        <CaseStudies />
+        {/* <CaseStudies /> hidden for now */}
         <Services />
-        <Pricing />
         <Commitments />
         <Process />
         <Testimonials />

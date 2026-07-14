@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail } from "lucide-react";
+import { MessagesSquare, Mail } from "lucide-react";
 import { SiLine } from "react-icons/si";
 import { useLanguage } from "@/lib/language-context";
 import { footer, profile } from "@/lib/content";
@@ -9,8 +9,7 @@ export default function Footer() {
   const { lang } = useLanguage();
 
   const socials = [
-    { icon: Github, href: profile.github, label: "GitHub" },
-    { icon: Linkedin, href: profile.linkedin, label: "LinkedIn" },
+    { icon: MessagesSquare, href: profile.chatwork, label: "Chatwork" },
     { icon: SiLine, href: profile.line, label: "LINE" },
     { icon: Mail, href: `mailto:${profile.email}`, label: "Email" },
   ];

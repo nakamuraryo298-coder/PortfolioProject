@@ -5,20 +5,29 @@ import { useLanguage } from "@/lib/language-context";
 import { testimonials, testimonialsSection, nav } from "@/lib/content";
 import SectionHeading from "../SectionHeading";
 import Reveal from "../Reveal";
-import TiltCard from "../TiltCard";
+
+const fadeMask =
+  "linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%)";
 
 export default function Testimonials() {
   const { lang } = useLanguage();
+  // duplicate the list so the marquee can loop seamlessly (translateX -50%)
+  const track = [...testimonials, ...testimonials];
 
   return (
     <section id="voice" className="relative border-t border-[var(--color-border)] bg-[var(--color-surface)]/30 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeading label={nav.voice[lang]} heading={testimonialsSection.heading[lang]} lead={testimonialsSection.lead[lang]} />
+      </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.author} delay={i * 0.08}>
-              <TiltCard className="group h-full" max={6}>
+      <Reveal delay={0.05}>
+        <div
+          className="group relative mt-14 flex overflow-hidden"
+          style={{ maskImage: fadeMask, WebkitMaskImage: fadeMask }}
+        >
+          <ul className="flex w-max animate-[marquee_75s_linear_infinite] gap-6 pr-6 group-hover:[animation-play-state:paused]">
+            {track.map((t, i) => (
+              <li key={i} className="w-[300px] shrink-0 sm:w-[360px]">
                 <figure className="ring-gradient card-soft flex h-full flex-col rounded-2xl glass-strong p-7">
                   <Quote className="h-8 w-8 text-[var(--color-accent)]/60" />
                   <div className="mt-3 flex gap-0.5">
@@ -30,7 +39,7 @@ export default function Testimonials() {
                     {t.quote[lang]}
                   </blockquote>
                   <figcaption className="mt-6 flex items-center gap-3 border-t border-white/10 pt-5">
-                    <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] font-display font-bold text-white">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-3)] font-display font-bold text-white">
                       {t.author.charAt(0)}
                     </span>
                     <div>
@@ -39,13 +48,15 @@ export default function Testimonials() {
                     </div>
                   </figcaption>
                 </figure>
-              </TiltCard>
-            </Reveal>
-          ))}
+              </li>
+            ))}
+          </ul>
         </div>
+      </Reveal>
 
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal delay={0.1}>
-          <p className="mt-8 text-center text-xs text-[var(--color-muted)]">{testimonialsSection.note[lang]}</p>
+          <p className="mt-10 text-center text-xs text-[var(--color-muted)]">{testimonialsSection.note[lang]}</p>
         </Reveal>
       </div>
     </section>
