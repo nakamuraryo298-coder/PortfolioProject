@@ -13,6 +13,24 @@ import ProjectModal from "../ProjectModal";
 
 const STEP = 6;
 
+// Deterministic shuffle (fixed seed) so the "All" view mixes categories while
+// staying identical on server and client (no hydration mismatch).
+function seededShuffle<T>(arr: T[], seed: number): T[] {
+  const a = [...arr];
+  let s = seed >>> 0;
+  const rand = () => {
+    s = (s + 0x6d2b79f5) | 0;
+    let t = Math.imul(s ^ (s >>> 15), 1 | s);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 function hostOf(url: string) {
   try {
     return new URL(url).hostname.replace(/^www\./, "");
@@ -73,18 +91,20 @@ export default function Projects() {
     };
   }, []);
 
+  // "All" shows a mixed order; a specific category keeps the data (grouped) order
+  const shuffledProjects = useMemo(() => seededShuffle(projects, 0x5eed_1234), []);
+
   const q = query.trim().toLowerCase();
-  const filtered = useMemo(
-    () =>
-      projects.filter((p) => {
-        if (active !== "all" && !p.categories.includes(active)) return false;
-        if (!q) return true;
-        const cats = p.categories.map((k) => `${labelOf(k)?.ja ?? ""} ${labelOf(k)?.en ?? ""}`).join(" ");
-        const hay = `${p.title.ja} ${p.title.en} ${p.description.ja} ${p.description.en} ${cats}`.toLowerCase();
-        return hay.includes(q);
-      }),
-    [active, q, labelOf]
-  );
+  const filtered = useMemo(() => {
+    const source = active === "all" ? shuffledProjects : projects;
+    return source.filter((p) => {
+      if (active !== "all" && !p.categories.includes(active)) return false;
+      if (!q) return true;
+      const cats = p.categories.map((k) => `${labelOf(k)?.ja ?? ""} ${labelOf(k)?.en ?? ""}`).join(" ");
+      const hay = `${p.title.ja} ${p.title.en} ${p.description.ja} ${p.description.en} ${cats}`.toLowerCase();
+      return hay.includes(q);
+    });
+  }, [active, q, labelOf, shuffledProjects]);
 
   const visible = filtered.slice(0, visibleCount);
   const remaining = filtered.length - visibleCount;
