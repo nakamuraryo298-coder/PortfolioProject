@@ -11,7 +11,6 @@ const links = [
   { id: "skills", label: nav.skills },
   { id: "projects", label: nav.projects },
   { id: "services", label: nav.services },
-  { id: "voice", label: nav.voice },
   { id: "flow", label: nav.flow },
   { id: "faq", label: nav.faq },
 ];

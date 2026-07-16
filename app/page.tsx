@@ -12,7 +12,7 @@ import Projects from "@/components/sections/Projects";
 import Services from "@/components/sections/Services";
 import Commitments from "@/components/sections/Commitments";
 import Process from "@/components/sections/Process";
-import Testimonials from "@/components/sections/Testimonials";
+// import Testimonials from "@/components/sections/Testimonials"; // hidden until real client quotes are available
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
 
@@ -33,7 +33,7 @@ export default function Home() {
         <Services />
         <Commitments />
         <Process />
-        <Testimonials />
+        {/* <Testimonials /> hidden until real client quotes are available */}
         <Faq />
         <Contact />
       </main>

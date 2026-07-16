@@ -12,8 +12,8 @@ export interface ProjectDetail {
 
 const CODED_BASE: ProjectDetail = {
   role: {
-    ja: "デザインをもとにしたコーディング・CMS実装から公開・保守までを担当。",
-    en: "Coding from the design through CMS implementation, launch, and maintenance.",
+    ja: "デザインをもとにしたフロントエンドのコーディング・実装を担当。",
+    en: "Handled the front-end coding and implementation from the design.",
   },
   tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "SCSS", "WordPress"],
   scope: {
@@ -113,8 +113,6 @@ export function getProjectDetail(p: Project): ProjectDetail {
   if (cats.includes("certification") || cats.includes("public")) {
     addScope("資格・試験情報の整理と申込導線の実装", "Structuring exam info and application flow");
   }
-
-  if (!cats.includes("nocode")) addScope("公開後の運用・更新サポート", "Post-launch operation and update support");
 
   return d;
 }

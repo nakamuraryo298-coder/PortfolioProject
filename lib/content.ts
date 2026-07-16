@@ -68,7 +68,7 @@ export const profile = {
     en: "Freelance Software Engineer",
   },
   location: { ja: "日本", en: "Japan" },
-  email: "biyou00000@gmail.com",
+  email: "mistsid46@gmail.com",
   yearsOfExperience: 8,
   chatwork: "https://www.chatwork.com/w0u5iho8ow74",
   line: "https://line.me/ti/p/RxM-Bgw7nS",
@@ -96,8 +96,8 @@ export const hero = {
     en: "8 years of development experience.",
   },
   subtitle: {
-    ja: "Webシステム・モバイルアプリ・業務システム・AI開発まで幅広く対応。品質・保守性・拡張性を重視し、お客様の課題解決につながるシステムを提供しています。",
-    en: "Broad expertise across web systems, mobile apps, business systems, and AI development. I focus on quality, maintainability, and scalability to deliver systems that solve real client problems.",
+    ja: "コーポレートサイト・LP・ECなどのWeb制作を軸に、業務ツールやシステム開発まで対応。品質・保守性・使いやすさを重視し、お客様の課題解決につながる成果物を提供します。",
+    en: "Centred on web production — corporate sites, landing pages, and e-commerce — extending into business tools and system development. I focus on quality, maintainability, and usability to deliver results that solve real problems.",
   },
   ctaPrimary: { ja: "お仕事のご相談", en: "Hire Me" },
   ctaSecondary: { ja: "制作実績を見る", en: "View Work" },
@@ -215,76 +215,66 @@ export const strengths: Strength[] = [
 export const skillCategories: SkillCategory[] = [
   {
     icon: "Layout",
-    title: { ja: "フロントエンド", en: "Frontend" },
-    skills: ["React", "Next.js", "Vue.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Redux", "Vite"],
+    title: { ja: "Web制作・コーディング", en: "Web Production" },
+    skills: ["HTML5", "CSS3", "SCSS", "JavaScript", "jQuery", "WordPress", "レスポンシブデザイン"],
+  },
+  {
+    icon: "Code2",
+    title: { ja: "モダンフロントエンド", en: "Modern Frontend" },
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    icon: "Boxes",
+    title: { ja: "ノーコード制作", en: "No-code" },
+    skills: ["STUDIO", "STUDIO CMS", "CMS", "SEO"],
   },
   {
     icon: "Server",
-    title: { ja: "バックエンド", en: "Backend" },
-    skills: ["Node.js", "Go", "Python", "Java", "Ruby on Rails", "PHP", "GraphQL", "REST / gRPC"],
+    title: { ja: "バックエンド・システム", en: "Backend & Systems" },
+    skills: ["Python", "PHP", "Node.js", "MySQL", "REST API"],
   },
   {
-    icon: "Smartphone",
-    title: { ja: "モバイル", en: "Mobile" },
-    skills: ["React Native", "Flutter", "Swift / iOS", "Kotlin / Android", "Expo"],
+    icon: "BrainCircuit",
+    title: { ja: "データ・自動化 / AI", en: "Data, Automation & AI" },
+    skills: ["Selenium", "BeautifulSoup", "pandas", "スクレイピング", "機械学習"],
   },
   {
     icon: "Cloud",
-    title: { ja: "クラウド / DevOps", en: "Cloud / DevOps" },
-    skills: ["AWS", "Google Cloud", "Docker", "Kubernetes", "Terraform", "CI/CD", "GitHub Actions"],
-  },
-  {
-    icon: "Database",
-    title: { ja: "データ / AI", en: "Data / AI" },
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "BigQuery", "LLM / RAG", "TensorFlow", "Pandas"],
-  },
-  {
-    icon: "ShieldCheck",
-    title: { ja: "設計 / 品質", en: "Architecture / Quality" },
-    skills: ["System Design", "Microservices", "DDD", "Testing", "Security", "Performance", "Agile / Scrum"],
+    title: { ja: "モバイル・クラウド", en: "Mobile & Cloud" },
+    skills: ["Swift / iOS", "AWS", "Vercel", "GitHub"],
   },
 ];
 
 export const experiences: ExperienceItem[] = [
   {
     period: { ja: "2023 — 現在", en: "2023 — Present" },
-    role: { ja: "フリーランス ソフトウェアエンジニア", en: "Freelance Software Engineer" },
+    role: { ja: "フリーランス（Web制作・開発）", en: "Freelance — Web & Development" },
     company: { ja: "個人事業", en: "Independent" },
     description: {
-      ja: "独立後、コーポレートサイト・LP・業務システム・モバイルアプリの開発を、要件定義から設計・実装・運用まで一貫して請け負う。Next.js / TypeScript を中心としたモダンな構成に加え、生成AIを活用した業務効率化ツールの開発や、既存システムの改善・保守も担当。準委任・請負の双方でプロジェクトを推進している。",
-      en: "Since going independent, I deliver corporate sites, landing pages, business systems, and mobile apps end-to-end — from requirements through design, implementation, and operation. Alongside a modern Next.js / TypeScript stack, I build generative-AI tools for operational efficiency and take on the improvement and maintenance of existing systems, working on both retainer and fixed-scope engagements.",
+      ja: "コーポレートサイト・LP・ECサイトなどのWeb制作を中心に、WordPressやモダンなフロントエンドでの実装を数多く担当。あわせて、Pythonを用いた業務効率化ツールや、モバイルアプリ・システム開発にも取り組んでいます。",
+      en: "Primarily web production — corporate sites, LPs, and e-commerce — implemented with WordPress and modern frontend stacks, alongside Python-based automation tools and mobile/system development.",
     },
-    tags: ["Next.js", "TypeScript", "AWS", "生成AI / LLM"],
+    tags: ["WordPress", "Next.js", "Python", "Swift / iOS"],
   },
   {
-    period: { ja: "2021 — 2023", en: "2021 — 2023" },
-    role: { ja: "テックリード / シニアエンジニア", en: "Tech Lead / Senior Engineer" },
-    company: { ja: "自社開発企業（SaaS）", en: "Product Company (SaaS)" },
+    period: { ja: "2020 — 2023", en: "2020 — 2023" },
+    role: { ja: "Web制作・コーディング", en: "Web Production & Coding" },
+    company: { ja: "受託・協業", en: "Contract / Collaboration" },
     description: {
-      ja: "BtoB向けSaaSプロダクトの開発チームで、フロントエンドとバックエンドの設計・実装をリード。モノリスからのサービス分割やCI/CDの整備、パフォーマンス改善に取り組み、主要画面の表示速度を大きく改善した。コードレビューや若手メンバーのメンタリングを通じて、チーム全体の開発品質向上にも貢献。",
-      en: "Led frontend and backend design and implementation on a B2B SaaS product team. Drove the migration from a monolith toward split services, established CI/CD, and improved performance — substantially speeding up key screens. Also raised overall team quality through code review and mentoring of junior engineers.",
+      ja: "医療・福祉・教育・コーポレートなど幅広い業種のWebサイト制作に携わり、デザインをもとにしたコーディング・CMS実装・公開までを担当。案件に応じてチームでの協業や、公開後の更新・運用にも対応してきました。",
+      en: "Worked on websites across healthcare, welfare, education, and corporate sectors — coding from designs, CMS implementation, and launch — collaborating in teams and supporting post-launch updates as needed.",
     },
-    tags: ["TypeScript", "Node.js", "Docker", "CI/CD"],
+    tags: ["HTML / CSS", "jQuery", "WordPress", "STUDIO"],
   },
   {
-    period: { ja: "2019 — 2021", en: "2019 — 2021" },
-    role: { ja: "フルスタックエンジニア", en: "Full-Stack Engineer" },
-    company: { ja: "Web開発エージェンシー", en: "Web Development Agency" },
+    period: { ja: "2018 — 2020", en: "2018 — 2020" },
+    role: { ja: "Webコーディング（キャリア初期）", en: "Web Coding (Early Career)" },
+    company: { ja: "制作現場", en: "Production Work" },
     description: {
-      ja: "受託開発のエージェンシーで、ECサイト・コーポレートサイト・予約管理システムなど、業種の異なる案件を並行して担当。クライアントとの要件定義から画面設計、実装、公開後の保守までを一貫して手掛け、複数のプロジェクトを納期通りにリリースした。",
-      en: "At a client-services agency, I handled diverse projects in parallel — e-commerce, corporate sites, and reservation-management systems across different industries. I owned each project from requirements and screen design through implementation and post-launch maintenance, shipping multiple releases on schedule.",
+      ja: "Web制作の現場でコーディング・実装の実務を通じて基礎を習得。レスポンシブ対応やCMS構築、公開後の更新作業などを重ねながら、制作フロー全体への理解を深めました。",
+      en: "Built the fundamentals through hands-on coding and implementation — responsive work, CMS builds, and post-launch updates — deepening my grasp of the whole production workflow.",
     },
-    tags: ["Ruby on Rails", "Vue.js", "MySQL", "E-commerce"],
-  },
-  {
-    period: { ja: "2018 — 2019", en: "2018 — 2019" },
-    role: { ja: "ソフトウェアエンジニア", en: "Software Engineer" },
-    company: { ja: "システム開発会社", en: "Software Development Firm" },
-    description: {
-      ja: "社内業務システムや基幹系アプリケーションの開発でエンジニアとしてのキャリアをスタート。詳細設計・実装・テスト・ドキュメント作成といった開発工程の基礎を実務で身につけ、チーム開発やバージョン管理、レビュー文化を学んだ。",
-      en: "Began my engineering career developing in-house business systems and core enterprise applications. Through hands-on detailed design, implementation, testing, and documentation, I built solid fundamentals and learned team development, version control, and a culture of code review.",
-    },
-    tags: ["Java", "SQL", "業務システム / Enterprise"],
+    tags: ["HTML / CSS", "JavaScript", "レスポンシブデザイン"],
   },
 ];
 
@@ -889,16 +879,16 @@ export const servicesSection = {
 export const skillsSection = {
   heading: { ja: "技術スタック", en: "Skills & Technologies" },
   lead: {
-    ja: "あらゆる領域をカバーする、フルスタックの技術力。",
-    en: "Full-stack expertise spanning every layer of the modern stack.",
+    ja: "Web制作を軸に、システム・ツール開発まで対応できる技術。",
+    en: "A stack centred on web production, extending into systems and tooling.",
   },
 };
 
 export const experienceSection = {
   heading: { ja: "経歴", en: "Experience" },
   lead: {
-    ja: "8年間、技術と共に歩んできたキャリア。",
-    en: "An 8-year career growing alongside technology.",
+    ja: "Web制作を軸に歩んできた、これまでのあゆみ。",
+    en: "My path so far, centred on web production.",
   },
 };
 
@@ -909,8 +899,8 @@ export const projectsSection = {
     en: "Web production across medical, beauty, corporate, education, welfare, sports, and more — filter by category below.",
   },
   note: {
-    ja: "※ 制作・実装に携わった実績の一部です。各カードをクリックすると実際のサイトが開きます。",
-    en: "* A selection of sites I helped build. Click any card to open the live site.",
+    ja: "※ 制作・実装に携わった案件を掲載しています。各カードから担当内容の詳細をご覧いただけます。",
+    en: "* Projects I contributed to. Open any card for details on my role.",
   },
 };
 

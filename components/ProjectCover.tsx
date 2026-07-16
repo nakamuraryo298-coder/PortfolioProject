@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import ProjectThumb from "./ProjectThumb";
 
 // Cover for an achievement card.
@@ -29,13 +30,14 @@ export default function ProjectCover({
         <>
           {/* solid color placeholder, shown only until the screenshot paints */}
           <div className="absolute inset-0" style={{ backgroundColor: `hsl(${hue} 28% 15%)` }} />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={`/projects/${image}`}
             alt={alt}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 400px"
             loading="lazy"
             onError={() => setFailed(true)}
-            className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
           />
         </>
       ) : (

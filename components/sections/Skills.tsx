@@ -1,6 +1,6 @@
 "use client";
 
-import { Layout, Server, Smartphone, Cloud, Database, ShieldCheck, type LucideIcon } from "lucide-react";
+import { Layout, Server, Smartphone, Cloud, Database, ShieldCheck, Code2, Boxes, BrainCircuit, type LucideIcon } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { skillCategories, skillsSection, nav } from "@/lib/content";
 import { techIcon } from "@/lib/tech-icons";
@@ -14,12 +14,15 @@ const iconMap: Record<string, LucideIcon> = {
   Cloud,
   Database,
   ShieldCheck,
+  Code2,
+  Boxes,
+  BrainCircuit,
 };
 
 const marqueeItems = [
-  "React", "Next.js", "TypeScript", "Node.js", "Go", "Python", "AWS", "GCP",
-  "Docker", "Kubernetes", "Terraform", "GraphQL", "PostgreSQL", "Redis",
-  "React Native", "Flutter", "LLM / RAG", "Vue.js", "Rust", "TensorFlow",
+  "HTML5", "CSS3", "JavaScript", "jQuery", "WordPress", "STUDIO", "React", "Next.js",
+  "TypeScript", "Tailwind CSS", "PHP", "Python", "Selenium", "pandas", "Swift / iOS",
+  "AWS", "MySQL", "Vercel", "GitHub", "SEO",
 ];
 
 export default function Skills() {
