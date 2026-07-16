@@ -70,8 +70,8 @@ export const profile = {
   location: { ja: "日本", en: "Japan" },
   email: "biyou00000@gmail.com",
   yearsOfExperience: 8,
-  chatwork: "https://www.chatwork.com/",
-  line: "https://line.me/",
+  chatwork: "https://www.chatwork.com/w0u5iho8ow74",
+  line: "https://line.me/ti/p/RxM-Bgw7nS",
 };
 
 export const nav = {
